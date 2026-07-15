@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        {% block title %}
+
+        Modernized Healthcare PBM Portal
+
+        {% endblock %}
+
+    </title>
+
+    <!-- ==========================================
+                    GOOGLE FONT
+    =========================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- ==========================================
+                    FONT AWESOME
+    =========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- ==========================================
+                    GLOBAL CSS
+    =========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/components.css') }}">
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/animations.css') }}">
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/responsive.css') }}">
+
+    <!-- ==========================================
+                    PAGE CSS
+    =========================================== -->
+
+    {% block styles %}
+
+    {% endblock %}
+
+</head>
+
+<body>
+
+    <!-- ==========================================
+                    MAIN WRAPPER
+    =========================================== -->
+
+    <div class="app-wrapper">
+
+        {% block body %}
+
+        {% endblock %}
+
+    </div>
+
+    <!-- ==========================================
+                    GLOBAL LOADER
+    =========================================== -->
+
+    <div
+        id="globalLoader"
+        class="global-loader hidden">
+
+        <div class="loader-spinner"></div>
+
+    </div>
+
+    <!-- ==========================================
+                    TOAST
+    =========================================== -->
+
+    <div
+        id="toastContainer"
+        class="toast-container">
+
+    </div>
+
+    <!-- ==========================================
+                    GLOBAL JS
+    =========================================== -->
+
+    <script src="{{ url_for('static', filename='js/components.js') }}"></script>
+
+    <!-- ==========================================
+                    PAGE JS
+    =========================================== -->
+
+    {% block scripts %}
+
+    {% endblock %}
+
+</body>
+
+</html>

@@ -1,0 +1,501 @@
+Medicine ID,Medicine Name,Category,Manufacturer,Batch Number,Expiry Date,Stock Quantity,Unit Price,Supplier Name,Status
+M0001,Aspirin,Capsule,Glenmark,B46284,09-09-2029,339,2361.91,MedPlus Supplier,Available
+M0002,Diclofenac,Injection,Lupin,B70063,19-01-2030,179,2327.48,Wellness Pharma,Available
+M0003,Paracetamol,Cream,Abbott,B31269,27-03-2027,469,1858.4,Apollo Distributor,Available
+M0004,Amoxicillin,Injection,Mankind,B53428,13-02-2028,363,931.16,Wellness Pharma,Available
+M0005,Ibuprofen,Injection,Abbott,B87195,23-05-2028,477,1569.51,Apollo Distributor,Available
+M0006,Metformin,Capsule,Dr. Reddy's,B49761,30-09-2028,34,442.51,ABC Medicals,Available
+M0007,ORS,Tablet,Mankind,B39214,31-12-2029,329,299.68,HealthCare Pharma,Available
+M0008,ORS,Capsule,Dr. Reddy's,B45622,05-04-2027,155,23.97,Apollo Distributor,Available
+M0009,Cetirizine,Syrup,Dr. Reddy's,B32422,31-12-2029,232,1798.45,MedPlus Supplier,Available
+M0010,Monocef,Syrup,Mankind,B60897,30-06-2027,467,449.65,HealthCare Pharma,Available
+M0011,Ciprofloxacin,Cream,Cipla,B33406,12-07-2030,18,1261.27,Apollo Distributor,Low Stock
+M0012,Paracetamol,Injection,Lupin,B47582,15-01-2029,191,345.11,MedPlus Supplier,Available
+M0013,Ibuprofen,Syrup,Lupin,B25111,28-12-2029,415,1968.98,Apollo Distributor,Available
+M0014,ORS,Cream,Glenmark,B75932,07-02-2029,438,2040.31,HealthCare Pharma,Available
+M0015,Monocef,Tablet,Pfizer,B36223,09-03-2027,117,992.86,Wellness Pharma,Available
+M0016,Vitamin D,Cream,Mankind,B37716,23-09-2028,328,864.22,Apollo Distributor,Available
+M0017,Ibuprofen,Syrup,Pfizer,B76255,29-03-2027,489,438.48,Apollo Distributor,Available
+M0018,Atorvastatin,Cream,Alkem,B40192,29-10-2029,24,1329.22,Apollo Distributor,Available
+M0019,Aspirin,Capsule,Alkem,B10851,16-12-2029,241,841.92,ABC Medicals,Available
+M0020,Vitamin D,Injection,Cipla,B92409,19-07-2030,217,2054.4,MedPlus Supplier,Available
+M0021,Paracetamol,Cream,Pfizer,B68044,28-01-2028,470,1246.37,Apollo Distributor,Available
+M0022,Azithromycin,Syrup,Lupin,B10028,07-08-2029,385,1512.51,HealthCare Pharma,Available
+M0023,Pantoprazole,Tablet,Cipla,B16129,22-03-2029,426,1987.57,Wellness Pharma,Available
+M0024,Paracetamol,Syrup,Lupin,B92814,24-12-2027,42,1701.16,ABC Medicals,Available
+M0025,Aspirin,Injection,Cipla,B24639,09-10-2028,241,872.14,Wellness Pharma,Available
+M0026,Azithromycin,Tablet,Torrent,B53385,17-07-2029,258,1890.13,Apollo Distributor,Available
+M0027,Crocin,Capsule,Abbott,B29108,24-03-2029,272,1890.57,ABC Medicals,Available
+M0028,Omeprazole,Cream,Alkem,B99337,11-09-2028,455,677.89,HealthCare Pharma,Available
+M0029,Diclofenac,Tablet,Pfizer,B77574,14-10-2028,332,2358.55,HealthCare Pharma,Available
+M0030,Omeprazole,Tablet,Cipla,B43299,02-06-2027,142,1717.25,ABC Medicals,Available
+M0031,Crocin,Cream,Dr. Reddy's,B38267,08-09-2028,105,349.8,ABC Medicals,Available
+M0032,ORS,Injection,Mankind,B24709,24-11-2027,392,1361.49,Apollo Distributor,Available
+M0033,Ciprofloxacin,Injection,Pfizer,B82439,26-08-2028,167,876.04,Apollo Distributor,Available
+M0034,Dolo 650,Tablet,Sun Pharma,B67698,21-03-2030,204,2302.77,HealthCare Pharma,Available
+M0035,Ibuprofen,Capsule,Cipla,B27220,07-03-2027,296,274.78,Wellness Pharma,Available
+M0036,Vitamin C,Injection,Pfizer,B55482,30-03-2029,281,684.16,MedPlus Supplier,Available
+M0037,Cetirizine,Capsule,Mankind,B38029,11-11-2028,233,701.06,ABC Medicals,Available
+M0038,Ibuprofen,Injection,Lupin,B35828,08-02-2027,90,1241.29,Apollo Distributor,Available
+M0039,Omeprazole,Tablet,Dr. Reddy's,B87555,07-01-2029,325,1380.76,HealthCare Pharma,Available
+M0040,Cetirizine,Injection,Sun Pharma,B19461,22-10-2029,83,509.26,MedPlus Supplier,Available
+M0041,Pantoprazole,Cream,Cipla,B46885,23-06-2029,216,605.98,MedPlus Supplier,Available
+M0042,Omeprazole,Cream,Mankind,B81289,05-09-2029,216,1874.69,ABC Medicals,Available
+M0043,Aspirin,Injection,Sun Pharma,B28690,27-08-2027,33,2156.09,MedPlus Supplier,Available
+M0044,Amoxicillin,Tablet,Sun Pharma,B57904,12-01-2030,488,177.61,ABC Medicals,Available
+M0045,Augmentin,Capsule,Lupin,B41148,04-08-2028,214,1640.23,MedPlus Supplier,Available
+M0046,Azithromycin,Injection,Pfizer,B63430,21-05-2030,314,1002.83,HealthCare Pharma,Available
+M0047,Pantoprazole,Injection,Torrent,B31004,28-02-2030,139,1455.74,Wellness Pharma,Available
+M0048,Aspirin,Cream,Lupin,B29059,20-11-2027,80,309.77,HealthCare Pharma,Available
+M0049,Augmentin,Capsule,Glenmark,B36606,27-04-2030,434,1120.42,Wellness Pharma,Available
+M0050,Vitamin D,Capsule,Glenmark,B15169,06-11-2029,213,1788.57,ABC Medicals,Available
+M0051,Azithromycin,Injection,Dr. Reddy's,B54468,17-12-2028,45,1539.91,Apollo Distributor,Available
+M0052,Cetirizine,Syrup,Sun Pharma,B51473,17-02-2027,210,700.37,Apollo Distributor,Available
+M0053,Aspirin,Syrup,Pfizer,B98407,16-08-2027,413,801.38,Apollo Distributor,Available
+M0054,Aspirin,Tablet,Lupin,B39845,21-06-2028,194,1442.84,Wellness Pharma,Available
+M0055,Calcium Tablets,Syrup,Torrent,B17107,01-02-2027,189,389.65,MedPlus Supplier,Available
+M0056,Ciprofloxacin,Cream,Lupin,B86262,13-01-2028,191,984.41,MedPlus Supplier,Available
+M0057,Vitamin D,Syrup,Torrent,B48913,20-03-2029,272,1775.41,Apollo Distributor,Available
+M0058,Aspirin,Syrup,Sun Pharma,B90957,19-05-2028,359,2474.85,Wellness Pharma,Available
+M0059,Monocef,Injection,Mankind,B66736,02-06-2028,377,590.95,Wellness Pharma,Available
+M0060,Calcium Tablets,Tablet,Pfizer,B68842,18-08-2027,293,170.67,ABC Medicals,Available
+M0061,Pantoprazole,Injection,Torrent,B63545,17-05-2027,361,1178.63,Wellness Pharma,Available
+M0062,Omeprazole,Syrup,Pfizer,B54699,12-01-2027,299,1151.03,ABC Medicals,Available
+M0063,Vitamin D,Injection,Mankind,B56409,21-03-2028,151,471.58,HealthCare Pharma,Available
+M0064,Dolo 650,Capsule,Glenmark,B91732,26-07-2027,225,1592.87,Wellness Pharma,Available
+M0065,ORS,Tablet,Glenmark,B93880,01-10-2029,467,1846.2,ABC Medicals,Available
+M0066,Augmentin,Cream,Torrent,B83843,03-05-2030,345,1609.45,Wellness Pharma,Available
+M0067,Vitamin D,Tablet,Mankind,B95562,22-11-2028,83,1185.86,Wellness Pharma,Available
+M0068,Azithromycin,Capsule,Pfizer,B48124,30-12-2029,441,2297.39,Wellness Pharma,Available
+M0069,Dolo 650,Syrup,Alkem,B42985,22-07-2027,387,762.44,HealthCare Pharma,Available
+M0070,Monocef,Syrup,Mankind,B39646,29-06-2029,387,2261.42,HealthCare Pharma,Available
+M0071,Vitamin C,Cream,Lupin,B53368,16-07-2028,55,1158.5,Apollo Distributor,Available
+M0072,Paracetamol,Capsule,Alkem,B80857,28-02-2027,171,348.96,Wellness Pharma,Available
+M0073,Calcium Tablets,Tablet,Sun Pharma,B10848,23-01-2027,284,562.82,Wellness Pharma,Available
+M0074,Augmentin,Cream,Alkem,B47362,20-07-2028,272,2439.16,MedPlus Supplier,Available
+M0075,Ciprofloxacin,Tablet,Abbott,B57091,06-05-2028,289,229.17,MedPlus Supplier,Available
+M0076,Cetirizine,Syrup,Pfizer,B22513,11-09-2027,112,489.83,MedPlus Supplier,Available
+M0077,Azithromycin,Tablet,Lupin,B18248,19-07-2029,473,2396.9,ABC Medicals,Available
+M0078,Vitamin D,Cream,Pfizer,B57085,04-01-2027,259,2010.5,HealthCare Pharma,Available
+M0079,Vitamin D,Injection,Dr. Reddy's,B72411,04-05-2029,356,327.41,Apollo Distributor,Available
+M0080,Dolo 650,Cream,Pfizer,B71805,11-08-2029,30,481.4,Wellness Pharma,Available
+M0081,Diclofenac,Syrup,Alkem,B12316,13-07-2028,398,474.19,Apollo Distributor,Available
+M0082,Pantoprazole,Tablet,Glenmark,B41715,16-10-2028,267,1623.34,Apollo Distributor,Available
+M0083,Ibuprofen,Tablet,Lupin,B98058,27-03-2028,330,1036.85,Apollo Distributor,Available
+M0084,Azithromycin,Cream,Mankind,B23131,04-09-2028,336,1237.79,HealthCare Pharma,Available
+M0085,Aspirin,Injection,Sun Pharma,B11737,03-05-2027,157,201.11,MedPlus Supplier,Available
+M0086,Cetirizine,Tablet,Abbott,B77874,18-05-2028,313,2340.83,HealthCare Pharma,Available
+M0087,Monocef,Syrup,Sun Pharma,B10580,09-05-2028,26,411.7,MedPlus Supplier,Available
+M0088,Ciprofloxacin,Tablet,Abbott,B38275,07-09-2028,429,795.81,HealthCare Pharma,Available
+M0089,Omeprazole,Tablet,Glenmark,B94221,29-12-2029,497,2427.54,Wellness Pharma,Available
+M0090,Amoxicillin,Tablet,Cipla,B32576,16-02-2027,325,1837.55,MedPlus Supplier,Available
+M0091,Augmentin,Injection,Mankind,B29774,07-10-2029,270,1284.59,MedPlus Supplier,Available
+M0092,Omeprazole,Cream,Alkem,B48220,23-01-2027,157,989.11,ABC Medicals,Available
+M0093,Cetirizine,Capsule,Cipla,B70139,20-06-2029,28,791.29,MedPlus Supplier,Available
+M0094,Vitamin C,Cream,Cipla,B24112,21-12-2029,287,1400.25,Apollo Distributor,Available
+M0095,Monocef,Tablet,Abbott,B60677,10-02-2027,450,1167.16,MedPlus Supplier,Available
+M0096,Crocin,Injection,Cipla,B50861,18-02-2030,198,2099.57,MedPlus Supplier,Available
+M0097,Augmentin,Capsule,Glenmark,B20603,19-10-2027,330,754.82,ABC Medicals,Available
+M0098,Omeprazole,Injection,Pfizer,B76089,11-11-2028,257,415.1,MedPlus Supplier,Available
+M0099,Aspirin,Cream,Pfizer,B17229,08-06-2030,21,1030.54,HealthCare Pharma,Available
+M0100,Metformin,Injection,Pfizer,B17139,11-07-2027,493,731.92,Apollo Distributor,Available
+M0101,Calcium Tablets,Tablet,Cipla,B10799,07-05-2030,11,683.47,Apollo Distributor,Low Stock
+M0102,Crocin,Tablet,Abbott,B70668,26-05-2027,371,672.64,Apollo Distributor,Available
+M0103,Monocef,Injection,Glenmark,B80942,13-04-2027,324,246.16,MedPlus Supplier,Available
+M0104,Aspirin,Tablet,Sun Pharma,B69642,22-06-2029,257,612.4,HealthCare Pharma,Available
+M0105,Ciprofloxacin,Injection,Pfizer,B28722,03-03-2027,324,840.84,MedPlus Supplier,Available
+M0106,Metformin,Capsule,Pfizer,B99353,03-03-2030,251,1053.91,Wellness Pharma,Available
+M0107,Cetirizine,Cream,Sun Pharma,B23853,08-08-2028,486,2270.62,ABC Medicals,Available
+M0108,Calcium Tablets,Injection,Dr. Reddy's,B12521,06-10-2027,324,1099.69,Wellness Pharma,Available
+M0109,Amoxicillin,Injection,Cipla,B21913,30-04-2028,379,2480.35,MedPlus Supplier,Available
+M0110,Crocin,Tablet,Abbott,B51743,27-06-2028,355,2015.14,Apollo Distributor,Available
+M0111,Azithromycin,Syrup,Alkem,B73868,12-08-2027,55,1512.16,HealthCare Pharma,Available
+M0112,Dolo 650,Syrup,Alkem,B60446,17-05-2027,376,177.66,ABC Medicals,Available
+M0113,Azithromycin,Cream,Sun Pharma,B28126,18-11-2029,277,90.26,ABC Medicals,Available
+M0114,Metformin,Injection,Mankind,B54500,11-11-2028,142,365.37,ABC Medicals,Available
+M0115,Omeprazole,Tablet,Dr. Reddy's,B68417,13-09-2029,376,149.82,MedPlus Supplier,Available
+M0116,Vitamin D,Capsule,Sun Pharma,B26081,19-06-2029,491,970.52,Apollo Distributor,Available
+M0117,Crocin,Syrup,Sun Pharma,B48171,01-10-2027,9,1883.97,MedPlus Supplier,Low Stock
+M0118,Augmentin,Tablet,Mankind,B15219,20-10-2027,101,1094.92,HealthCare Pharma,Available
+M0119,Metformin,Tablet,Alkem,B51493,24-01-2030,341,658.98,HealthCare Pharma,Available
+M0120,Ciprofloxacin,Capsule,Mankind,B30582,23-03-2030,237,487.56,HealthCare Pharma,Available
+M0121,Diclofenac,Capsule,Alkem,B72270,13-08-2030,78,152.52,HealthCare Pharma,Available
+M0122,Paracetamol,Tablet,Sun Pharma,B99788,23-07-2028,176,2470.22,ABC Medicals,Available
+M0123,Vitamin D,Syrup,Mankind,B87789,28-03-2027,331,327.32,ABC Medicals,Available
+M0124,Ciprofloxacin,Syrup,Glenmark,B40011,15-12-2029,378,1600.84,HealthCare Pharma,Available
+M0125,Monocef,Cream,Glenmark,B44775,10-06-2030,343,1301.59,ABC Medicals,Available
+M0126,Azithromycin,Cream,Pfizer,B12975,04-12-2029,259,1178.25,Apollo Distributor,Available
+M0127,Ibuprofen,Injection,Sun Pharma,B83481,14-05-2027,232,1024.72,Apollo Distributor,Available
+M0128,Amoxicillin,Cream,Glenmark,B41927,11-07-2028,86,289.99,Apollo Distributor,Available
+M0129,Azithromycin,Cream,Pfizer,B13644,01-06-2028,214,1762.09,HealthCare Pharma,Available
+M0130,Azithromycin,Capsule,Lupin,B95795,26-01-2027,7,581.32,ABC Medicals,Low Stock
+M0131,Crocin,Capsule,Glenmark,B50058,14-01-2029,451,591.55,ABC Medicals,Available
+M0132,Ibuprofen,Capsule,Lupin,B10808,05-03-2029,57,1899.53,MedPlus Supplier,Available
+M0133,Dolo 650,Tablet,Pfizer,B50619,21-07-2028,97,839.98,Apollo Distributor,Available
+M0134,Azithromycin,Syrup,Glenmark,B83918,04-01-2029,134,1334.81,MedPlus Supplier,Available
+M0135,Dolo 650,Tablet,Abbott,B23356,17-01-2028,155,545.91,MedPlus Supplier,Available
+M0136,Ibuprofen,Capsule,Mankind,B19796,27-06-2029,384,214.3,HealthCare Pharma,Available
+M0137,ORS,Syrup,Lupin,B84847,05-07-2027,489,891.49,MedPlus Supplier,Available
+M0138,Paracetamol,Cream,Cipla,B99884,17-07-2027,422,1401.96,MedPlus Supplier,Available
+M0139,Vitamin C,Tablet,Alkem,B29065,11-02-2027,9,37.33,Wellness Pharma,Low Stock
+M0140,Amoxicillin,Injection,Sun Pharma,B73590,27-10-2027,351,2103.25,ABC Medicals,Available
+M0141,Metformin,Tablet,Glenmark,B67491,01-02-2029,14,1356.48,Wellness Pharma,Low Stock
+M0142,Paracetamol,Syrup,Cipla,B13770,26-06-2028,447,1514.09,Apollo Distributor,Available
+M0143,Crocin,Syrup,Pfizer,B92170,14-12-2028,140,522.38,Wellness Pharma,Available
+M0144,Ibuprofen,Cream,Lupin,B77923,17-09-2028,285,681.82,MedPlus Supplier,Available
+M0145,Aspirin,Capsule,Lupin,B12471,27-07-2029,327,1117.38,MedPlus Supplier,Available
+M0146,Vitamin C,Injection,Dr. Reddy's,B65905,11-11-2029,41,658.26,Wellness Pharma,Available
+M0147,Ibuprofen,Tablet,Pfizer,B34668,09-09-2029,205,1483.04,Wellness Pharma,Available
+M0148,Ibuprofen,Tablet,Lupin,B19081,12-04-2029,196,1865.3,Wellness Pharma,Available
+M0149,Ciprofloxacin,Injection,Sun Pharma,B61226,25-03-2030,130,533.82,ABC Medicals,Available
+M0150,Calcium Tablets,Cream,Alkem,B30787,20-12-2028,464,1811.94,MedPlus Supplier,Available
+M0151,ORS,Cream,Dr. Reddy's,B53739,28-09-2029,373,1131.56,ABC Medicals,Available
+M0152,Pantoprazole,Tablet,Glenmark,B40564,19-08-2027,140,374.69,Apollo Distributor,Available
+M0153,Ibuprofen,Injection,Dr. Reddy's,B41055,11-06-2027,175,1634.08,Wellness Pharma,Available
+M0154,Azithromycin,Syrup,Pfizer,B26777,13-04-2027,263,506.3,Wellness Pharma,Available
+M0155,Atorvastatin,Syrup,Dr. Reddy's,B13251,26-11-2027,148,1268.42,MedPlus Supplier,Available
+M0156,Dolo 650,Injection,Mankind,B23818,11-03-2029,61,1052.09,MedPlus Supplier,Available
+M0157,Vitamin D,Cream,Cipla,B68795,14-03-2029,131,784.37,ABC Medicals,Available
+M0158,Dolo 650,Injection,Cipla,B64446,21-07-2030,357,1960.16,HealthCare Pharma,Available
+M0159,Aspirin,Tablet,Pfizer,B64811,07-07-2030,406,1220.15,MedPlus Supplier,Available
+M0160,Aspirin,Tablet,Lupin,B41966,18-06-2027,225,1585.21,Apollo Distributor,Available
+M0161,Azithromycin,Capsule,Alkem,B18437,15-01-2028,222,1397.12,HealthCare Pharma,Available
+M0162,Metformin,Injection,Sun Pharma,B55072,21-05-2030,298,2009.18,HealthCare Pharma,Available
+M0163,Monocef,Syrup,Sun Pharma,B88807,01-07-2030,56,1717.98,ABC Medicals,Available
+M0164,Amoxicillin,Injection,Sun Pharma,B81487,02-02-2030,27,2044.85,Wellness Pharma,Available
+M0165,Monocef,Tablet,Glenmark,B12924,02-02-2027,150,1431.96,MedPlus Supplier,Available
+M0166,Ibuprofen,Syrup,Cipla,B83335,10-11-2027,312,410.39,MedPlus Supplier,Available
+M0167,Pantoprazole,Tablet,Pfizer,B38451,31-08-2029,368,1713.77,ABC Medicals,Available
+M0168,Diclofenac,Capsule,Pfizer,B80573,02-08-2027,326,1228.23,Apollo Distributor,Available
+M0169,Aspirin,Tablet,Mankind,B33230,05-02-2030,171,395.26,HealthCare Pharma,Available
+M0170,Azithromycin,Cream,Abbott,B89983,10-10-2029,320,917.08,Apollo Distributor,Available
+M0171,Metformin,Tablet,Alkem,B32064,28-01-2030,114,1103.22,Wellness Pharma,Available
+M0172,ORS,Syrup,Dr. Reddy's,B64560,02-05-2030,62,1606.26,ABC Medicals,Available
+M0173,ORS,Capsule,Pfizer,B45951,15-12-2028,1,891.17,Apollo Distributor,Low Stock
+M0174,Monocef,Injection,Dr. Reddy's,B61737,25-07-2030,415,1038.45,Wellness Pharma,Available
+M0175,Monocef,Capsule,Abbott,B26061,17-03-2028,419,2047.62,Apollo Distributor,Available
+M0176,Dolo 650,Cream,Pfizer,B26325,08-04-2028,276,1620.83,MedPlus Supplier,Available
+M0177,Paracetamol,Tablet,Pfizer,B92002,07-06-2030,151,1316.13,Wellness Pharma,Available
+M0178,Cetirizine,Cream,Lupin,B73518,28-12-2028,64,35.03,HealthCare Pharma,Available
+M0179,Azithromycin,Capsule,Torrent,B38627,28-08-2029,202,1214.91,ABC Medicals,Available
+M0180,Azithromycin,Syrup,Cipla,B67062,24-03-2030,201,826.83,Wellness Pharma,Available
+M0181,Ciprofloxacin,Capsule,Pfizer,B63787,06-07-2028,78,2185.09,Apollo Distributor,Available
+M0182,Ibuprofen,Capsule,Alkem,B69880,12-08-2030,233,1659.48,Wellness Pharma,Available
+M0183,Dolo 650,Syrup,Cipla,B97837,18-06-2030,214,939.65,Wellness Pharma,Available
+M0184,Diclofenac,Capsule,Sun Pharma,B73002,16-09-2028,384,150.73,Wellness Pharma,Available
+M0185,Augmentin,Capsule,Cipla,B92177,15-01-2029,43,1228.6,ABC Medicals,Available
+M0186,ORS,Tablet,Abbott,B14246,28-07-2029,72,143.02,Wellness Pharma,Available
+M0187,Metformin,Capsule,Alkem,B86868,04-07-2028,366,1704.31,MedPlus Supplier,Available
+M0188,Atorvastatin,Tablet,Alkem,B85150,28-01-2030,418,1299.61,HealthCare Pharma,Available
+M0189,Diclofenac,Cream,Torrent,B85665,21-11-2028,305,1528.61,ABC Medicals,Available
+M0190,Crocin,Injection,Mankind,B36284,03-11-2027,16,1096.52,ABC Medicals,Low Stock
+M0191,Augmentin,Tablet,Lupin,B11088,31-12-2028,297,1051.26,Wellness Pharma,Available
+M0192,Ciprofloxacin,Injection,Cipla,B22219,21-04-2030,177,2137.39,HealthCare Pharma,Available
+M0193,Diclofenac,Syrup,Cipla,B89693,01-05-2029,18,1778.14,HealthCare Pharma,Low Stock
+M0194,Diclofenac,Cream,Abbott,B55630,02-02-2028,314,1432.05,Apollo Distributor,Available
+M0195,ORS,Injection,Sun Pharma,B17156,15-10-2029,433,395.15,Wellness Pharma,Available
+M0196,Monocef,Syrup,Torrent,B28622,29-03-2030,207,1966.98,MedPlus Supplier,Available
+M0197,Ibuprofen,Injection,Pfizer,B27611,09-08-2030,142,1941.38,Apollo Distributor,Available
+M0198,Ibuprofen,Syrup,Alkem,B96244,14-05-2027,54,1899.4,ABC Medicals,Available
+M0199,Augmentin,Syrup,Sun Pharma,B65777,11-08-2029,391,906.85,Apollo Distributor,Available
+M0200,Ciprofloxacin,Cream,Pfizer,B79807,10-12-2029,386,1674.75,Apollo Distributor,Available
+M0201,Amoxicillin,Injection,Torrent,B18266,01-04-2028,158,2353.6,Wellness Pharma,Available
+M0202,Paracetamol,Tablet,Lupin,B40287,24-10-2028,84,2343.94,Apollo Distributor,Available
+M0203,Augmentin,Capsule,Alkem,B38792,13-06-2027,251,335.66,MedPlus Supplier,Available
+M0204,Pantoprazole,Capsule,Alkem,B24368,04-10-2028,5,2379.59,Apollo Distributor,Low Stock
+M0205,Aspirin,Tablet,Sun Pharma,B34820,27-06-2028,176,1681.2,ABC Medicals,Available
+M0206,Dolo 650,Tablet,Glenmark,B20183,27-01-2030,110,2252.65,MedPlus Supplier,Available
+M0207,Dolo 650,Capsule,Alkem,B61959,12-04-2028,451,330.41,MedPlus Supplier,Available
+M0208,Ibuprofen,Injection,Mankind,B26046,02-09-2027,27,2171.54,Wellness Pharma,Available
+M0209,Aspirin,Tablet,Sun Pharma,B97446,11-02-2030,244,1643.89,Wellness Pharma,Available
+M0210,Pantoprazole,Tablet,Sun Pharma,B87923,09-02-2028,46,965.51,MedPlus Supplier,Available
+M0211,Ibuprofen,Cream,Alkem,B31262,02-08-2030,82,1559.27,MedPlus Supplier,Available
+M0212,Calcium Tablets,Injection,Sun Pharma,B39084,20-02-2028,95,806.41,ABC Medicals,Available
+M0213,Aspirin,Injection,Glenmark,B71829,07-08-2027,232,331.53,HealthCare Pharma,Available
+M0214,Vitamin C,Injection,Abbott,B99647,12-08-2029,288,2337,ABC Medicals,Available
+M0215,Paracetamol,Syrup,Torrent,B95783,09-03-2030,456,1698.55,HealthCare Pharma,Available
+M0216,Crocin,Syrup,Sun Pharma,B46946,28-11-2027,434,171.1,Wellness Pharma,Available
+M0217,Azithromycin,Cream,Lupin,B38651,09-05-2030,307,2282.48,MedPlus Supplier,Available
+M0218,Crocin,Cream,Alkem,B26303,07-05-2027,338,2244.53,Apollo Distributor,Available
+M0219,Omeprazole,Cream,Alkem,B84050,07-07-2030,178,1909.5,MedPlus Supplier,Available
+M0220,Dolo 650,Injection,Mankind,B83741,27-11-2028,333,454.09,MedPlus Supplier,Available
+M0221,Omeprazole,Capsule,Glenmark,B47141,19-02-2030,261,1029.9,Apollo Distributor,Available
+M0222,Vitamin C,Cream,Dr. Reddy's,B59997,12-06-2029,403,1765.52,HealthCare Pharma,Available
+M0223,Vitamin D,Capsule,Glenmark,B88809,15-03-2030,250,1208.66,MedPlus Supplier,Available
+M0224,Omeprazole,Syrup,Sun Pharma,B15016,27-02-2027,56,320.02,MedPlus Supplier,Available
+M0225,Omeprazole,Tablet,Glenmark,B44298,21-05-2028,97,2497.87,Wellness Pharma,Available
+M0226,Amoxicillin,Capsule,Pfizer,B28941,17-01-2030,135,2035.61,Apollo Distributor,Available
+M0227,Cetirizine,Tablet,Lupin,B96507,13-05-2027,179,2051.28,MedPlus Supplier,Available
+M0228,Ciprofloxacin,Tablet,Dr. Reddy's,B24157,03-08-2030,252,1478.74,Wellness Pharma,Available
+M0229,Vitamin C,Cream,Abbott,B68783,29-01-2027,361,1721.59,MedPlus Supplier,Available
+M0230,Vitamin D,Syrup,Mankind,B53955,26-04-2030,470,1902.31,Wellness Pharma,Available
+M0231,Augmentin,Syrup,Dr. Reddy's,B82307,24-11-2029,368,336.68,Apollo Distributor,Available
+M0232,Vitamin C,Syrup,Pfizer,B45298,03-05-2030,75,1750.38,Apollo Distributor,Available
+M0233,Aspirin,Syrup,Alkem,B91602,02-12-2028,365,470.37,Wellness Pharma,Available
+M0234,Omeprazole,Injection,Alkem,B91638,28-12-2029,403,2381.75,Wellness Pharma,Available
+M0235,Pantoprazole,Tablet,Lupin,B96097,22-08-2028,168,20.49,Wellness Pharma,Available
+M0236,Azithromycin,Tablet,Torrent,B86166,26-08-2029,58,2448.98,MedPlus Supplier,Available
+M0237,Aspirin,Capsule,Mankind,B69410,24-03-2030,234,831.53,HealthCare Pharma,Available
+M0238,Amoxicillin,Capsule,Pfizer,B89784,29-11-2029,239,1826.81,HealthCare Pharma,Available
+M0239,Vitamin D,Injection,Pfizer,B30667,12-06-2027,134,2256.13,Apollo Distributor,Available
+M0240,Atorvastatin,Syrup,Glenmark,B63711,21-03-2027,482,2333.55,MedPlus Supplier,Available
+M0241,Omeprazole,Tablet,Sun Pharma,B15982,22-05-2029,177,2377.98,Apollo Distributor,Available
+M0242,Metformin,Capsule,Lupin,B46336,19-12-2028,464,2191.65,ABC Medicals,Available
+M0243,Augmentin,Cream,Sun Pharma,B56351,27-06-2030,469,1661.71,HealthCare Pharma,Available
+M0244,Amoxicillin,Tablet,Mankind,B58510,10-08-2029,391,2008.31,HealthCare Pharma,Available
+M0245,ORS,Cream,Dr. Reddy's,B81435,02-06-2029,243,1281.47,HealthCare Pharma,Available
+M0246,Metformin,Syrup,Abbott,B15893,20-11-2028,139,216.07,Wellness Pharma,Available
+M0247,Azithromycin,Capsule,Alkem,B70981,14-10-2029,265,1778.96,ABC Medicals,Available
+M0248,Vitamin D,Capsule,Torrent,B63188,23-10-2029,305,2436.77,Wellness Pharma,Available
+M0249,Diclofenac,Tablet,Sun Pharma,B65235,26-10-2027,85,984.92,HealthCare Pharma,Available
+M0250,Dolo 650,Cream,Dr. Reddy's,B57915,13-10-2029,320,58.77,Apollo Distributor,Available
+M0251,Ibuprofen,Syrup,Alkem,B92562,24-05-2028,412,1180.24,ABC Medicals,Available
+M0252,Vitamin C,Tablet,Abbott,B25898,25-03-2030,331,2490.16,Wellness Pharma,Available
+M0253,Omeprazole,Injection,Sun Pharma,B82905,15-12-2028,374,1600.79,Wellness Pharma,Available
+M0254,Crocin,Capsule,Mankind,B72139,01-10-2028,256,2444,MedPlus Supplier,Available
+M0255,Ibuprofen,Syrup,Lupin,B57488,24-10-2028,316,2158.1,MedPlus Supplier,Available
+M0256,Diclofenac,Capsule,Cipla,B16569,18-12-2027,203,1960.08,MedPlus Supplier,Available
+M0257,Paracetamol,Syrup,Pfizer,B26846,02-01-2028,17,69.2,MedPlus Supplier,Low Stock
+M0258,Metformin,Injection,Glenmark,B24420,19-08-2028,75,859.61,HealthCare Pharma,Available
+M0259,Pantoprazole,Capsule,Abbott,B39242,19-07-2029,496,447.68,Apollo Distributor,Available
+M0260,Dolo 650,Capsule,Cipla,B94474,21-05-2029,281,751.84,Wellness Pharma,Available
+M0261,Amoxicillin,Capsule,Lupin,B33438,13-02-2027,264,2420.44,HealthCare Pharma,Available
+M0262,Azithromycin,Syrup,Mankind,B72420,27-05-2029,290,968.24,HealthCare Pharma,Available
+M0263,Ibuprofen,Syrup,Alkem,B58686,07-12-2028,207,1689.61,ABC Medicals,Available
+M0264,Pantoprazole,Capsule,Glenmark,B79034,12-04-2028,480,2392.8,Wellness Pharma,Available
+M0265,Amoxicillin,Cream,Mankind,B54381,03-04-2030,135,506.14,Wellness Pharma,Available
+M0266,Vitamin D,Syrup,Torrent,B66156,30-01-2027,289,2279.36,ABC Medicals,Available
+M0267,Dolo 650,Capsule,Lupin,B37722,31-12-2027,189,34.87,Wellness Pharma,Available
+M0268,Aspirin,Syrup,Sun Pharma,B88402,20-02-2029,44,146.44,Apollo Distributor,Available
+M0269,Amoxicillin,Tablet,Lupin,B16977,15-12-2028,487,1556.32,ABC Medicals,Available
+M0270,Ibuprofen,Cream,Dr. Reddy's,B54859,01-11-2029,185,2437.86,Apollo Distributor,Available
+M0271,Augmentin,Tablet,Abbott,B80436,08-08-2029,488,462.96,ABC Medicals,Available
+M0272,Calcium Tablets,Injection,Pfizer,B81136,16-08-2028,426,369.58,HealthCare Pharma,Available
+M0273,Aspirin,Capsule,Pfizer,B33070,25-03-2030,383,498.3,ABC Medicals,Available
+M0274,Vitamin C,Injection,Pfizer,B67380,17-04-2028,470,677.54,HealthCare Pharma,Available
+M0275,Monocef,Syrup,Torrent,B87682,16-04-2027,25,1552.15,MedPlus Supplier,Available
+M0276,Vitamin C,Tablet,Dr. Reddy's,B13291,04-04-2030,119,367.5,HealthCare Pharma,Available
+M0277,Paracetamol,Cream,Torrent,B30808,14-02-2028,298,2498.52,Wellness Pharma,Available
+M0278,ORS,Injection,Sun Pharma,B36460,31-10-2027,182,384.73,Wellness Pharma,Available
+M0279,Aspirin,Injection,Sun Pharma,B60097,01-10-2027,202,970.46,HealthCare Pharma,Available
+M0280,Amoxicillin,Capsule,Alkem,B66026,15-02-2029,138,1016.53,Wellness Pharma,Available
+M0281,ORS,Cream,Torrent,B51559,12-01-2028,69,1648.53,MedPlus Supplier,Available
+M0282,ORS,Capsule,Alkem,B18267,23-03-2028,239,650.79,Apollo Distributor,Available
+M0283,Amoxicillin,Capsule,Torrent,B52658,27-05-2027,454,681.97,HealthCare Pharma,Available
+M0284,Pantoprazole,Cream,Glenmark,B89611,04-07-2029,106,1403.4,HealthCare Pharma,Available
+M0285,Metformin,Tablet,Glenmark,B74078,27-02-2029,67,2442.69,HealthCare Pharma,Available
+M0286,Omeprazole,Cream,Lupin,B51257,28-10-2029,358,2062.05,HealthCare Pharma,Available
+M0287,Ciprofloxacin,Capsule,Sun Pharma,B94091,20-11-2029,299,2445.22,MedPlus Supplier,Available
+M0288,Diclofenac,Injection,Sun Pharma,B50352,13-07-2029,417,1971.69,HealthCare Pharma,Available
+M0289,Vitamin D,Cream,Glenmark,B77400,05-08-2029,226,2396.09,Apollo Distributor,Available
+M0290,Paracetamol,Syrup,Torrent,B39689,02-10-2028,51,314.36,MedPlus Supplier,Available
+M0291,Diclofenac,Capsule,Mankind,B47896,15-05-2029,378,89.67,Apollo Distributor,Available
+M0292,ORS,Syrup,Cipla,B10021,17-11-2028,96,1275.85,HealthCare Pharma,Available
+M0293,Cetirizine,Cream,Abbott,B86664,28-02-2029,71,1329.56,Wellness Pharma,Available
+M0294,Calcium Tablets,Injection,Abbott,B12504,26-07-2028,337,948.97,ABC Medicals,Available
+M0295,Vitamin C,Cream,Lupin,B88888,25-01-2027,275,2309.49,ABC Medicals,Available
+M0296,Diclofenac,Capsule,Dr. Reddy's,B15245,10-02-2029,385,1744.63,MedPlus Supplier,Available
+M0297,Calcium Tablets,Capsule,Cipla,B83562,24-07-2030,462,152.27,ABC Medicals,Available
+M0298,Amoxicillin,Syrup,Lupin,B39853,20-08-2029,275,1493.52,Wellness Pharma,Available
+M0299,Ciprofloxacin,Tablet,Mankind,B26239,26-05-2028,206,1060.91,MedPlus Supplier,Available
+M0300,Diclofenac,Injection,Sun Pharma,B30305,22-04-2029,311,2308.28,Wellness Pharma,Available
+M0301,Metformin,Injection,Dr. Reddy's,B53647,03-12-2028,57,736.91,Apollo Distributor,Available
+M0302,Dolo 650,Syrup,Abbott,B56508,16-09-2029,73,975.83,Apollo Distributor,Available
+M0303,Omeprazole,Syrup,Glenmark,B95366,13-01-2029,190,689.2,Wellness Pharma,Available
+M0304,Monocef,Injection,Alkem,B54907,14-06-2029,119,1496.33,HealthCare Pharma,Available
+M0305,Azithromycin,Tablet,Sun Pharma,B69460,09-05-2030,319,295.56,ABC Medicals,Available
+M0306,Monocef,Cream,Mankind,B17875,27-06-2030,76,712.53,MedPlus Supplier,Available
+M0307,ORS,Syrup,Sun Pharma,B29529,23-04-2029,473,30.86,Apollo Distributor,Available
+M0308,Omeprazole,Injection,Dr. Reddy's,B86781,25-06-2027,432,295.49,MedPlus Supplier,Available
+M0309,Ciprofloxacin,Tablet,Sun Pharma,B59970,13-03-2028,170,403.77,Wellness Pharma,Available
+M0310,ORS,Cream,Pfizer,B81624,02-06-2027,140,106.4,ABC Medicals,Available
+M0311,Omeprazole,Tablet,Sun Pharma,B61538,25-06-2028,156,2472.06,HealthCare Pharma,Available
+M0312,Cetirizine,Syrup,Pfizer,B96845,02-08-2030,231,1197.95,Apollo Distributor,Available
+M0313,Amoxicillin,Cream,Mankind,B79183,24-02-2027,239,1947.21,ABC Medicals,Available
+M0314,ORS,Injection,Mankind,B41764,07-10-2027,450,1141.31,Wellness Pharma,Available
+M0315,Calcium Tablets,Cream,Pfizer,B99576,18-05-2029,480,1430.8,Apollo Distributor,Available
+M0316,Dolo 650,Tablet,Torrent,B95354,27-01-2029,2,2409.26,ABC Medicals,Low Stock
+M0317,Augmentin,Capsule,Dr. Reddy's,B97742,02-08-2027,385,2223.06,ABC Medicals,Available
+M0318,Dolo 650,Injection,Abbott,B26264,05-03-2029,65,1620.31,HealthCare Pharma,Available
+M0319,Pantoprazole,Capsule,Glenmark,B54632,18-01-2027,24,330.48,HealthCare Pharma,Available
+M0320,Vitamin D,Syrup,Sun Pharma,B17086,07-04-2030,407,1932.19,Apollo Distributor,Available
+M0321,Paracetamol,Injection,Torrent,B56489,29-12-2027,137,1109.3,Wellness Pharma,Available
+M0322,Diclofenac,Tablet,Lupin,B60112,05-06-2028,156,2428,MedPlus Supplier,Available
+M0323,Augmentin,Cream,Cipla,B94020,07-02-2029,392,84.38,Apollo Distributor,Available
+M0324,Diclofenac,Injection,Dr. Reddy's,B79030,16-01-2027,297,170.97,HealthCare Pharma,Available
+M0325,Vitamin D,Capsule,Cipla,B48703,28-02-2029,396,1424.51,ABC Medicals,Available
+M0326,Dolo 650,Syrup,Lupin,B52083,16-10-2027,128,2170.52,Wellness Pharma,Available
+M0327,Ciprofloxacin,Tablet,Sun Pharma,B88623,25-11-2027,372,2151.77,MedPlus Supplier,Available
+M0328,Vitamin D,Capsule,Alkem,B11002,21-01-2027,368,892.8,ABC Medicals,Available
+M0329,Diclofenac,Tablet,Glenmark,B46461,18-09-2029,245,1317.32,HealthCare Pharma,Available
+M0330,Ibuprofen,Tablet,Pfizer,B92990,01-05-2028,268,1920.46,HealthCare Pharma,Available
+M0331,Diclofenac,Capsule,Mankind,B66110,09-05-2027,58,164.41,Wellness Pharma,Available
+M0332,Crocin,Capsule,Pfizer,B75413,03-02-2027,168,1966.27,ABC Medicals,Available
+M0333,Pantoprazole,Cream,Abbott,B92118,30-10-2029,167,442.88,Wellness Pharma,Available
+M0334,Ibuprofen,Capsule,Sun Pharma,B77360,18-07-2030,457,1837.58,Wellness Pharma,Available
+M0335,Vitamin D,Cream,Cipla,B43038,24-02-2028,465,380.71,MedPlus Supplier,Available
+M0336,Omeprazole,Syrup,Dr. Reddy's,B65921,12-01-2027,420,935.04,Wellness Pharma,Available
+M0337,Calcium Tablets,Cream,Glenmark,B83077,18-08-2027,486,2334.49,Apollo Distributor,Available
+M0338,Diclofenac,Cream,Cipla,B82590,20-12-2029,60,2429.54,Wellness Pharma,Available
+M0339,Dolo 650,Syrup,Torrent,B44277,11-07-2030,291,1219.84,HealthCare Pharma,Available
+M0340,Calcium Tablets,Injection,Pfizer,B43451,25-01-2030,44,50.72,MedPlus Supplier,Available
+M0341,Metformin,Tablet,Pfizer,B19060,15-03-2028,176,2198.53,HealthCare Pharma,Available
+M0342,Diclofenac,Tablet,Lupin,B36273,04-11-2027,394,1570.04,HealthCare Pharma,Available
+M0343,Atorvastatin,Tablet,Mankind,B68768,11-03-2028,84,1287.82,ABC Medicals,Available
+M0344,Vitamin D,Cream,Lupin,B14704,17-06-2027,336,1345.59,MedPlus Supplier,Available
+M0345,ORS,Syrup,Glenmark,B81891,29-05-2030,211,1670.76,Apollo Distributor,Available
+M0346,Aspirin,Cream,Lupin,B77773,20-07-2029,342,605.74,HealthCare Pharma,Available
+M0347,Calcium Tablets,Syrup,Pfizer,B14703,02-02-2030,9,859.05,Wellness Pharma,Low Stock
+M0348,Pantoprazole,Syrup,Glenmark,B49238,27-06-2028,97,1773.2,Wellness Pharma,Available
+M0349,Ciprofloxacin,Capsule,Cipla,B78093,28-11-2028,231,595.6,Wellness Pharma,Available
+M0350,Aspirin,Capsule,Dr. Reddy's,B90262,29-10-2028,106,1691.43,HealthCare Pharma,Available
+M0351,Ibuprofen,Tablet,Cipla,B31225,08-12-2029,344,1256.79,Wellness Pharma,Available
+M0352,Augmentin,Cream,Sun Pharma,B71692,06-07-2029,468,2104.68,Wellness Pharma,Available
+M0353,Vitamin D,Syrup,Glenmark,B53196,05-01-2030,260,2098.4,MedPlus Supplier,Available
+M0354,Ibuprofen,Capsule,Mankind,B51753,27-09-2028,60,2187.86,Apollo Distributor,Available
+M0355,Omeprazole,Cream,Alkem,B47797,04-10-2029,25,1985.53,Apollo Distributor,Available
+M0356,Aspirin,Capsule,Abbott,B39159,06-12-2029,483,108.81,Wellness Pharma,Available
+M0357,Crocin,Cream,Lupin,B19303,20-09-2027,483,2118.48,Wellness Pharma,Available
+M0358,ORS,Syrup,Mankind,B76577,30-12-2027,199,1853.77,ABC Medicals,Available
+M0359,ORS,Syrup,Alkem,B94663,16-06-2029,337,1891.2,ABC Medicals,Available
+M0360,Azithromycin,Cream,Sun Pharma,B47790,26-12-2029,499,282.1,Wellness Pharma,Available
+M0361,Ibuprofen,Syrup,Abbott,B13155,21-01-2030,54,1315.07,ABC Medicals,Available
+M0362,Cetirizine,Tablet,Cipla,B66375,09-04-2028,155,1140.67,Wellness Pharma,Available
+M0363,Monocef,Cream,Lupin,B49481,12-07-2027,262,1496.89,ABC Medicals,Available
+M0364,Cetirizine,Capsule,Torrent,B62713,03-03-2030,419,2194.22,Apollo Distributor,Available
+M0365,Vitamin D,Injection,Alkem,B73997,20-05-2029,360,444.4,MedPlus Supplier,Available
+M0366,Vitamin D,Cream,Pfizer,B46717,03-12-2028,50,182.82,MedPlus Supplier,Available
+M0367,Paracetamol,Syrup,Dr. Reddy's,B25671,23-11-2028,70,2435.02,Apollo Distributor,Available
+M0368,Augmentin,Syrup,Cipla,B40343,26-03-2030,263,1592.6,Wellness Pharma,Available
+M0369,ORS,Tablet,Cipla,B22420,14-05-2027,38,873.61,ABC Medicals,Available
+M0370,Ibuprofen,Syrup,Cipla,B67467,13-01-2030,302,1121.39,ABC Medicals,Available
+M0371,Azithromycin,Capsule,Abbott,B52409,06-01-2027,179,1699.67,MedPlus Supplier,Available
+M0372,Atorvastatin,Tablet,Dr. Reddy's,B39372,25-04-2028,108,23.18,MedPlus Supplier,Available
+M0373,Atorvastatin,Tablet,Torrent,B99898,15-01-2027,99,445.38,ABC Medicals,Available
+M0374,Atorvastatin,Capsule,Lupin,B95403,03-01-2027,9,930.67,ABC Medicals,Low Stock
+M0375,Omeprazole,Injection,Cipla,B33945,19-01-2028,107,1053.54,MedPlus Supplier,Available
+M0376,Aspirin,Injection,Cipla,B66903,17-05-2027,391,2480.72,MedPlus Supplier,Available
+M0377,Vitamin C,Cream,Glenmark,B77637,04-06-2027,316,1559.03,HealthCare Pharma,Available
+M0378,Aspirin,Tablet,Dr. Reddy's,B28009,24-01-2030,478,1512.72,Apollo Distributor,Available
+M0379,Aspirin,Syrup,Abbott,B64136,12-03-2029,348,791.04,MedPlus Supplier,Available
+M0380,Pantoprazole,Tablet,Mankind,B25857,08-05-2028,472,433.92,MedPlus Supplier,Available
+M0381,Ibuprofen,Syrup,Sun Pharma,B16804,24-11-2028,286,780.32,HealthCare Pharma,Available
+M0382,Crocin,Tablet,Pfizer,B56585,05-10-2027,242,804.94,ABC Medicals,Available
+M0383,Amoxicillin,Tablet,Sun Pharma,B40130,26-03-2027,83,492.74,HealthCare Pharma,Available
+M0384,Vitamin C,Tablet,Mankind,B29050,14-07-2027,313,2457.35,MedPlus Supplier,Available
+M0385,Aspirin,Injection,Cipla,B15908,18-09-2028,74,1486.24,Apollo Distributor,Available
+M0386,ORS,Cream,Torrent,B51865,30-03-2029,241,2350.72,Wellness Pharma,Available
+M0387,Monocef,Injection,Mankind,B86297,27-09-2029,279,513.3,ABC Medicals,Available
+M0388,Vitamin C,Capsule,Lupin,B91396,19-08-2027,69,205.23,HealthCare Pharma,Available
+M0389,Diclofenac,Tablet,Dr. Reddy's,B64744,10-01-2027,0,1677.39,MedPlus Supplier,Out of Stock
+M0390,Dolo 650,Cream,Dr. Reddy's,B74195,12-06-2028,356,2173.31,Wellness Pharma,Available
+M0391,Paracetamol,Capsule,Alkem,B92381,27-10-2027,299,2455.76,Wellness Pharma,Available
+M0392,Metformin,Injection,Cipla,B80683,03-08-2029,404,1696.2,ABC Medicals,Available
+M0393,Calcium Tablets,Syrup,Abbott,B96600,10-02-2030,63,2315.75,Apollo Distributor,Available
+M0394,Crocin,Injection,Abbott,B37404,29-12-2028,177,723.86,ABC Medicals,Available
+M0395,Calcium Tablets,Capsule,Abbott,B81933,22-07-2029,478,1567.21,HealthCare Pharma,Available
+M0396,Monocef,Syrup,Torrent,B89170,09-09-2027,101,211.01,HealthCare Pharma,Available
+M0397,Omeprazole,Cream,Lupin,B55254,27-11-2029,461,1935.85,MedPlus Supplier,Available
+M0398,Aspirin,Syrup,Alkem,B25280,24-07-2028,464,1004.9,HealthCare Pharma,Available
+M0399,ORS,Injection,Glenmark,B24700,06-10-2028,392,1295.16,Apollo Distributor,Available
+M0400,Aspirin,Tablet,Abbott,B61758,11-06-2028,57,2111.49,ABC Medicals,Available
+M0401,Atorvastatin,Cream,Pfizer,B38826,25-06-2030,77,1571.02,MedPlus Supplier,Available
+M0402,Crocin,Syrup,Dr. Reddy's,B78764,28-04-2027,155,447.77,HealthCare Pharma,Available
+M0403,Dolo 650,Tablet,Mankind,B56717,09-09-2029,244,879.19,HealthCare Pharma,Available
+M0404,Azithromycin,Injection,Cipla,B48187,03-09-2028,7,654.9,HealthCare Pharma,Low Stock
+M0405,Calcium Tablets,Injection,Pfizer,B46393,11-02-2029,19,293.07,Apollo Distributor,Low Stock
+M0406,Omeprazole,Capsule,Lupin,B77599,29-03-2027,236,493.66,ABC Medicals,Available
+M0407,Crocin,Cream,Pfizer,B21587,27-04-2030,283,227.22,ABC Medicals,Available
+M0408,Ciprofloxacin,Cream,Glenmark,B21215,19-03-2027,323,2400.03,MedPlus Supplier,Available
+M0409,Cetirizine,Capsule,Pfizer,B91068,10-06-2030,183,745.67,Wellness Pharma,Available
+M0410,Ibuprofen,Syrup,Sun Pharma,B26400,05-12-2029,354,1670.83,ABC Medicals,Available
+M0411,Amoxicillin,Cream,Mankind,B77669,07-05-2028,421,829.12,HealthCare Pharma,Available
+M0412,Ibuprofen,Injection,Dr. Reddy's,B29729,09-01-2028,498,854.84,HealthCare Pharma,Available
+M0413,Ciprofloxacin,Syrup,Cipla,B31979,08-04-2030,31,1834.56,ABC Medicals,Available
+M0414,Pantoprazole,Injection,Pfizer,B81305,13-06-2027,255,1970.7,HealthCare Pharma,Available
+M0415,Dolo 650,Capsule,Lupin,B49985,10-08-2030,49,197.22,MedPlus Supplier,Available
+M0416,Vitamin C,Capsule,Sun Pharma,B97542,29-03-2030,229,1339.22,MedPlus Supplier,Available
+M0417,Vitamin D,Cream,Sun Pharma,B65006,15-10-2029,20,492.88,Apollo Distributor,Available
+M0418,Paracetamol,Syrup,Abbott,B55479,20-09-2028,182,1600.74,HealthCare Pharma,Available
+M0419,Ciprofloxacin,Injection,Dr. Reddy's,B29002,07-03-2028,4,1336.06,MedPlus Supplier,Low Stock
+M0420,Omeprazole,Syrup,Pfizer,B67842,22-06-2029,72,2097.31,ABC Medicals,Available
+M0421,Augmentin,Capsule,Sun Pharma,B60112,19-08-2028,333,1071.71,Wellness Pharma,Available
+M0422,Paracetamol,Capsule,Alkem,B68132,08-05-2030,238,876.05,Apollo Distributor,Available
+M0423,Cetirizine,Capsule,Mankind,B69481,15-11-2027,309,1272.25,Wellness Pharma,Available
+M0424,Calcium Tablets,Capsule,Sun Pharma,B40383,25-03-2029,56,759.56,Apollo Distributor,Available
+M0425,Dolo 650,Capsule,Abbott,B39532,26-07-2027,344,2468.77,HealthCare Pharma,Available
+M0426,Atorvastatin,Tablet,Abbott,B72632,22-05-2028,287,1619.3,Apollo Distributor,Available
+M0427,Metformin,Injection,Pfizer,B29490,18-07-2027,92,172.7,ABC Medicals,Available
+M0428,Dolo 650,Cream,Sun Pharma,B40104,18-11-2028,223,308.91,HealthCare Pharma,Available
+M0429,Ciprofloxacin,Capsule,Alkem,B27123,01-03-2027,262,452.38,ABC Medicals,Available
+M0430,Atorvastatin,Injection,Glenmark,B61735,02-12-2029,335,630.31,ABC Medicals,Available
+M0431,Pantoprazole,Cream,Pfizer,B82542,11-05-2030,428,1085.13,Wellness Pharma,Available
+M0432,Amoxicillin,Syrup,Cipla,B92942,03-08-2027,424,2291.9,Apollo Distributor,Available
+M0433,Vitamin D,Syrup,Cipla,B88381,29-04-2029,243,1512.22,MedPlus Supplier,Available
+M0434,Cetirizine,Capsule,Lupin,B34447,05-01-2029,320,442.52,MedPlus Supplier,Available
+M0435,Azithromycin,Capsule,Mankind,B30666,19-11-2027,133,1536.18,MedPlus Supplier,Available
+M0436,Azithromycin,Capsule,Abbott,B23997,28-12-2028,416,65.24,HealthCare Pharma,Available
+M0437,Monocef,Cream,Pfizer,B51670,22-01-2028,76,1359.05,HealthCare Pharma,Available
+M0438,Calcium Tablets,Cream,Sun Pharma,B84466,08-05-2028,117,1584.32,HealthCare Pharma,Available
+M0439,Azithromycin,Capsule,Cipla,B47283,02-12-2028,192,461.28,MedPlus Supplier,Available
+M0440,Vitamin D,Syrup,Alkem,B19268,14-08-2030,443,1551.65,ABC Medicals,Available
+M0441,Calcium Tablets,Injection,Cipla,B37482,05-06-2028,467,1643.37,ABC Medicals,Available
+M0442,Paracetamol,Capsule,Torrent,B23511,05-07-2030,103,187.62,Wellness Pharma,Available
+M0443,Crocin,Cream,Torrent,B17063,13-01-2028,395,2206.75,HealthCare Pharma,Available
+M0444,Azithromycin,Capsule,Abbott,B73325,18-04-2028,79,1064.52,ABC Medicals,Available
+M0445,Pantoprazole,Cream,Pfizer,B65065,19-02-2028,164,1818.44,Wellness Pharma,Available
+M0446,Paracetamol,Tablet,Alkem,B28804,18-04-2027,478,2312.11,Wellness Pharma,Available
+M0447,Calcium Tablets,Tablet,Lupin,B82662,29-11-2028,385,1372.24,Apollo Distributor,Available
+M0448,Aspirin,Capsule,Alkem,B14475,16-05-2029,386,1305.02,ABC Medicals,Available
+M0449,Pantoprazole,Capsule,Pfizer,B84358,26-06-2027,177,1101.79,Apollo Distributor,Available
+M0450,Amoxicillin,Injection,Alkem,B54249,31-03-2029,463,1516.2,Apollo Distributor,Available
+M0451,Dolo 650,Cream,Sun Pharma,B35096,03-04-2029,422,2026.63,MedPlus Supplier,Available
+M0452,Dolo 650,Capsule,Mankind,B74080,06-12-2028,211,1170.49,MedPlus Supplier,Available
+M0453,Monocef,Cream,Dr. Reddy's,B17924,11-12-2027,490,1787.58,ABC Medicals,Available
+M0454,Paracetamol,Syrup,Abbott,B95767,21-10-2029,87,1590.64,HealthCare Pharma,Available
+M0455,Augmentin,Tablet,Sun Pharma,B30690,13-06-2030,144,1655.03,MedPlus Supplier,Available
+M0456,Paracetamol,Injection,Abbott,B38129,29-10-2027,300,2173.21,Apollo Distributor,Available
+M0457,Ciprofloxacin,Cream,Alkem,B60089,04-01-2029,81,1750.08,ABC Medicals,Available
+M0458,Calcium Tablets,Syrup,Alkem,B33320,06-10-2029,482,1877.95,MedPlus Supplier,Available
+M0459,Vitamin D,Syrup,Glenmark,B37726,19-07-2027,90,1653.22,HealthCare Pharma,Available
+M0460,ORS,Syrup,Mankind,B26106,27-03-2030,122,1927.86,Apollo Distributor,Available
+M0461,Diclofenac,Tablet,Pfizer,B42404,20-09-2027,371,1702.51,MedPlus Supplier,Available
+M0462,Pantoprazole,Syrup,Torrent,B18679,12-04-2027,366,350.6,Wellness Pharma,Available
+M0463,Omeprazole,Injection,Lupin,B92791,23-04-2030,25,1414.67,Wellness Pharma,Available
+M0464,Atorvastatin,Injection,Glenmark,B27313,16-05-2027,285,814.67,HealthCare Pharma,Available
+M0465,Omeprazole,Tablet,Dr. Reddy's,B87878,13-08-2030,9,1111.32,HealthCare Pharma,Low Stock
+M0466,Azithromycin,Syrup,Cipla,B19566,18-01-2027,51,1938.81,ABC Medicals,Available
+M0467,Metformin,Syrup,Pfizer,B80674,27-03-2030,21,1682.67,ABC Medicals,Available
+M0468,Omeprazole,Injection,Dr. Reddy's,B54661,24-04-2027,105,1967.79,ABC Medicals,Available
+M0469,Diclofenac,Capsule,Dr. Reddy's,B13978,28-06-2029,47,1384.56,HealthCare Pharma,Available
+M0470,Omeprazole,Injection,Glenmark,B84223,08-04-2030,330,1577.38,HealthCare Pharma,Available
+M0471,Diclofenac,Cream,Abbott,B16080,29-06-2030,197,2046.89,Apollo Distributor,Available
+M0472,Vitamin D,Syrup,Cipla,B13002,21-06-2027,423,224.23,Apollo Distributor,Available
+M0473,Azithromycin,Tablet,Torrent,B19042,05-01-2027,288,1909.43,Apollo Distributor,Available
+M0474,Ibuprofen,Capsule,Lupin,B40666,30-03-2028,118,1535.32,Apollo Distributor,Available
+M0475,Vitamin C,Capsule,Torrent,B15673,24-09-2027,432,1445.77,ABC Medicals,Available
+M0476,Aspirin,Capsule,Dr. Reddy's,B94772,29-11-2027,11,1013.99,ABC Medicals,Low Stock
+M0477,Pantoprazole,Cream,Cipla,B47507,11-12-2028,468,1400.78,Wellness Pharma,Available
+M0478,Augmentin,Capsule,Lupin,B58974,19-07-2029,152,357.87,Apollo Distributor,Available
+M0479,Diclofenac,Tablet,Mankind,B68689,18-03-2028,68,2157.85,Apollo Distributor,Available
+M0480,Augmentin,Tablet,Lupin,B65691,10-12-2027,346,1080.58,Wellness Pharma,Available
+M0481,Crocin,Tablet,Torrent,B31641,01-02-2028,435,2415.86,ABC Medicals,Available
+M0482,Augmentin,Capsule,Mankind,B62778,05-08-2027,400,103.3,ABC Medicals,Available
+M0483,Augmentin,Injection,Alkem,B38374,27-08-2028,32,1418.83,MedPlus Supplier,Available
+M0484,Dolo 650,Injection,Abbott,B30284,11-12-2029,77,541.79,MedPlus Supplier,Available
+M0485,Calcium Tablets,Syrup,Abbott,B55968,03-01-2029,150,743.44,ABC Medicals,Available
+M0486,Pantoprazole,Injection,Alkem,B46313,18-05-2028,406,1314.08,MedPlus Supplier,Available
+M0487,Cetirizine,Capsule,Sun Pharma,B12556,01-04-2027,78,2338.46,Apollo Distributor,Available
+M0488,Atorvastatin,Capsule,Pfizer,B69779,11-02-2027,385,1871.78,Wellness Pharma,Available
+M0489,Cetirizine,Syrup,Glenmark,B42846,09-03-2028,194,989.75,Wellness Pharma,Available
+M0490,Ibuprofen,Cream,Abbott,B99081,27-03-2030,146,1719.05,ABC Medicals,Available
+M0491,Azithromycin,Cream,Dr. Reddy's,B95011,02-12-2027,471,935.06,ABC Medicals,Available
+M0492,Vitamin C,Cream,Mankind,B12984,24-11-2027,25,2010.77,ABC Medicals,Available
+M0493,Dolo 650,Capsule,Abbott,B90675,14-06-2028,198,2139.79,HealthCare Pharma,Available
+M0494,Ciprofloxacin,Syrup,Torrent,B36742,26-11-2029,218,972.77,Apollo Distributor,Available
+M0495,Calcium Tablets,Tablet,Sun Pharma,B18076,04-11-2027,401,1427.1,ABC Medicals,Available
+M0496,Augmentin,Syrup,Mankind,B47677,13-06-2029,249,1892.83,Apollo Distributor,Available
+M0497,Vitamin D,Cream,Alkem,B77522,28-01-2028,364,590.5,HealthCare Pharma,Available
+M0498,Calcium Tablets,Capsule,Alkem,B29997,20-05-2029,102,195.08,ABC Medicals,Available
+M0499,Diclofenac,Cream,Sun Pharma,B39530,13-04-2027,68,1898.51,HealthCare Pharma,Available
+M0500,Cetirizine,Syrup,Abbott,B89601,25-05-2029,44,1086.19,MedPlus Supplier,Available

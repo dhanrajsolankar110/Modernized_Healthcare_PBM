@@ -1,0 +1,351 @@
+{% extends "dashboard_layout.html" %}
+
+{% set page_title = "System Settings" %}
+
+{% block title %}
+
+System Settings
+
+{% endblock %}
+
+{% block extra_css %}
+
+<link
+rel="stylesheet"
+href="{{ url_for('static', filename='css/settings.css') }}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+
+    <div>
+
+        <h1>
+
+            System Settings
+
+        </h1>
+
+        <p>
+
+            Configure the Healthcare PBM Portal system settings.
+
+        </p>
+
+    </div>
+
+    <div class="header-actions">
+
+        <a
+
+        href="{{ url_for('settings.backup_manager') }}"
+
+        class="btn btn-primary">
+
+            <i class="fa-solid fa-database"></i>
+
+            Backup Database
+
+        </a>
+
+        <a
+
+        href="{{ url_for('settings.initialize') }}"
+
+        class="btn btn-success">
+
+            <i class="fa-solid fa-rotate-right"></i>
+
+            Initialize Defaults
+
+        </a>
+
+    </div>
+
+</div>
+
+<div class="stats-grid">
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-sliders"></i>
+
+        <h3>
+
+            Total Settings
+
+        </h3>
+
+        <h2>
+
+            {{ total_settings }}
+
+        </h2>
+
+    </div>
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-pen-to-square"></i>
+
+        <h3>
+
+            Editable
+
+        </h3>
+
+        <h2>
+
+            {{ editable_settings }}
+
+        </h2>
+
+    </div>
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-lock"></i>
+
+        <h3>
+
+            Locked
+
+        </h3>
+
+        <h2>
+
+            {{ locked_settings }}
+
+        </h2>
+
+    </div>
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-folder-tree"></i>
+
+        <h3>
+
+            Categories
+
+        </h3>
+
+        <h2>
+
+            {{ categories }}
+
+        </h2>
+
+    </div>
+
+</div>
+
+{% if settings %}
+
+<div class="table-card">
+
+    <div class="table-header">
+
+        <h2>
+
+            System Configuration
+
+        </h2>
+
+        <p>
+
+            Manage all application settings.
+
+        </p>
+
+    </div>
+
+    <div class="table-responsive">
+
+        <table class="settings-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>No.</th>
+
+                    <th>Key</th>
+
+                    <th>Value</th>
+
+                    <th>Category</th>
+
+                    <th>Type</th>
+
+                    <th>Status</th>
+
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {% for setting in settings %}
+
+                <tr>
+
+                    <td>{{ loop.index }}</td>
+
+                    <td>
+
+                        <strong>
+
+                            {{ setting.setting_key }}
+
+                        </strong>
+
+                    </td>
+
+                    <td>
+
+                        {{ setting.setting_value }}
+
+                    </td>
+
+                    <td>
+
+                        <span>
+
+                            {{ setting.category }}
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <span>
+
+                            {{ setting.data_type }}
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        {% if setting.is_editable %}
+
+                        <span>
+
+                            Editable
+
+                        </span>
+
+                        {% else %}
+
+                        <span>
+
+                            Locked
+
+                        </span>
+
+                        {% endif %}
+
+                    </td>
+
+                    <td>
+
+                        <a
+
+                        href="{{ url_for('settings.edit', id=setting.id) }}"
+
+                        class="btn btn-warning btn-sm">
+
+                            Edit
+
+                        </a>
+
+                        <a
+
+                        href="{{ url_for('settings.reset', id=setting.id) }}"
+
+                        class="btn btn-info btn-sm">
+
+                            Reset
+
+                        </a>
+
+                        <a
+
+                        href="{{ url_for('settings.delete', id=setting.id) }}"
+
+                        class="btn btn-danger btn-sm"
+
+                        onclick="return confirm('Delete this setting?')">
+
+                            Delete
+
+                        </a>
+
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endif %}
+
+<!-- ==========================================
+                PAGE FOOTER
+========================================== -->
+
+<div class="page-footer">
+
+    <div class="footer-left">
+
+        <p>
+
+            Showing
+
+            <strong>
+
+                {{ total_settings }}
+
+            </strong>
+
+            system setting(s).
+
+        </p>
+
+    </div>
+
+    <div class="footer-right">
+
+        <small>
+
+            Modernized Healthcare PBM Portal
+
+        </small>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+
+<script
+src="{{ url_for('static', filename='js/settings.js') }}">
+</script>
+
+{% endblock %}

@@ -1,0 +1,463 @@
+{% extends "dashboard_layout.html" %}
+
+<!-- ==========================================================
+                    PAGE TITLE
+=========================================================== -->
+
+{% set page_title = "Edit Claim" %}
+
+<!-- ==========================================================
+                    EXTRA CSS
+=========================================================== -->
+
+{% block extra_css %}
+
+<link
+rel="stylesheet"
+href="{{ url_for('static', filename='css/claim.css') }}">
+
+{% endblock %}
+
+<!-- ==========================================================
+                    CONTENT
+=========================================================== -->
+
+{% block content %}
+
+<div class="claim-form-page fade-in">
+
+    <!-- ==========================================
+                    PAGE HEADER
+    =========================================== -->
+
+    <div class="page-header">
+
+        <div>
+
+            <h2>
+
+                Edit Claim
+
+            </h2>
+
+            <p>
+
+                Update healthcare claim information.
+
+            </p>
+
+        </div>
+
+        <a
+            href="{{ url_for('claim.index') }}"
+            class="btn btn-outline">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back
+
+        </a>
+
+    </div>
+
+    <!-- ==========================================
+                    FORM
+    =========================================== -->
+
+    <form
+
+        method="POST"
+
+        action="{{ url_for('claim.edit', id=claim.id) }}"
+
+        class="card claim-form">
+
+        <div class="card-header">
+
+            <h3 class="card-title">
+
+                Claim Information
+
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="form-grid">
+
+                <!-- Claim ID -->
+
+                <div class="form-group">
+
+                    <label class="form-label">
+
+                        Claim ID
+
+                    </label>
+
+                    <input
+
+                        type="text"
+
+                        name="claim_id"
+
+                        class="form-control"
+
+                        value="{{ claim.claim_id }}"
+
+                        required>
+
+                </div>
+
+                <!-- Patient -->
+
+                <div class="form-group">
+
+                    <label class="form-label">
+
+                        Patient
+
+                    </label>
+
+                    <select
+
+                        name="patient_id"
+
+                        class="form-control"
+
+                        required>
+
+                        {% for patient in patients %}
+
+                        <option
+
+                            value="{{ patient.patient_id }}"
+
+                            {% if patient.patient_id == claim.patient_id %}
+
+                                selected
+
+                            {% endif %}>
+
+                            {{ patient.patient_id }}
+
+                            -
+
+                            {{ patient.first_name }}
+
+                            {{ patient.last_name }}
+
+                        </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+                <!-- Hospital -->
+
+                <div class="form-group">
+
+                    <label class="form-label">
+
+                        Hospital Name
+
+                    </label>
+
+                    <input
+
+                        type="text"
+
+                        name="hospital_name"
+
+                        class="form-control"
+
+                        value="{{ claim.hospital_name }}"
+
+                        required>
+
+                </div>
+
+                <!-- Doctor -->
+
+                <div class="form-group">
+
+                    <label class="form-label">
+
+                        Doctor Name
+
+                    </label>
+
+                    <input
+
+                        type="text"
+
+                        name="doctor_name"
+
+                        class="form-control"
+
+                        value="{{ claim.doctor_name }}"
+
+                        required>
+
+                </div>
+
+                                <!-- Disease -->
+
+                <div class="form-group">
+
+                    <label class="form-label">
+
+                        Disease
+
+                    </label>
+
+                    <input
+
+                        type="text"
+
+                        name="disease"
+
+                        class="form-control"
+
+                        value="{{ claim.disease }}"
+
+                        required>
+
+                </div>
+
+                <!-- Claim Amount -->
+
+                <div class="form-group">
+
+                    <label class="form-label">
+
+                        Claim Amount (₹)
+
+                    </label>
+
+                    <input
+
+                        type="number"
+
+                        name="claim_amount"
+
+                        class="form-control"
+
+                        value="{{ claim.claim_amount }}"
+
+                        min="0"
+
+                        step="0.01"
+
+                        required>
+
+                </div>
+
+                <!-- Treatment Date -->
+
+                <div class="form-group">
+
+                    <label class="form-label">
+
+                        Treatment Date
+
+                    </label>
+
+                    <input
+
+                        type="date"
+
+                        name="treatment_date"
+
+                        class="form-control"
+
+                        value="{{ claim.treatment_date.strftime('%Y-%m-%d') }}"
+
+                        required>
+
+                </div>
+
+                <!-- Claim Status -->
+
+                <div class="form-group">
+
+                    <label class="form-label">
+
+                        Claim Status
+
+                    </label>
+
+                    <select
+
+                        name="status"
+
+                        class="form-control"
+
+                        required>
+
+                        <option
+
+                            value="Pending"
+
+                            {% if claim.status == "Pending" %}
+
+                                selected
+
+                            {% endif %}>
+
+                            Pending
+
+                        </option>
+
+                        <option
+
+                            value="Approved"
+
+                            {% if claim.status == "Approved" %}
+
+                                selected
+
+                            {% endif %}>
+
+                            Approved
+
+                        </option>
+
+                        <option
+
+                            value="Rejected"
+
+                            {% if claim.status == "Rejected" %}
+
+                                selected
+
+                            {% endif %}>
+
+                            Rejected
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- ==========================================
+                        Remarks
+            =========================================== -->
+
+            <div class="form-group mt-3">
+
+                <label class="form-label">
+
+                    Remarks
+
+                </label>
+
+                <textarea
+
+                    name="remarks"
+
+                    class="form-control"
+
+                    rows="5"
+
+                    placeholder="Enter additional remarks...">{{ claim.remarks }}</textarea>
+
+            </div>
+
+                    </div>
+
+        <!-- ==========================================
+                    FORM ACTIONS
+        =========================================== -->
+
+        <div class="card-footer">
+
+            <div class="d-flex justify-between align-center w-100">
+
+                <a
+
+                    href="{{ url_for('claim.index') }}"
+
+                    class="btn btn-outline">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Cancel
+
+                </a>
+
+                <div class="d-flex gap-2">
+
+                    <button
+
+                        type="reset"
+
+                        class="btn btn-warning">
+
+                        <i class="fa-solid fa-rotate-left"></i>
+
+                        Reset
+
+                    </button>
+
+                    <button
+
+                        type="submit"
+
+                        class="btn btn-success">
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        Update Claim
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}
+
+<!-- ==========================================================
+                    EXTRA JAVASCRIPT
+=========================================================== -->
+
+{% block extra_js %}
+
+<script src="{{ url_for('static', filename='js/claim.js') }}"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    const today = new Date().toISOString().split("T")[0];
+
+    const treatmentDate = document.querySelector(
+
+        'input[name="treatment_date"]'
+
+    );
+
+    if(treatmentDate){
+
+        treatmentDate.max = today;
+
+    }
+
+});
+
+</script>
+
+{% endblock %}

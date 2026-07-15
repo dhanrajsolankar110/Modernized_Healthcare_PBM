@@ -1,0 +1,731 @@
+{% extends "auth_layout.html" %}
+
+{% block title %}
+Login | {{ APP_NAME }}
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/auth.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- =====================================================
+                    LOGIN PAGE
+====================================================== -->
+
+<section class="login-page">
+
+    <div class="login-container">
+
+        <!-- ==========================================
+                    LEFT PANEL
+        =========================================== -->
+
+        <div class="login-left">
+
+            <!-- =====================================================
+                    BRANDING PANEL
+====================================================== -->
+
+<div class="branding-overlay">
+
+    <div class="branding-content">
+
+        <!-- Logo -->
+
+        <div class="brand-logo">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+            <div>
+
+                <h1>Healthcare PBM</h1>
+
+                <span>AI-Powered Portal</span>
+
+            </div>
+
+        </div>
+
+        <!-- Badge -->
+
+        <div class="brand-badge">
+
+            <i class="fa-solid fa-robot"></i>
+
+            <span>Artificial Intelligence Enabled</span>
+
+        </div>
+
+        <!-- Heading -->
+
+        <h2>
+
+            Modernized Web Portal for Healthcare (PBM)
+
+        </h2>
+
+        <p>
+
+            Securely manage patients, claims, pharmacy benefits,
+            reports, analytics, and AI-powered healthcare insights
+            from one intelligent platform.
+
+        </p>
+
+        <!-- Feature Cards -->
+
+        <div class="feature-list">
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <div>
+
+                    <h4>Secure Authentication</h4>
+
+                    <p>Enterprise-grade login and user protection.</p>
+
+                </div>
+
+            </div>
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-brain"></i>
+
+                <div>
+
+                    <h4>AI Decision Support</h4>
+
+                    <p>Smart recommendations for healthcare workflows.</p>
+
+                </div>
+
+            </div>
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <div>
+
+                    <h4>Real-Time Analytics</h4>
+
+                    <p>Interactive dashboards with operational insights.</p>
+
+                </div>
+
+            </div>
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-user-doctor"></i>
+
+                <div>
+
+                    <h4>Healthcare Management</h4>
+
+                    <p>Patients, claims, pharmacies and reports in one place.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Statistics -->
+
+        <div class="portal-highlights">
+
+            <div class="highlight-box">
+
+                <h3>99.9%</h3>
+
+                <span>System Uptime</span>
+
+            </div>
+
+            <div class="highlight-box">
+
+                <h3>24×7</h3>
+
+                <span>AI Monitoring</span>
+
+            </div>
+
+            <div class="highlight-box">
+
+                <h3>Secure</h3>
+
+                <span>Healthcare Data</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+        </div>
+
+        <!-- ==========================================
+                    RIGHT PANEL
+        =========================================== -->
+
+        <div class="login-right">
+
+<!-- =====================================================
+                    FLASH MESSAGES
+====================================================== -->
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+
+    {% if messages %}
+
+        <div class="flash-container">
+
+            {% for category, message in messages %}
+
+                <div class="flash-message flash-{{ category }}">
+
+                    <div class="flash-icon">
+
+                        {% if category == "success" %}
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                        {% elif category == "danger" %}
+
+                            <i class="fa-solid fa-circle-xmark"></i>
+
+                        {% elif category == "warning" %}
+
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+
+                        {% else %}
+
+                            <i class="fa-solid fa-circle-info"></i>
+
+                        {% endif %}
+
+                    </div>
+
+                    <div class="flash-content">
+
+                        {{ message }}
+
+                    </div>
+
+                    <button
+
+                        type="button"
+
+                        class="flash-close"
+
+                        onclick="this.parentElement.remove()"
+
+                        aria-label="Close"
+
+                    >
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                    </button>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% endif %}
+
+{% endwith %}
+
+<!-- =====================================================
+                    LOGIN CARD
+====================================================== -->
+
+<div class="login-card">
+
+    <!-- Header -->
+
+    <div class="login-header">
+
+        <h2>
+
+            Welcome Back
+
+        </h2>
+
+        <p>
+
+            Sign in to access the Healthcare PBM Portal.
+
+        </p>
+
+    </div>
+
+    <!-- Login Form -->
+
+    <form method="POST"
+
+          action="{{ url_for('auth.login') }}"
+
+          class="login-form"
+
+          id="loginForm"
+
+          novalidate>
+
+        
+
+        <!-- Username -->
+
+        <div class="form-group">
+
+            <label for="username">
+
+                Username or Email
+
+            </label>
+
+            <div class="input-group">
+
+                <span class="input-icon">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </span>
+
+                <input
+
+                    type="text"
+
+                    id="username"
+
+                    name="username"
+
+                    class="form-control"
+
+                    placeholder="Enter username or email"
+
+                    autocomplete="username"
+
+                    required
+
+                >
+
+            </div>
+
+            <small
+
+                class="error-message"
+
+                id="usernameError">
+
+            </small>
+
+        </div>
+
+        <!-- Password -->
+
+        <div class="form-group">
+
+            <label for="password">
+
+                Password
+
+            </label>
+
+            <div class="input-group">
+
+                <span class="input-icon">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                </span>
+
+                <input
+
+                    type="password"
+
+                    id="password"
+
+                    name="password"
+
+                    class="form-control"
+
+                    placeholder="Enter your password"
+
+                    autocomplete="current-password"
+
+                    required
+
+                >
+
+                <button
+
+                    type="button"
+
+                    class="password-toggle"
+
+                    id="togglePassword"
+
+                    aria-label="Show password">
+
+                    <i
+
+                        class="fa-solid fa-eye"
+
+                        id="passwordIcon">
+
+                    </i>
+
+                </button>
+
+            </div>
+
+            <small
+
+                class="error-message"
+
+                id="passwordError">
+
+            </small>
+
+        </div>
+
+                <!-- ==========================================
+                    FORM OPTIONS
+        =========================================== -->
+
+        <div class="form-options">
+
+            <!-- Remember Me -->
+
+            <label class="remember-me">
+
+                <input
+
+                    type="checkbox"
+
+                    id="remember"
+
+                    name="remember"
+
+                    value="true"
+
+                >
+
+                <span class="checkmark"></span>
+
+                <span class="remember-text">
+
+                    Keep me signed in
+
+                </span>
+
+            </label>
+
+            <!-- Forgot Password -->
+
+            <a
+
+                href="{{ url_for('auth.forgot_password') }}"
+
+                class="forgot-password"
+
+            >
+
+                Forgot Password?
+
+            </a>
+
+        </div>
+
+        <!-- ==========================================
+                    SECURITY MESSAGE
+        =========================================== -->
+
+        <div class="security-message">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <span>
+
+                Your login is protected with secure password encryption.
+
+            </span>
+
+        </div>
+
+        
+
+                <!-- ==========================================
+                    LOGIN BUTTON
+        =========================================== -->
+
+        <div class="login-actions">
+
+            <button
+
+                type="submit"
+
+                class="btn btn-primary login-btn"
+
+                id="loginButton"
+
+            >
+
+                <span class="btn-text">
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+
+                    Sign In
+
+                </span>
+
+            </button>
+
+        </div>
+
+        <!-- ==========================================
+                    DIVIDER
+        =========================================== -->
+
+        <div class="login-divider">
+
+            <span>
+
+                OR
+
+            </span>
+
+        </div>
+
+        <!-- ==========================================
+                    CREATE ACCOUNT
+        =========================================== -->
+
+        <div class="register-section">
+
+            <p>
+
+                Don't have an account?
+
+            </p>
+
+            <a
+
+                href="{{ url_for('auth.register') }}"
+
+                class="register-link"
+
+            >
+
+                <i class="fa-solid fa-user-plus"></i>
+
+                Create New Account
+
+            </a>
+
+        </div>
+
+        <!-- ==========================================
+                    AI MESSAGE
+        =========================================== -->
+
+        <div class="ai-login-note">
+
+            <i class="fa-solid fa-robot"></i>
+
+            <p>
+
+                AI-powered analytics and secure healthcare management
+                become available after you sign in.
+
+            </p>
+
+        </div>
+
+    </form>
+
+</div>
+
+<!-- =====================================================
+                    LOGIN FOOTER
+====================================================== -->
+
+<div class="login-footer">
+
+    <div class="footer-top">
+
+        <div class="footer-brand">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+            <span>
+
+                Healthcare PBM Portal
+
+            </span>
+
+        </div>
+
+        <div class="footer-version">
+
+            Version {{ VERSION }}
+
+        </div>
+
+    </div>
+
+    <div class="footer-links">
+
+        <a href="#">
+
+            Privacy Policy
+
+        </a>
+
+        <span>|</span>
+
+        <a href="#">
+
+            Terms of Service
+
+        </a>
+
+        <span>|</span>
+
+        <a href="#">
+
+            Contact Support
+
+        </a>
+
+    </div>
+
+    <div class="footer-copy">
+
+        <p>
+
+            &copy; {{ APP_NAME }} {{ VERSION }}.
+            All rights reserved.
+
+        </p>
+
+        <p>
+
+            Built with Flask, AI-powered analytics,
+            and secure authentication.
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- =====================================================
+                    LOGIN LOADING OVERLAY
+====================================================== -->
+
+<div class="login-loading"
+
+     id="loginLoading"
+
+     hidden>
+
+    <div class="loading-card">
+
+        <div class="loading-spinner">
+
+            <i class="fa-solid fa-spinner fa-spin"></i>
+
+        </div>
+
+        <h3>
+
+            Signing In...
+
+        </h3>
+
+        <p>
+
+            Please wait while we securely verify your credentials.
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- =====================================================
+                ACCESSIBILITY SUPPORT
+====================================================== -->
+
+<a href="#loginForm"
+
+   class="skip-link">
+
+    Skip to Login Form
+
+</a>
+
+<!-- =====================================================
+                PAGE INFORMATION
+====================================================== -->
+
+<div class="page-information"
+
+     hidden>
+
+    <span>
+
+        Portal :
+
+        {{ APP_NAME }}
+
+    </span>
+
+    <span>
+
+        Version :
+
+        {{ VERSION }}
+
+    </span>
+
+</div>
+
+<!-- =====================================================
+                END OF LOGIN RIGHT
+====================================================== -->
+
+</div>
+
+<!-- End login-container -->
+
+</div>
+
+<!-- End login-page -->
+
+</section>
+
+    </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+{% endblock %}

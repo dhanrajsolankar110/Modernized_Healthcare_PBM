@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}Healthcare PBM Portal{% endblock %}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
+{% if request.endpoint and request.endpoint.startswith('auth.') %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+{% else %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+{% endif %}
+{% block extra_css %}{% endblock %}
+</head>
+<body>
+<div id="loader"><div class="loader-content"><div class="loader-circle"></div><h2>Healthcare PBM Portal</h2><p>Loading Application...</p></div></div>
+{% if request.endpoint and request.endpoint.startswith('auth.') %}
+<main class="auth-main">{% block content %}{% endblock %}</main>
+{% else %}
+<div class="app-container">
+{% include 'components/sidebar.html' %}
+<main class="main-content">
+{% include 'components/header.html' %}
+<section class="page-content">{% block content %}{% endblock %}</section>
+{% include 'components/footer.html' %}
+</main>
+</div>
+<button id="scrollTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
+{% endif %}
+<script src="{{ url_for('static', filename='js/components.js') }}"></script>
+{% if request.endpoint and request.endpoint.startswith('auth.') %}
+<script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+{% else %}
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+{% endif %}
+{% block extra_js %}{% endblock %}
+</body>
+</html>

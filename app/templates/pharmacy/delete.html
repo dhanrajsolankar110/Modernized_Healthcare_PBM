@@ -1,0 +1,269 @@
+{% extends "dashboard_layout.html" %}
+
+{% block title %}
+Delete Medicine
+{% endblock %}
+
+{% block extra_css %}
+
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/pharmacy.css') }}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="pharmacy-delete-page">
+
+    <!-- ==========================================
+                    PAGE HEADER
+    =========================================== -->
+
+    <div class="page-header">
+
+        <div>
+
+            <h1>
+
+                Delete Medicine
+
+            </h1>
+
+            <p>
+
+                Permanently remove this medicine from the inventory.
+
+            </p>
+
+        </div>
+
+        <a
+            href="{{ url_for('pharmacy.index') }}"
+            class="btn btn-secondary">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back
+
+        </a>
+
+    </div>
+
+    <!-- ==========================================
+                    DELETE CARD
+    =========================================== -->
+
+    <form method="POST">
+
+        <div class="delete-card">
+
+            <div class="warning-icon">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+            </div>
+
+            <h2>
+
+                Delete Confirmation
+
+            </h2>
+
+            <p>
+
+                You are about to permanently delete this medicine.
+
+                This action cannot be undone.
+
+            </p>
+
+            <!-- ==========================================
+                        MEDICINE SUMMARY
+            =========================================== -->
+
+            <div class="patient-summary">
+
+                <div class="summary-row">
+
+                    <span>
+
+                        Medicine ID
+
+                    </span>
+
+                    <strong>
+
+                        {{ medicine.medicine_id }}
+
+                    </strong>
+
+                </div>
+
+                <div class="summary-row">
+
+                    <span>
+
+                        Medicine Name
+
+                    </span>
+
+                    <strong>
+
+                        {{ medicine.medicine_name }}
+
+                    </strong>
+
+                </div>
+
+                <div class="summary-row">
+
+                    <span>
+
+                        Category
+
+                    </span>
+
+                    <strong>
+
+                        {{ medicine.category }}
+
+                    </strong>
+
+                </div>
+
+                <div class="summary-row">
+
+                    <span>
+
+                        Manufacturer
+
+                    </span>
+
+                    <strong>
+
+                        {{ medicine.manufacturer }}
+
+                    </strong>
+
+                </div>
+
+                <div class="summary-row">
+
+                    <span>
+
+                        Stock Quantity
+
+                    </span>
+
+                    <strong>
+
+                        {{ medicine.stock_quantity }}
+
+                    </strong>
+
+                </div>
+
+                <div class="summary-row">
+
+                    <span>
+
+                        Status
+
+                    </span>
+
+                    <strong>
+
+                        {{ medicine.status }}
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <!-- ==========================================
+                        CONFIRMATION
+            =========================================== -->
+
+            <div class="confirmation-box">
+
+                <label class="checkbox-container">
+
+                    <input
+                        type="checkbox"
+                        id="confirmDelete"
+                        required>
+
+                    <span>
+
+                        I understand that this medicine will be permanently deleted.
+
+                    </span>
+
+                </label>
+
+            </div>
+
+            <!-- ==========================================
+                        ACTION BUTTONS
+            =========================================== -->
+
+            <div class="form-actions">
+
+                <button
+                    type="submit"
+                    class="btn btn-danger"
+                    id="deleteButton">
+
+                    <i class="fa-solid fa-trash"></i>
+
+                    Delete Medicine
+
+                </button>
+
+                <a
+                    href="{{ url_for('pharmacy.index') }}"
+                    class="btn btn-secondary">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                    Cancel
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+
+<script src="{{ url_for('static', filename='js/pharmacy.js') }}"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", function(e){
+
+        if(!confirm("Are you sure you want to permanently delete this medicine?")){
+
+            e.preventDefault();
+
+        }
+
+    });
+
+});
+
+</script>
+
+{% endblock %}

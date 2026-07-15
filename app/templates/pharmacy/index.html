@@ -1,0 +1,489 @@
+{% extends "dashboard_layout.html" %}
+
+{% set page_title = "Pharmacy Management" %}
+
+{% block title %}
+Pharmacy Management
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/pharmacy.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="pharmacy-page">
+
+    <!-- ===========================
+            PAGE HEADER
+    ============================ -->
+
+    <div class="page-header">
+
+        <div>
+
+            <h1>
+
+                Pharmacy Management
+
+            </h1>
+
+            <p>
+
+                Manage medicines, inventory and stock.
+
+            </p>
+
+        </div>
+
+        <a
+            href="{{ url_for('pharmacy.add') }}"
+            class="btn btn-primary">
+
+            <i class="fa-solid fa-capsules"></i>
+
+            Add Medicine
+
+        </a>
+
+    </div>
+
+    <!-- ===========================
+            STATISTICS
+    ============================ -->
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+
+                <i class="fa-solid fa-capsules"></i>
+
+            </div>
+
+            <div class="stat-content">
+
+                <h2>{{ total_medicines }}</h2>
+
+                <span>Total Medicines</span>
+
+            </div>
+
+        </div>
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+            <div class="stat-content">
+
+                <h2>{{ available }}</h2>
+
+                <span>Available</span>
+
+            </div>
+
+        </div>
+
+        <div class="stat-card">
+
+            <div class="stat-icon yellow">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+            </div>
+
+            <div class="stat-content">
+
+                <h2>{{ low_stock }}</h2>
+
+                <span>Low Stock</span>
+
+            </div>
+
+        </div>
+
+        <div class="stat-card">
+
+            <div class="stat-icon red">
+
+                <i class="fa-solid fa-ban"></i>
+
+            </div>
+
+            <div class="stat-content">
+
+                <h2>{{ out_of_stock }}</h2>
+
+                <span>Out of Stock</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===========================
+            SEARCH
+    ============================ -->
+
+    <div class="table-toolbar">
+
+        <form
+            method="GET"
+            action="{{ url_for('pharmacy.index') }}"
+            class="search-form">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    name="search"
+                    placeholder="Search Medicine ID, Name, Category..."
+                    value="{{ search }}">
+
+            </div>
+
+            <button
+                type="submit"
+                class="btn btn-primary">
+
+                Search
+
+            </button>
+
+            {% if search %}
+
+            <a
+                href="{{ url_for('pharmacy.index') }}"
+                class="btn btn-secondary">
+
+                Clear
+
+            </a>
+
+            {% endif %}
+
+        </form>
+
+    </div>
+
+    <!-- ===========================
+            TABLE
+    ============================ -->
+
+    <div class="table-container">
+
+        <table class="medicine-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>Medicine ID</th>
+
+                    <th>Medicine Name</th>
+
+                    <th>Category</th>
+
+                    <th>Manufacturer</th>
+
+                    <th>Stock</th>
+
+                    <th>Price</th>
+
+                    <th>Status</th>
+
+                    <th width="180">
+
+                        Actions
+
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            {% if pharmacy.items %}
+
+                {% for medicine in pharmacy.items %}
+
+                <tr>
+
+                    <td>
+
+                        <span class="medicine-id">
+
+                            {{ medicine.medicine_id }}
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <strong>
+
+                            {{ medicine.medicine_name }}
+
+                        </strong>
+
+                    </td>
+
+                    <td>
+
+                        {{ medicine.category }}
+
+                    </td>
+
+                    <td>
+
+                        {{ medicine.manufacturer }}
+
+                    </td>
+
+                    <td>
+
+                        {{ medicine.stock_quantity }}
+
+                    </td>
+
+                    <td>
+
+                        {{ medicine.formatted_price }}
+
+                    </td>
+
+                    <td>
+
+                        {% if medicine.status=="Available" %}
+
+                        <span>
+
+                            Available
+
+                        </span>
+
+                        {% elif medicine.status=="Low Stock" %}
+
+                        <span>
+
+                            Low Stock
+
+                        </span>
+
+                        {% else %}
+
+                        <span>
+
+                            Out of Stock
+
+                        </span>
+
+                        {% endif %}
+
+                    </td>
+
+                    <td>
+
+                        <div class="action-buttons">
+
+                            <a
+                                href="{{ url_for('pharmacy.details',id=medicine.id) }}"
+                                class="btn-action view">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </a>
+
+                            <a
+                                href="{{ url_for('pharmacy.edit',id=medicine.id) }}"
+                                class="btn-action edit">
+
+                                <i class="fa-solid fa-pen"></i>
+
+                            </a>
+
+                            <a
+                                href="{{ url_for('pharmacy.delete',id=medicine.id) }}"
+                                class="btn-action delete">
+
+                                <i class="fa-solid fa-trash"></i>
+
+                            </a>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            {% else %}
+
+                <tr>
+
+                    <td colspan="8" class="empty-table">
+
+                        <div class="empty-state">
+
+                            <i class="fa-solid fa-capsules"></i>
+
+                            <h3>
+
+                                No Medicines Found
+
+                            </h3>
+
+                            <p>
+
+                                There are no medicine records available.
+
+                            </p>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            {% endif %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- ==========================================
+                    PAGINATION
+    =========================================== -->
+
+    {% if pharmacy.pages > 1 %}
+
+    <div class="table-footer">
+
+        <div class="table-info">
+
+            Showing
+
+            <strong>
+
+                {{ pharmacy.first }}
+
+            </strong>
+
+            -
+
+            <strong>
+
+                {{ pharmacy.last }}
+
+            </strong>
+
+            of
+
+            <strong>
+
+                {{ pharmacy.total }}
+
+            </strong>
+
+            medicines
+
+        </div>
+
+        <nav class="pagination">
+
+            {% if pharmacy.has_prev %}
+
+            <a
+                href="{{ url_for('pharmacy.index',
+                    page=pharmacy.prev_num,
+                    search=search) }}">
+
+                <i class="fa-solid fa-angle-left"></i>
+
+            </a>
+
+            {% endif %}
+
+            {% for page_num in pharmacy.iter_pages(
+                left_edge=1,
+                right_edge=1,
+                left_current=2,
+                right_current=2
+            ) %}
+
+                {% if page_num %}
+
+                    {% if page_num == pharmacy.page %}
+
+                        <span class="active">
+
+                            {{ page_num }}
+
+                        </span>
+
+                    {% else %}
+
+                        <a
+                            href="{{ url_for(
+                                'pharmacy.index',
+                                page=page_num,
+                                search=search
+                            ) }}">
+
+                            {{ page_num }}
+
+                        </a>
+
+                    {% endif %}
+
+                {% else %}
+
+                    <span>...</span>
+
+                {% endif %}
+
+            {% endfor %}
+
+            {% if pharmacy.has_next %}
+
+            <a
+                href="{{ url_for(
+                    'pharmacy.index',
+                    page=pharmacy.next_num,
+                    search=search
+                ) }}">
+
+                <i class="fa-solid fa-angle-right"></i>
+
+            </a>
+
+            {% endif %}
+
+        </nav>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/pharmacy.js') }}"></script>
+{% endblock %}

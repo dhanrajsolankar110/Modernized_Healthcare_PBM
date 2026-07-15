@@ -1,0 +1,307 @@
+{% extends "dashboard_layout.html" %}
+
+{% block title %}
+
+Database Backup
+
+{% endblock %}
+
+{% block extra_css %}
+
+<link
+rel="stylesheet"
+href="{{ url_for('static', filename='css/backup.css') }}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+
+    <div>
+
+        <h1>
+
+            Database Backup & Restore
+
+        </h1>
+
+        <p>
+
+            Create backups and restore your Healthcare PBM Portal database.
+
+        </p>
+
+    </div>
+
+    <div class="header-actions">
+
+        <a
+
+        href="{{ url_for('settings.index') }}"
+
+        class="btn btn-outline">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+                BACKUP CARD
+========================================== -->
+
+<div class="table-card">
+
+    <div class="table-header">
+
+        <h2>
+
+            Create Database Backup
+
+        </h2>
+
+    </div>
+
+    <div class="backup-card">
+
+        <p>
+
+            Generate a complete backup of the Healthcare PBM database.
+
+        </p>
+
+        <br>
+
+        <a
+
+        href="{{ url_for('settings.backup') }}"
+
+        class="btn btn-primary">
+
+            <i class="fa-solid fa-download"></i>
+
+            Create Backup
+
+        </a>
+
+    </div>
+
+</div>
+
+<br>
+
+<!-- ==========================================
+                RESTORE CARD
+========================================== -->
+
+<div class="table-card">
+
+    <div class="table-header">
+
+        <h2>
+
+            Restore Backup
+
+        </h2>
+
+    </div>
+
+    <div class="restore-box">
+
+        <form
+
+        method="POST"
+
+        enctype="multipart/form-data">
+
+            <div class="form-group">
+
+                <label>
+
+                    Backup File
+
+                </label>
+
+                <input
+
+                type="file"
+
+                name="backup_file"
+
+                class="form-control"
+
+                accept=".db">
+
+            </div>
+
+            <br>
+
+            <button
+
+            type="submit"
+
+            class="btn btn-warning">
+
+                <i class="fa-solid fa-upload"></i>
+
+                Restore Backup
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<br>
+
+<!-- ==========================================
+                BACKUP INFORMATION
+========================================== -->
+
+<div class="table-card">
+
+    <div class="table-header">
+
+        <h2>
+
+            Backup Information
+
+        </h2>
+
+    </div>
+
+    <div class="backup-card">
+
+        <table class="settings-table">
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+
+                        <strong>
+
+                            Backup Location
+
+                        </strong>
+
+                    </td>
+
+                    <td>
+
+                        /backups/
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+
+                        <strong>
+
+                            Backup Type
+
+                        </strong>
+
+                    </td>
+
+                    <td>
+
+                        SQLite Database
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+
+                        <strong>
+
+                            Compression
+
+                        </strong>
+
+                    </td>
+
+                    <td>
+
+                        Disabled
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+
+                        <strong>
+
+                            Automatic Backup
+
+                        </strong>
+
+                    </td>
+
+                    <td>
+
+                        Enabled
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+
+                        <strong>
+
+                            Status
+
+                        </strong>
+
+                    </td>
+
+                    <td>
+
+                        <span>
+
+                            Ready
+
+                        </span>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+
+<script
+src="{{ url_for('static', filename='js/settings.js') }}">
+</script>
+
+{% endblock %}

@@ -1,0 +1,501 @@
+Patient ID,Name,Gender,Age,Phone,Disease,Status
+P0001,Arjun Kulkarni,Male,36,9306629577,Arthritis,Active
+P0002,Aditya Kulkarni,Male,36,9268554597,Asthma,Active
+P0003,Arjun Singh,Female,6,9612898381,Asthma,Inactive
+P0004,Meera Gupta,Female,5,9803510742,Diabetes,Inactive
+P0005,Aditya Patil,Female,18,9730418904,Hypertension,Inactive
+P0006,Ritika Gupta,Female,36,9795314365,Heart Disease,Active
+P0007,Pooja Verma,Female,59,9125622458,Hypertension,Active
+P0008,Pooja Gupta,Male,37,9509994966,Fever,Inactive
+P0009,Rohan Reddy,Male,16,9450429363,Fever,Inactive
+P0010,Aisha Reddy,Female,48,9769389427,Heart Disease,Active
+P0011,Aarav Reddy,Female,35,9780219875,Heart Disease,Inactive
+P0012,Aditya Patil,Male,28,9829449065,Fever,Inactive
+P0013,Kavya Sharma,Female,78,9392847667,Cancer,Inactive
+P0014,Meera Gupta,Female,64,9572539904,Cancer,Active
+P0015,Sanjay Verma,Female,3,9623195404,Cancer,Inactive
+P0016,Pooja Patel,Female,27,9904249435,Heart Disease,Inactive
+P0017,Kavya Patil,Male,73,9239591842,Heart Disease,Inactive
+P0018,Aisha Naik,Male,4,9743890263,Cancer,Active
+P0019,Priya Joshi,Male,85,9696044099,Heart Disease,Active
+P0020,Sanjay Kulkarni,Female,85,9433747883,Cancer,Active
+P0021,Sanjay Verma,Male,25,9702507676,Cancer,Active
+P0022,Ritika Verma,Male,47,9374338382,Kidney Disease,Active
+P0023,Karan Patil,Male,6,9717560209,Arthritis,Inactive
+P0024,Ishita Naik,Female,82,9766140128,Heart Disease,Inactive
+P0025,Sneha Singh,Female,14,9894298208,Kidney Disease,Inactive
+P0026,Aisha Kulkarni,Male,67,9648810190,Fever,Inactive
+P0027,Rahul Patel,Male,57,9640171282,Migraine,Active
+P0028,Vivaan Gupta,Male,12,9701954955,Hypertension,Inactive
+P0029,Aisha Reddy,Male,35,9656270896,COVID-19,Active
+P0030,Sneha Sharma,Female,20,9796104752,Heart Disease,Active
+P0031,Priya Kulkarni,Female,8,9593118719,Heart Disease,Active
+P0032,Arjun Singh,Female,48,9554332771,Migraine,Active
+P0033,Aarav Sharma,Female,24,9458279655,Kidney Disease,Active
+P0034,Meera Reddy,Female,64,9673480185,Fever,Active
+P0035,Pooja Gupta,Male,3,9187143538,Heart Disease,Active
+P0036,Karan Gupta,Female,36,9605554307,Arthritis,Active
+P0037,Aditya Naik,Female,58,9987819423,Hypertension,Active
+P0038,Vivaan Reddy,Female,26,9370865255,Migraine,Inactive
+P0039,Vivaan Joshi,Female,78,9973330767,Kidney Disease,Inactive
+P0040,Priya Singh,Male,30,9563689224,Diabetes,Inactive
+P0041,Sanjay Patil,Female,39,9950659868,Kidney Disease,Inactive
+P0042,Neha Patil,Male,18,9252993341,Hypertension,Active
+P0043,Meera Patel,Female,47,9775587632,Migraine,Active
+P0044,Kavya Gupta,Female,59,9199025201,Arthritis,Inactive
+P0045,Arjun Reddy,Female,11,9698207776,COVID-19,Inactive
+P0046,Aisha Verma,Female,24,9789874404,Heart Disease,Inactive
+P0047,Aarav Verma,Female,21,9986280247,Kidney Disease,Inactive
+P0048,Kavya Naik,Male,20,9848801841,Hypertension,Inactive
+P0049,Kavya Kulkarni,Male,17,9613792013,Heart Disease,Inactive
+P0050,Aditya Singh,Female,45,9557873955,Asthma,Active
+P0051,Priya Naik,Male,68,9731211383,Migraine,Inactive
+P0052,Diya Reddy,Male,11,9786480778,Diabetes,Inactive
+P0053,Aditya Naik,Male,9,9502866778,Arthritis,Inactive
+P0054,Nikhil Singh,Male,78,9504101776,Migraine,Active
+P0055,Neha Naik,Male,79,9649219531,Cancer,Inactive
+P0056,Karan Gupta,Male,58,9472968352,Arthritis,Active
+P0057,Neha Singh,Female,7,9358807895,Diabetes,Active
+P0058,Priya Kulkarni,Male,15,9699897667,Heart Disease,Active
+P0059,Sanjay Kulkarni,Male,78,9732935446,Fever,Inactive
+P0060,Aditya Reddy,Male,2,9963548922,Cancer,Active
+P0061,Pooja Patel,Female,78,9951839068,Fever,Inactive
+P0062,Neha Verma,Male,13,9673089568,Hypertension,Inactive
+P0063,Pooja Kulkarni,Female,74,9834420290,COVID-19,Inactive
+P0064,Ishita Kulkarni,Male,14,9217668936,Heart Disease,Active
+P0065,Aarav Patil,Female,16,9239409085,COVID-19,Inactive
+P0066,Diya Joshi,Female,83,9709327153,Arthritis,Active
+P0067,Kavya Sharma,Female,55,9415373508,Kidney Disease,Active
+P0068,Priya Naik,Female,66,9583368234,Asthma,Active
+P0069,Aditya Joshi,Male,10,9135906621,Hypertension,Active
+P0070,Diya Sharma,Female,26,9474207002,Heart Disease,Active
+P0071,Karan Verma,Female,69,9837403542,Diabetes,Active
+P0072,Vivaan Kulkarni,Female,62,9964316647,Cancer,Active
+P0073,Rohan Naik,Female,72,9364707974,Cancer,Inactive
+P0074,Pooja Gupta,Male,31,9509934466,Arthritis,Inactive
+P0075,Aarav Patel,Female,18,9146820651,Cancer,Active
+P0076,Diya Reddy,Female,54,9480417298,Arthritis,Active
+P0077,Ishita Sharma,Male,75,9935774886,Hypertension,Inactive
+P0078,Ananya Patel,Female,69,9851250357,Kidney Disease,Active
+P0079,Ananya Reddy,Male,3,9673758498,Fever,Inactive
+P0080,Aisha Gupta,Male,45,9614191283,Cancer,Inactive
+P0081,Aarav Patil,Female,11,9688848987,Cancer,Active
+P0082,Arjun Joshi,Male,5,9467268278,Fever,Inactive
+P0083,Diya Patel,Female,30,9299410066,Diabetes,Inactive
+P0084,Sneha Naik,Female,61,9419860154,COVID-19,Active
+P0085,Nikhil Singh,Female,73,9313406702,Fever,Inactive
+P0086,Arjun Gupta,Female,14,9842825069,Hypertension,Inactive
+P0087,Arjun Patil,Male,45,9880874446,Migraine,Active
+P0088,Sneha Gupta,Female,57,9484671878,Arthritis,Active
+P0089,Ritika Singh,Female,37,9352495898,Cancer,Inactive
+P0090,Diya Reddy,Female,59,9544434850,Cancer,Inactive
+P0091,Arjun Sharma,Female,32,9992455862,COVID-19,Active
+P0092,Neha Naik,Male,36,9228795676,Diabetes,Inactive
+P0093,Vivaan Verma,Female,37,9651007294,Asthma,Inactive
+P0094,Priya Reddy,Male,24,9467534812,Kidney Disease,Active
+P0095,Neha Gupta,Male,70,9357130422,Migraine,Inactive
+P0096,Vivaan Patel,Female,71,9587330754,Diabetes,Inactive
+P0097,Sanjay Joshi,Female,39,9479401439,COVID-19,Active
+P0098,Sanjay Singh,Female,2,9723455277,Kidney Disease,Inactive
+P0099,Aditya Verma,Female,3,9823023227,Kidney Disease,Active
+P0100,Pooja Singh,Female,51,9336333488,Heart Disease,Inactive
+P0101,Nikhil Verma,Male,85,9582610066,Asthma,Inactive
+P0102,Arjun Kulkarni,Male,43,9803689289,Diabetes,Inactive
+P0103,Neha Joshi,Female,79,9268405421,Kidney Disease,Active
+P0104,Meera Gupta,Female,52,9108607491,Fever,Inactive
+P0105,Ritika Singh,Female,34,9552527806,COVID-19,Active
+P0106,Rohan Gupta,Male,6,9849205513,Arthritis,Inactive
+P0107,Pooja Reddy,Male,80,9539345786,Kidney Disease,Inactive
+P0108,Kavya Patil,Male,1,9928688916,Arthritis,Inactive
+P0109,Rahul Naik,Male,33,9384637937,Cancer,Inactive
+P0110,Neha Patel,Female,4,9832654174,Asthma,Active
+P0111,Priya Joshi,Female,30,9171909167,Kidney Disease,Active
+P0112,Rahul Kulkarni,Female,17,9981486284,Heart Disease,Active
+P0113,Meera Gupta,Male,62,9527214040,Asthma,Active
+P0114,Rohan Kulkarni,Female,70,9558557771,COVID-19,Inactive
+P0115,Nikhil Naik,Female,67,9904656517,COVID-19,Inactive
+P0116,Aarav Verma,Male,73,9528247905,Heart Disease,Inactive
+P0117,Neha Reddy,Female,33,9757283850,Asthma,Inactive
+P0118,Rohan Joshi,Male,6,9662146512,Diabetes,Active
+P0119,Rohan Gupta,Female,21,9583307702,Kidney Disease,Inactive
+P0120,Priya Sharma,Male,23,9827479192,Hypertension,Active
+P0121,Aisha Sharma,Male,61,9396438729,Heart Disease,Active
+P0122,Ritika Naik,Female,14,9827337389,Fever,Inactive
+P0123,Meera Singh,Female,43,9262459438,Arthritis,Active
+P0124,Kavya Reddy,Male,43,9859659418,Heart Disease,Active
+P0125,Aditya Naik,Female,22,9581161710,Cancer,Active
+P0126,Aditya Gupta,Male,83,9975578019,Fever,Inactive
+P0127,Rahul Patil,Male,82,9497705971,Hypertension,Inactive
+P0128,Diya Singh,Male,37,9379826635,Arthritis,Inactive
+P0129,Arjun Reddy,Male,39,9387710304,Migraine,Active
+P0130,Ritika Gupta,Male,76,9801552436,Asthma,Inactive
+P0131,Aarav Kulkarni,Male,40,9767787587,Fever,Active
+P0132,Ishita Joshi,Male,28,9190092325,Heart Disease,Inactive
+P0133,Priya Patil,Male,42,9320035995,Diabetes,Inactive
+P0134,Ritika Kulkarni,Female,82,9222959650,Fever,Active
+P0135,Karan Naik,Male,50,9569643826,Migraine,Inactive
+P0136,Ananya Verma,Female,1,9296072388,Fever,Active
+P0137,Aditya Verma,Male,34,9308185192,COVID-19,Inactive
+P0138,Meera Patel,Male,51,9391929195,Cancer,Inactive
+P0139,Meera Patil,Male,15,9960139120,COVID-19,Inactive
+P0140,Ritika Gupta,Female,46,9873973801,Heart Disease,Inactive
+P0141,Priya Patel,Male,80,9401248746,Heart Disease,Active
+P0142,Sneha Joshi,Female,24,9385110832,Heart Disease,Inactive
+P0143,Pooja Verma,Male,54,9818896913,Diabetes,Inactive
+P0144,Vivaan Verma,Male,28,9971028545,Hypertension,Inactive
+P0145,Ananya Patel,Female,39,9722858005,Diabetes,Inactive
+P0146,Rohan Naik,Male,82,9192705802,Fever,Active
+P0147,Sneha Gupta,Female,31,9941666019,COVID-19,Active
+P0148,Aisha Naik,Female,15,9795463913,Hypertension,Inactive
+P0149,Rohan Gupta,Male,36,9517416765,Arthritis,Active
+P0150,Arjun Singh,Female,73,9649551118,Heart Disease,Inactive
+P0151,Ritika Naik,Female,34,9500807323,Kidney Disease,Inactive
+P0152,Diya Verma,Male,82,9462968851,Kidney Disease,Inactive
+P0153,Aisha Reddy,Female,46,9837605963,COVID-19,Inactive
+P0154,Meera Naik,Female,15,9754777463,Heart Disease,Inactive
+P0155,Aisha Naik,Female,58,9588957717,Migraine,Active
+P0156,Diya Patil,Female,17,9433638387,Hypertension,Inactive
+P0157,Karan Reddy,Female,43,9205432109,Hypertension,Inactive
+P0158,Ritika Sharma,Male,22,9844580552,Fever,Active
+P0159,Sanjay Verma,Male,27,9633625081,Diabetes,Active
+P0160,Sneha Patil,Female,17,9596453161,Diabetes,Active
+P0161,Neha Patil,Female,36,9822092846,Diabetes,Inactive
+P0162,Rohan Reddy,Female,70,9591391012,Hypertension,Inactive
+P0163,Karan Verma,Female,17,9495115896,Arthritis,Active
+P0164,Vivaan Verma,Male,72,9973400083,Hypertension,Active
+P0165,Sanjay Gupta,Female,42,9632332308,Diabetes,Inactive
+P0166,Meera Patel,Female,68,9207744363,Heart Disease,Inactive
+P0167,Pooja Gupta,Female,58,9324646790,Migraine,Active
+P0168,Sanjay Naik,Male,61,9293815105,Arthritis,Active
+P0169,Karan Reddy,Female,44,9284640964,Asthma,Inactive
+P0170,Nikhil Patil,Female,50,9267173660,Arthritis,Active
+P0171,Priya Gupta,Female,71,9987413291,Fever,Inactive
+P0172,Aarav Naik,Female,23,9903463903,Heart Disease,Active
+P0173,Meera Patel,Male,17,9935361117,Diabetes,Active
+P0174,Karan Patil,Male,2,9400474310,Fever,Inactive
+P0175,Ishita Singh,Male,20,9230799880,Kidney Disease,Active
+P0176,Neha Gupta,Female,45,9236945352,Cancer,Active
+P0177,Karan Sharma,Male,66,9987782619,Diabetes,Active
+P0178,Ritika Reddy,Female,40,9540028663,Arthritis,Active
+P0179,Neha Verma,Female,35,9506079519,COVID-19,Inactive
+P0180,Pooja Sharma,Female,50,9766081239,Diabetes,Inactive
+P0181,Meera Singh,Male,68,9856937470,Heart Disease,Inactive
+P0182,Karan Singh,Male,57,9418710423,Cancer,Active
+P0183,Pooja Reddy,Female,18,9606534305,COVID-19,Active
+P0184,Aisha Kulkarni,Female,81,9930720778,Hypertension,Inactive
+P0185,Meera Patel,Female,38,9931499539,Diabetes,Active
+P0186,Arjun Naik,Female,67,9592961981,Kidney Disease,Active
+P0187,Kavya Joshi,Male,16,9377493942,Hypertension,Active
+P0188,Ritika Sharma,Male,49,9464557563,Diabetes,Inactive
+P0189,Kavya Naik,Female,4,9194195596,Kidney Disease,Active
+P0190,Priya Singh,Male,3,9207137704,Arthritis,Active
+P0191,Arjun Verma,Male,16,9903191771,Kidney Disease,Active
+P0192,Rohan Joshi,Female,24,9657189219,Arthritis,Inactive
+P0193,Meera Joshi,Female,39,9658588825,Asthma,Active
+P0194,Rahul Kulkarni,Male,67,9894144667,Fever,Inactive
+P0195,Kavya Reddy,Female,19,9634746387,Hypertension,Active
+P0196,Neha Naik,Male,17,9972260835,Kidney Disease,Active
+P0197,Sanjay Joshi,Male,61,9797819032,Asthma,Active
+P0198,Sanjay Patel,Male,12,9789694377,Kidney Disease,Active
+P0199,Vivaan Singh,Male,53,9701894338,Arthritis,Active
+P0200,Aditya Verma,Male,39,9333360447,Kidney Disease,Inactive
+P0201,Rohan Naik,Female,56,9384571284,Asthma,Active
+P0202,Ananya Verma,Female,80,9829899845,Diabetes,Active
+P0203,Nikhil Sharma,Male,2,9148527095,Heart Disease,Inactive
+P0204,Kavya Kulkarni,Male,15,9975378369,COVID-19,Active
+P0205,Pooja Sharma,Male,21,9963663851,Asthma,Inactive
+P0206,Vivaan Patel,Male,14,9748460945,Heart Disease,Inactive
+P0207,Arjun Sharma,Female,66,9990068057,Asthma,Inactive
+P0208,Pooja Joshi,Male,55,9526006583,Fever,Inactive
+P0209,Arjun Verma,Female,47,9344535451,COVID-19,Inactive
+P0210,Aarav Gupta,Female,31,9409241445,Diabetes,Active
+P0211,Nikhil Patil,Female,33,9555577969,Heart Disease,Active
+P0212,Nikhil Patel,Male,24,9657966577,Cancer,Active
+P0213,Aisha Sharma,Female,64,9432072522,Fever,Inactive
+P0214,Pooja Reddy,Female,50,9995741118,Fever,Active
+P0215,Sneha Patel,Male,7,9283140373,Arthritis,Active
+P0216,Pooja Sharma,Female,25,9270077879,Arthritis,Active
+P0217,Sanjay Verma,Male,52,9293984305,Arthritis,Active
+P0218,Vivaan Patel,Male,68,9636343064,Cancer,Active
+P0219,Neha Patil,Female,33,9495164401,Arthritis,Active
+P0220,Priya Singh,Male,19,9417707702,Fever,Inactive
+P0221,Sanjay Patel,Male,52,9153868578,Asthma,Inactive
+P0222,Arjun Naik,Male,21,9346705764,Cancer,Active
+P0223,Sneha Patel,Male,82,9700437786,Diabetes,Inactive
+P0224,Ritika Patil,Male,43,9393878390,Diabetes,Active
+P0225,Aditya Joshi,Female,29,9811681949,Fever,Inactive
+P0226,Aarav Reddy,Male,15,9828733116,Asthma,Active
+P0227,Meera Kulkarni,Female,56,9586871874,Cancer,Active
+P0228,Ritika Gupta,Female,61,9383704218,Arthritis,Active
+P0229,Nikhil Verma,Female,35,9164521529,Fever,Active
+P0230,Ritika Gupta,Male,5,9296612069,Kidney Disease,Active
+P0231,Ritika Kulkarni,Male,19,9379284640,COVID-19,Inactive
+P0232,Nikhil Naik,Male,61,9383836397,Migraine,Active
+P0233,Rohan Patel,Female,38,9789578382,Arthritis,Active
+P0234,Ritika Verma,Female,83,9266023627,Asthma,Active
+P0235,Sanjay Singh,Female,6,9602724221,Asthma,Active
+P0236,Vivaan Kulkarni,Male,37,9793149643,Hypertension,Inactive
+P0237,Rohan Joshi,Male,59,9459043074,Diabetes,Active
+P0238,Aisha Reddy,Male,83,9425332808,Diabetes,Inactive
+P0239,Rohan Gupta,Male,44,9791787469,Diabetes,Active
+P0240,Meera Naik,Female,48,9656669820,Migraine,Active
+P0241,Aditya Verma,Female,7,9288512216,Asthma,Active
+P0242,Karan Patel,Female,74,9287746739,Arthritis,Active
+P0243,Aditya Reddy,Male,13,9844027975,Kidney Disease,Inactive
+P0244,Neha Kulkarni,Female,60,9145774361,COVID-19,Active
+P0245,Sneha Singh,Female,83,9741346840,Hypertension,Inactive
+P0246,Rohan Patil,Male,33,9637463778,Diabetes,Inactive
+P0247,Ananya Verma,Female,68,9317939658,Kidney Disease,Inactive
+P0248,Arjun Patil,Female,45,9585810688,Heart Disease,Active
+P0249,Aisha Kulkarni,Female,3,9279240975,Cancer,Active
+P0250,Aarav Reddy,Female,62,9964175749,Kidney Disease,Active
+P0251,Karan Reddy,Male,71,9978046201,Hypertension,Active
+P0252,Kavya Kulkarni,Female,51,9263410461,Arthritis,Active
+P0253,Ritika Kulkarni,Female,57,9575257101,Heart Disease,Inactive
+P0254,Aditya Reddy,Female,53,9759039542,Hypertension,Inactive
+P0255,Ritika Joshi,Male,63,9955565137,Heart Disease,Active
+P0256,Rohan Reddy,Female,44,9940394842,Arthritis,Active
+P0257,Priya Verma,Male,53,9521420910,Diabetes,Active
+P0258,Ritika Naik,Female,2,9620976701,Asthma,Active
+P0259,Aditya Naik,Female,56,9965522437,Diabetes,Active
+P0260,Vivaan Verma,Male,16,9945396738,Cancer,Active
+P0261,Aditya Kulkarni,Female,4,9716656159,Diabetes,Inactive
+P0262,Karan Gupta,Female,11,9230410927,Diabetes,Active
+P0263,Nikhil Patel,Female,11,9338824156,COVID-19,Inactive
+P0264,Aisha Sharma,Female,82,9122276425,Hypertension,Active
+P0265,Rahul Sharma,Female,27,9705887652,Migraine,Active
+P0266,Rohan Reddy,Female,49,9926455501,Fever,Inactive
+P0267,Diya Joshi,Female,32,9887950261,Migraine,Inactive
+P0268,Rohan Joshi,Male,77,9743030040,COVID-19,Active
+P0269,Aditya Joshi,Male,77,9744618482,Hypertension,Active
+P0270,Meera Kulkarni,Female,35,9305834389,Fever,Active
+P0271,Sanjay Patil,Male,76,9604170741,Fever,Active
+P0272,Karan Kulkarni,Female,31,9847421830,Heart Disease,Active
+P0273,Ishita Verma,Female,64,9538380739,Diabetes,Active
+P0274,Pooja Reddy,Female,27,9138204496,Diabetes,Inactive
+P0275,Aditya Sharma,Female,9,9587428233,Diabetes,Active
+P0276,Sneha Joshi,Male,27,9904698430,Asthma,Inactive
+P0277,Ishita Reddy,Male,75,9492266820,Migraine,Inactive
+P0278,Sanjay Verma,Female,9,9112491692,Hypertension,Active
+P0279,Rohan Reddy,Female,9,9539437347,Migraine,Inactive
+P0280,Ishita Kulkarni,Male,74,9504815504,Migraine,Active
+P0281,Nikhil Joshi,Male,15,9463174576,Cancer,Inactive
+P0282,Meera Kulkarni,Female,77,9187993217,Cancer,Active
+P0283,Ritika Reddy,Female,55,9579471908,Cancer,Active
+P0284,Meera Verma,Female,71,9524717378,Heart Disease,Active
+P0285,Priya Verma,Female,14,9381836539,Migraine,Active
+P0286,Rahul Kulkarni,Male,76,9331669965,Arthritis,Active
+P0287,Priya Sharma,Female,16,9906172307,Kidney Disease,Inactive
+P0288,Sneha Singh,Male,71,9450726843,Cancer,Active
+P0289,Sanjay Gupta,Male,52,9892227591,Arthritis,Active
+P0290,Ananya Gupta,Male,12,9256874696,Arthritis,Active
+P0291,Rahul Singh,Male,13,9564194625,Heart Disease,Inactive
+P0292,Neha Patel,Male,27,9342609821,Diabetes,Inactive
+P0293,Ritika Joshi,Female,55,9401880633,Cancer,Active
+P0294,Meera Reddy,Female,22,9571642522,Fever,Active
+P0295,Neha Kulkarni,Female,82,9121824291,Diabetes,Active
+P0296,Ananya Sharma,Female,44,9883268303,Kidney Disease,Inactive
+P0297,Kavya Reddy,Female,85,9833166605,Diabetes,Inactive
+P0298,Priya Joshi,Male,52,9739145538,Kidney Disease,Active
+P0299,Karan Kulkarni,Female,8,9929421210,Fever,Active
+P0300,Vivaan Sharma,Female,2,9822464484,COVID-19,Inactive
+P0301,Vivaan Kulkarni,Male,84,9500557106,Cancer,Active
+P0302,Neha Patil,Female,24,9709329341,Heart Disease,Inactive
+P0303,Rohan Gupta,Female,36,9335642346,Diabetes,Inactive
+P0304,Rohan Naik,Male,54,9523106697,Cancer,Active
+P0305,Nikhil Gupta,Female,61,9816788779,Heart Disease,Active
+P0306,Vivaan Gupta,Female,21,9262608374,Asthma,Inactive
+P0307,Pooja Patil,Female,51,9172637145,Diabetes,Active
+P0308,Vivaan Sharma,Male,41,9582256996,Fever,Active
+P0309,Diya Sharma,Male,76,9582764142,Heart Disease,Inactive
+P0310,Aarav Kulkarni,Female,8,9899262195,Diabetes,Active
+P0311,Meera Gupta,Female,36,9343882259,Fever,Active
+P0312,Ritika Singh,Female,17,9587564161,Diabetes,Active
+P0313,Ishita Gupta,Female,37,9253427850,Cancer,Inactive
+P0314,Karan Singh,Female,78,9600494770,Diabetes,Inactive
+P0315,Rohan Naik,Female,55,9545749227,Fever,Active
+P0316,Arjun Sharma,Female,38,9434954334,Diabetes,Inactive
+P0317,Aisha Singh,Female,27,9764035248,Asthma,Active
+P0318,Kavya Sharma,Male,17,9936508675,Hypertension,Active
+P0319,Ishita Joshi,Male,42,9654405827,Arthritis,Inactive
+P0320,Arjun Sharma,Female,27,9805644953,Migraine,Active
+P0321,Priya Kulkarni,Male,62,9122743222,Diabetes,Active
+P0322,Aditya Verma,Female,43,9944718485,Diabetes,Active
+P0323,Neha Singh,Female,80,9463448825,Kidney Disease,Active
+P0324,Neha Gupta,Male,28,9241670346,Hypertension,Active
+P0325,Priya Sharma,Male,79,9533090553,Arthritis,Active
+P0326,Rohan Naik,Female,85,9419473933,Arthritis,Inactive
+P0327,Pooja Reddy,Female,8,9672075008,Diabetes,Inactive
+P0328,Ananya Verma,Male,74,9482808557,Diabetes,Active
+P0329,Meera Kulkarni,Male,3,9464215512,Diabetes,Active
+P0330,Neha Joshi,Female,84,9552605416,Migraine,Inactive
+P0331,Diya Naik,Male,43,9534766433,Fever,Active
+P0332,Rohan Kulkarni,Male,44,9838796251,Diabetes,Active
+P0333,Rohan Naik,Male,58,9300336249,Hypertension,Active
+P0334,Ishita Patel,Female,64,9273341205,COVID-19,Inactive
+P0335,Ishita Reddy,Male,49,9452003649,COVID-19,Active
+P0336,Ananya Verma,Male,29,9322065946,Arthritis,Active
+P0337,Ishita Sharma,Male,74,9477957800,Hypertension,Active
+P0338,Kavya Reddy,Male,49,9520044851,Cancer,Active
+P0339,Ananya Patil,Male,1,9867417152,Cancer,Active
+P0340,Ishita Joshi,Male,22,9612103031,Cancer,Inactive
+P0341,Rahul Gupta,Female,49,9740912422,Diabetes,Active
+P0342,Ananya Patil,Female,14,9776427794,Arthritis,Active
+P0343,Karan Patel,Male,3,9658391788,Diabetes,Active
+P0344,Aarav Gupta,Male,58,9634981242,Fever,Inactive
+P0345,Kavya Naik,Female,75,9631420866,Fever,Active
+P0346,Kavya Sharma,Male,20,9528419447,Heart Disease,Inactive
+P0347,Ananya Patel,Female,17,9892906675,Asthma,Active
+P0348,Ananya Reddy,Female,12,9247685225,Diabetes,Active
+P0349,Sanjay Reddy,Male,15,9913456300,COVID-19,Active
+P0350,Aditya Reddy,Female,56,9903378293,Migraine,Inactive
+P0351,Neha Patel,Female,68,9276830735,Kidney Disease,Active
+P0352,Pooja Joshi,Female,15,9631072161,COVID-19,Active
+P0353,Aarav Singh,Female,70,9180543828,Diabetes,Inactive
+P0354,Ritika Naik,Female,73,9845189335,Heart Disease,Inactive
+P0355,Meera Reddy,Female,7,9914275016,Migraine,Inactive
+P0356,Diya Patel,Male,83,9763353016,Hypertension,Inactive
+P0357,Meera Singh,Male,23,9968651297,Asthma,Active
+P0358,Ritika Patel,Female,81,9537038216,Fever,Active
+P0359,Aisha Naik,Male,60,9427621136,COVID-19,Inactive
+P0360,Rohan Singh,Male,63,9560729120,Kidney Disease,Inactive
+P0361,Sneha Singh,Female,23,9456589521,Arthritis,Inactive
+P0362,Ananya Singh,Female,61,9104280392,Migraine,Active
+P0363,Ananya Naik,Female,6,9293097432,Arthritis,Active
+P0364,Priya Patel,Male,48,9414295869,COVID-19,Active
+P0365,Karan Verma,Female,49,9209008386,Asthma,Active
+P0366,Diya Singh,Female,83,9774282177,COVID-19,Inactive
+P0367,Rahul Verma,Female,84,9623803257,COVID-19,Active
+P0368,Aarav Gupta,Female,67,9320550724,Hypertension,Active
+P0369,Sanjay Kulkarni,Female,26,9652728109,Kidney Disease,Inactive
+P0370,Meera Gupta,Male,50,9678992590,Asthma,Active
+P0371,Priya Singh,Female,45,9602558324,Migraine,Inactive
+P0372,Ishita Gupta,Female,66,9800501735,Arthritis,Inactive
+P0373,Aarav Gupta,Female,55,9142207255,Kidney Disease,Inactive
+P0374,Neha Patil,Male,5,9398449066,Asthma,Inactive
+P0375,Neha Reddy,Female,1,9250155565,Diabetes,Inactive
+P0376,Ishita Patil,Male,54,9907019360,COVID-19,Active
+P0377,Arjun Gupta,Male,34,9284567112,COVID-19,Inactive
+P0378,Meera Sharma,Male,75,9559781629,Asthma,Active
+P0379,Karan Patel,Female,29,9647983528,Heart Disease,Active
+P0380,Ishita Joshi,Female,74,9660805403,Cancer,Active
+P0381,Rahul Naik,Male,81,9725842375,Fever,Inactive
+P0382,Kavya Kulkarni,Male,85,9709301871,Fever,Inactive
+P0383,Arjun Patel,Female,43,9549694160,Diabetes,Active
+P0384,Diya Joshi,Female,80,9879530556,Heart Disease,Inactive
+P0385,Aisha Patel,Male,7,9519329882,Diabetes,Inactive
+P0386,Arjun Gupta,Male,7,9682638311,Asthma,Inactive
+P0387,Nikhil Reddy,Male,77,9957886798,COVID-19,Active
+P0388,Priya Reddy,Male,82,9194124833,Diabetes,Inactive
+P0389,Diya Kulkarni,Male,57,9800429943,Heart Disease,Inactive
+P0390,Sneha Joshi,Male,29,9175553480,Migraine,Inactive
+P0391,Karan Reddy,Male,76,9812968624,Migraine,Active
+P0392,Kavya Naik,Male,11,9824911289,Hypertension,Active
+P0393,Ananya Singh,Male,10,9746038366,Cancer,Active
+P0394,Aditya Reddy,Male,10,9282388934,Hypertension,Active
+P0395,Nikhil Reddy,Male,9,9775298501,Diabetes,Active
+P0396,Karan Verma,Male,70,9427480189,Arthritis,Active
+P0397,Vivaan Reddy,Female,68,9680752599,Diabetes,Active
+P0398,Aditya Verma,Female,47,9704317210,Asthma,Active
+P0399,Karan Patel,Female,25,9977894572,Arthritis,Inactive
+P0400,Diya Sharma,Female,19,9536903345,Fever,Inactive
+P0401,Aisha Patel,Female,4,9713879383,Fever,Inactive
+P0402,Priya Patil,Female,42,9683485088,Kidney Disease,Inactive
+P0403,Diya Patel,Female,84,9100194087,Heart Disease,Active
+P0404,Sanjay Gupta,Male,84,9292139886,Asthma,Inactive
+P0405,Pooja Sharma,Female,3,9280615317,Diabetes,Inactive
+P0406,Kavya Patil,Female,58,9552978108,COVID-19,Inactive
+P0407,Aditya Gupta,Female,31,9485832147,Hypertension,Active
+P0408,Rohan Joshi,Male,17,9665763703,Kidney Disease,Active
+P0409,Arjun Patel,Male,19,9694552229,Fever,Active
+P0410,Diya Naik,Female,39,9835079521,Fever,Inactive
+P0411,Aditya Verma,Female,65,9588911432,Asthma,Active
+P0412,Neha Naik,Female,45,9534006505,Kidney Disease,Inactive
+P0413,Aisha Naik,Female,12,9246699770,Hypertension,Active
+P0414,Priya Patil,Male,17,9890001104,Migraine,Active
+P0415,Vivaan Joshi,Male,52,9208853105,Asthma,Active
+P0416,Rahul Sharma,Male,76,9931759623,Kidney Disease,Inactive
+P0417,Karan Reddy,Male,37,9240776673,Diabetes,Inactive
+P0418,Aditya Verma,Female,40,9850059288,Migraine,Inactive
+P0419,Aisha Naik,Female,71,9684123417,Arthritis,Inactive
+P0420,Neha Verma,Male,74,9693969906,Diabetes,Inactive
+P0421,Rohan Patil,Female,6,9841406063,Diabetes,Active
+P0422,Vivaan Gupta,Male,39,9241489021,Asthma,Active
+P0423,Aarav Singh,Male,30,9105892665,Hypertension,Active
+P0424,Neha Kulkarni,Male,7,9882424351,Kidney Disease,Active
+P0425,Kavya Patel,Male,49,9891223428,Diabetes,Inactive
+P0426,Pooja Verma,Female,85,9420993039,Fever,Active
+P0427,Aarav Naik,Male,18,9413282831,Kidney Disease,Active
+P0428,Arjun Naik,Female,38,9775186858,Fever,Active
+P0429,Ananya Patel,Male,29,9943484995,Heart Disease,Active
+P0430,Rahul Sharma,Female,17,9308456834,Fever,Active
+P0431,Sneha Gupta,Female,17,9480293880,Fever,Inactive
+P0432,Aarav Patil,Female,37,9511168398,Migraine,Active
+P0433,Aditya Reddy,Female,36,9410789597,Fever,Inactive
+P0434,Ananya Verma,Female,42,9307904775,Migraine,Active
+P0435,Sanjay Gupta,Male,39,9890894413,Asthma,Inactive
+P0436,Kavya Patil,Female,63,9465169265,Heart Disease,Inactive
+P0437,Ritika Patel,Male,52,9283184974,COVID-19,Active
+P0438,Neha Kulkarni,Male,52,9413616748,Diabetes,Inactive
+P0439,Aditya Naik,Male,32,9743681381,Fever,Inactive
+P0440,Arjun Gupta,Male,79,9873698226,Hypertension,Active
+P0441,Ananya Patil,Male,62,9900407211,Kidney Disease,Inactive
+P0442,Sanjay Verma,Female,12,9955886472,Heart Disease,Active
+P0443,Arjun Naik,Male,84,9175816008,COVID-19,Active
+P0444,Nikhil Reddy,Female,55,9191198280,Diabetes,Active
+P0445,Rahul Verma,Male,57,9455212641,Migraine,Inactive
+P0446,Vivaan Patel,Male,48,9668551170,Arthritis,Active
+P0447,Rohan Joshi,Male,7,9443904800,Fever,Active
+P0448,Kavya Sharma,Male,16,9686862188,Fever,Inactive
+P0449,Pooja Patel,Male,29,9487675103,Asthma,Inactive
+P0450,Pooja Reddy,Female,15,9245563504,Fever,Active
+P0451,Rahul Patel,Female,34,9604093788,Heart Disease,Inactive
+P0452,Meera Patil,Female,45,9863161183,Hypertension,Active
+P0453,Aditya Patel,Female,65,9360044280,Cancer,Active
+P0454,Kavya Sharma,Male,77,9186963531,Migraine,Inactive
+P0455,Aarav Kulkarni,Male,13,9139002301,Fever,Inactive
+P0456,Aisha Sharma,Female,77,9440436012,Diabetes,Active
+P0457,Ritika Singh,Male,69,9204753355,Kidney Disease,Active
+P0458,Aarav Singh,Female,27,9341894844,Diabetes,Inactive
+P0459,Rohan Singh,Male,10,9934682298,Arthritis,Active
+P0460,Diya Reddy,Female,4,9820341398,Heart Disease,Active
+P0461,Arjun Sharma,Male,84,9386540912,Asthma,Inactive
+P0462,Vivaan Joshi,Male,46,9396598177,COVID-19,Inactive
+P0463,Vivaan Sharma,Female,59,9318535552,Migraine,Active
+P0464,Arjun Reddy,Male,71,9940729034,Kidney Disease,Inactive
+P0465,Nikhil Joshi,Female,50,9737819448,COVID-19,Inactive
+P0466,Vivaan Naik,Male,13,9227086623,COVID-19,Active
+P0467,Ananya Verma,Male,60,9952308868,Diabetes,Active
+P0468,Aditya Naik,Female,77,9231626600,Arthritis,Active
+P0469,Diya Reddy,Female,82,9532491342,COVID-19,Inactive
+P0470,Rahul Patil,Female,11,9353589102,Kidney Disease,Inactive
+P0471,Pooja Naik,Male,44,9423542150,Fever,Inactive
+P0472,Diya Singh,Male,78,9264193997,Asthma,Inactive
+P0473,Nikhil Reddy,Female,6,9354284255,Heart Disease,Active
+P0474,Sneha Verma,Female,22,9278108899,Asthma,Active
+P0475,Vivaan Sharma,Female,74,9880707988,Hypertension,Active
+P0476,Sanjay Patel,Male,74,9986969858,Fever,Active
+P0477,Aditya Naik,Male,14,9660670097,Asthma,Inactive
+P0478,Aditya Patil,Male,5,9686691862,Arthritis,Inactive
+P0479,Ishita Kulkarni,Male,56,9619958599,Diabetes,Inactive
+P0480,Ananya Joshi,Female,45,9506126247,Cancer,Inactive
+P0481,Ritika Reddy,Male,58,9908924640,Kidney Disease,Active
+P0482,Rahul Verma,Male,2,9675138429,Fever,Inactive
+P0483,Neha Joshi,Male,85,9946273695,Cancer,Inactive
+P0484,Neha Singh,Male,6,9492276385,Kidney Disease,Active
+P0485,Meera Gupta,Male,41,9993230938,Hypertension,Active
+P0486,Rahul Kulkarni,Female,9,9303606090,Fever,Active
+P0487,Ritika Joshi,Male,85,9224006119,Fever,Active
+P0488,Meera Singh,Female,30,9871908077,Kidney Disease,Inactive
+P0489,Rohan Patel,Female,79,9490740062,COVID-19,Inactive
+P0490,Aisha Sharma,Male,27,9465883755,Diabetes,Inactive
+P0491,Karan Sharma,Female,38,9615875321,Diabetes,Inactive
+P0492,Aditya Gupta,Male,17,9152330897,Diabetes,Active
+P0493,Aarav Kulkarni,Female,2,9846930389,Asthma,Active
+P0494,Meera Patil,Female,66,9233363415,Heart Disease,Active
+P0495,Pooja Reddy,Male,22,9559899027,Hypertension,Inactive
+P0496,Rahul Reddy,Female,32,9982292436,Arthritis,Inactive
+P0497,Aarav Patil,Male,51,9179573965,Migraine,Inactive
+P0498,Kavya Patel,Female,23,9151605134,COVID-19,Active
+P0499,Rahul Naik,Female,16,9558820269,Heart Disease,Inactive
+P0500,Nikhil Kulkarni,Male,27,9208842508,Migraine,Active

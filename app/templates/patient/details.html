@@ -1,0 +1,657 @@
+{% extends "dashboard_layout.html" %}
+
+<!-- ==========================================================
+                        PAGE TITLE
+=========================================================== -->
+
+{% block title %}
+
+Patient Details
+
+{% endblock %}
+
+<!-- ==========================================================
+                        EXTRA CSS
+=========================================================== -->
+
+{% block extra_css %}
+
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/patient.css') }}">
+
+{% endblock %}
+
+<!-- ==========================================================
+                        PAGE CONTENT
+=========================================================== -->
+
+{% block content %}
+
+<div class="patient-details-page">
+
+    <!-- ==========================================
+                    PAGE HEADER
+    =========================================== -->
+
+    <div class="page-header">
+
+        <div>
+
+            <h1>
+
+                Patient Details
+
+            </h1>
+
+            <p>
+
+                View complete patient profile and medical information.
+
+            </p>
+
+        </div>
+
+        <div class="page-actions">
+
+            <a
+                href="{{ url_for('patient.edit', id=patient.id) }}"
+                class="btn btn-primary">
+
+                <i class="fa-solid fa-pen"></i>
+
+                Edit
+
+            </a>
+
+            <a
+                href="{{ url_for('patient.delete', id=patient.id) }}"
+                class="btn btn-danger">
+
+                <i class="fa-solid fa-trash"></i>
+
+                Delete
+
+            </a>
+
+            <a
+                href="{{ url_for('patient.index') }}"
+                class="btn btn-secondary">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+                    BREADCRUMB
+    =========================================== -->
+
+    <div class="breadcrumb">
+
+        <a href="{{ url_for('dashboard.index') }}">
+
+            Dashboard
+
+        </a>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <a href="{{ url_for('patient.index') }}">
+
+            Patients
+
+        </a>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <span>
+
+            Patient Details
+
+        </span>
+
+    </div>
+
+    <!-- ==========================================
+                    PROFILE SUMMARY
+    =========================================== -->
+
+    <div class="profile-summary">
+
+        <div class="profile-avatar">
+
+            {{ patient.first_name[0] }}{{ patient.last_name[0] }}
+
+        </div>
+
+        <div class="profile-info">
+
+            <h2>
+
+                {{ patient.full_name }}
+
+            </h2>
+
+            <p>
+
+                <strong>Patient ID:</strong>
+
+                {{ patient.patient_id }}
+
+            </p>
+
+            <p>
+
+                <strong>Gender:</strong>
+
+                {{ patient.gender }}
+
+            </p>
+
+            <p>
+
+                <strong>Age:</strong>
+
+                {{ patient.age }}
+
+                Years
+
+            </p>
+
+        </div>
+
+        <div class="profile-status">
+
+            {% if patient.status == "Active" %}
+
+                <span class="badge badge-success">
+
+                    Active
+
+                </span>
+
+            {% else %}
+
+                <span class="badge badge-danger">
+
+                    Inactive
+
+                </span>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+                    INFORMATION GRID
+    =========================================== -->
+
+    <div class="details-grid">
+
+            <!-- ==========================================
+                    PERSONAL INFORMATION
+    =========================================== -->
+
+    <div class="details-card">
+
+        <div class="card-header">
+
+            <i class="fa-solid fa-user"></i>
+
+            <h3>
+
+                Personal Information
+
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="info-row">
+
+                <span>First Name</span>
+
+                <strong>{{ patient.first_name }}</strong>
+
+            </div>
+
+            <div class="info-row">
+
+                <span>Last Name</span>
+
+                <strong>{{ patient.last_name }}</strong>
+
+            </div>
+
+            <div class="info-row">
+
+                <span>Date of Birth</span>
+
+                <strong>
+
+                    {% if patient.date_of_birth %}
+
+                        {{ patient.date_of_birth.strftime("%d %B %Y") }}
+
+                    {% else %}
+
+                        -
+
+                    {% endif %}
+
+                </strong>
+
+            </div>
+
+            <div class="info-row">
+
+                <span>Blood Group</span>
+
+                <strong>
+
+                    {{ patient.blood_group or "-" }}
+
+                </strong>
+
+            </div>
+
+            <div class="info-row">
+
+                <span>Status</span>
+
+                <strong>
+
+                    {{ patient.status }}
+
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+                    CONTACT INFORMATION
+    =========================================== -->
+
+    <div class="details-card">
+
+        <div class="card-header">
+
+            <i class="fa-solid fa-address-book"></i>
+
+            <h3>
+
+                Contact Information
+
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="info-row">
+
+                <span>Phone</span>
+
+                <strong>
+
+                    {{ patient.phone }}
+
+                </strong>
+
+            </div>
+
+            <div class="info-row">
+
+                <span>Email</span>
+
+                <strong>
+
+                    {{ patient.email or "-" }}
+
+                </strong>
+
+            </div>
+
+            <div class="info-row">
+
+                <span>Address</span>
+
+                <strong>
+
+                    {{ patient.address or "-" }}
+
+                </strong>
+
+            </div>
+
+            <div class="info-row">
+
+                <span>City</span>
+
+                <strong>
+
+                    {{ patient.city or "-" }}
+
+                </strong>
+
+            </div>
+
+            <div class="info-row">
+
+                <span>State</span>
+
+                <strong>
+
+                    {{ patient.state or "-" }}
+
+                </strong>
+
+            </div>
+
+            <div class="info-row">
+
+                <span>PIN Code</span>
+
+                <strong>
+
+                    {{ patient.pincode or "-" }}
+
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+                    MEDICAL INFORMATION
+    =========================================== -->
+
+    <div class="details-card">
+
+        <div class="card-header">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+            <h3>
+
+                Medical Information
+
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="info-row">
+
+                <span>Primary Disease</span>
+
+                <strong>
+
+                    {{ patient.disease or "-" }}
+
+                </strong>
+
+            </div>
+
+            <div class="info-row">
+
+                <span>Patient Status</span>
+
+                <strong>
+
+                    {{ patient.status }}
+
+                </strong>
+
+            </div>
+
+            <div class="info-row">
+
+                <span>Age</span>
+
+                <strong>
+
+                    {{ patient.age }} Years
+
+                </strong>
+
+            </div>
+
+            <div class="info-row">
+
+                <span>Gender</span>
+
+                <strong>
+
+                    {{ patient.gender }}
+
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+        <!-- ==========================================
+                    INSURANCE INFORMATION
+    =========================================== -->
+
+    <div class="details-card">
+
+        <div class="card-header">
+
+            <i class="fa-solid fa-file-shield"></i>
+
+            <h3>
+
+                Insurance Information
+
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="info-row">
+
+                <span>Insurance Provider</span>
+
+                <strong>
+
+                    {{ patient.insurance_provider or "-" }}
+
+                </strong>
+
+            </div>
+
+            <div class="info-row">
+
+                <span>Insurance Number</span>
+
+                <strong>
+
+                    {{ patient.insurance_number or "-" }}
+
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+                    EMERGENCY CONTACT
+    =========================================== -->
+
+    <div class="details-card">
+
+        <div class="card-header">
+
+            <i class="fa-solid fa-phone-volume"></i>
+
+            <h3>
+
+                Emergency Contact
+
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="info-row">
+
+                <span>Contact Person</span>
+
+                <strong>
+
+                    {{ patient.emergency_contact_name or "-" }}
+
+                </strong>
+
+            </div>
+
+            <div class="info-row">
+
+                <span>Contact Number</span>
+
+                <strong>
+
+                    {{ patient.emergency_contact or "-" }}
+
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+                    RECORD INFORMATION
+    =========================================== -->
+
+    <div class="details-card">
+
+        <div class="card-header">
+
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+            <h3>
+
+                Record Information
+
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="info-row">
+
+                <span>Created On</span>
+
+                <strong>
+
+                    {{ patient.created_at.strftime("%d %B %Y %I:%M %p") }}
+
+                </strong>
+
+            </div>
+
+            <div class="info-row">
+
+                <span>Last Updated</span>
+
+                <strong>
+
+                    {{ patient.updated_at.strftime("%d %B %Y %I:%M %p") }}
+
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+                QUICK ACTIONS
+=========================================== -->
+
+<div class="quick-actions">
+
+    <a
+        href="{{ url_for('patient.edit', id=patient.id) }}"
+        class="btn btn-primary">
+
+        <i class="fa-solid fa-pen"></i>
+
+        Edit Patient
+
+    </a>
+
+    <a
+        href="{{ url_for('patient.delete', id=patient.id) }}"
+        class="btn btn-danger">
+
+        <i class="fa-solid fa-trash"></i>
+
+        Delete Patient
+
+    </a>
+
+    <a
+        href="{{ url_for('patient.index') }}"
+        class="btn btn-secondary">
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+        Back to List
+
+    </a>
+
+</div>
+
+</div>
+
+{% endblock %}
+
+<!-- ==========================================================
+                    EXTRA JAVASCRIPT
+=========================================================== -->
+
+{% block extra_js %}
+
+<script src="{{ url_for('static', filename='js/patient.js') }}"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    console.log("Patient Details Loaded");
+
+});
+
+</script>
+
+{% endblock %}

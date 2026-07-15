@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+
+<!-- ==========================================================
+                    PAGE TITLE
+=========================================================== -->
+
+{% block title %}
+
+{{ page_title|default("Healthcare PBM Portal") }}
+
+{% endblock %}
+
+<!-- ==========================================================
+                    PAGE CSS
+=========================================================== -->
+
+{% block styles %}
+
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/components.css') }}">
+
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+{% block extra_css %}
+
+{% endblock %}
+
+{% endblock %}
+
+<!-- ==========================================================
+                    PAGE BODY
+=========================================================== -->
+
+{% block body %}
+
+<div class="dashboard-wrapper">
+
+    <!-- ==========================================
+                    SIDEBAR
+    =========================================== -->
+
+    {% include "components/sidebar.html" %}
+
+    <!-- ==========================================
+                    MAIN CONTENT
+    =========================================== -->
+
+    <main
+        class="main-content"
+        id="mainContent">
+
+        <!-- ======================================
+                    HEADER
+        ======================================= -->
+
+        {% include "components/header.html" %}
+
+        <!-- ======================================
+                    FLASH MESSAGE
+        ======================================= -->
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+
+            {% if messages %}
+
+                <div class="flash-container">
+
+                    {% for category, message in messages %}
+
+                        <div class="flash-message {{ category }}">
+
+                            {{ message }}
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% endif %}
+
+        {% endwith %}
+
+        <!-- ======================================
+                    PAGE CONTENT
+        ======================================= -->
+
+        <section
+            class="page-content"
+            id="pageContent">
+
+            {% block content %}
+
+            {% endblock %}
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- ==========================================
+                GLOBAL LOADER
+=========================================== -->
+
+<div
+    id="globalLoader"
+    class="global-loader">
+
+    <div class="loader-spinner"></div>
+
+</div>
+
+<!-- ==========================================
+                SCROLL TO TOP
+=========================================== -->
+
+<button
+    id="scrollTopBtn"
+    class="scroll-top">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+{% endblock %}
+
+<!-- ==========================================================
+                    PAGE JAVASCRIPT
+=========================================================== -->
+
+{% block scripts %}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+{% block extra_js %}
+
+{% endblock %}
+
+{% endblock %}

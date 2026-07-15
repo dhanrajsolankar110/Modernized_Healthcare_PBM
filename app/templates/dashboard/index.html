@@ -1,0 +1,1374 @@
+{% extends "dashboard_layout.html" %}
+
+<!-- ==========================================================
+                    PAGE TITLE
+=========================================================== -->
+
+{% set page_title = "Dashboard" %}
+
+<!-- ==========================================================
+                    PAGE CSS
+=========================================================== -->
+
+{% block extra_css %}
+
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+{% endblock %}
+
+<!-- ==========================================================
+                    PAGE CONTENT
+=========================================================== -->
+
+{% block content %}
+
+<!-- ==========================================
+                WELCOME SECTION
+========================================== -->
+
+<section class="welcome-banner fade-in">
+
+    <div class="welcome-left">
+
+        <h1>
+
+            Welcome,
+
+            {% if current_user.is_authenticated %}
+
+                {{ current_user.full_name }}
+
+            {% else %}
+
+                Administrator
+
+            {% endif %}
+
+            👋
+
+        </h1>
+
+        <p>
+
+            Welcome to the Modernized Healthcare PBM Portal
+            with AI-Powered UX. Monitor patients, claims,
+            pharmacy activities, reports and AI insights
+            from one centralized dashboard.
+
+        </p>
+
+        <div class="welcome-buttons">
+
+            <a
+                href="{{ url_for('patient.add') }}"
+                class="btn btn-outline">
+
+                <i class="fa-solid fa-user-plus"></i>
+
+                Add Patient
+
+            </a>
+
+            <a
+                href="{{ url_for('claim.add') }}"
+                class="btn btn-outline">
+
+                <i class="fa-solid fa-file-medical"></i>
+
+                Create Claim
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+                DASHBOARD STATS
+========================================== -->
+
+<section class="statistics-grid">
+
+    <!-- Patients -->
+
+    <div class="card statistics-card">
+
+        <div class="statistics-icon">
+
+            <i class="fa-solid fa-user-group"></i>
+
+        </div>
+
+        <div class="statistics-content">
+
+            <h3>
+
+                Total Patients
+
+            </h3>
+
+            <h2
+                class="counter"
+                data-target="1284">
+
+                0
+
+            </h2>
+
+            <span class="success">
+
+                +12% this month
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- Claims -->
+
+    <div class="card statistics-card">
+
+        <div class="statistics-icon">
+
+            <i class="fa-solid fa-file-medical"></i>
+
+        </div>
+
+        <div class="statistics-content">
+
+            <h3>
+
+                Total Claims
+
+            </h3>
+
+            <h2
+                class="counter"
+                data-target="824">
+
+                0
+
+            </h2>
+
+            <span class="success">
+
+                +8% this week
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- Approved -->
+
+    <div class="card statistics-card">
+
+        <div class="statistics-icon">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+        </div>
+
+        <div class="statistics-content">
+
+            <h3>
+
+                Approved Claims
+
+            </h3>
+
+            <h2
+                class="counter"
+                data-target="693">
+
+                0
+
+            </h2>
+
+            <span class="success">
+
+                84% Approval Rate
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- Fraud -->
+
+    <div class="card statistics-card">
+
+        <div class="statistics-icon">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+        </div>
+
+        <div class="statistics-content">
+
+            <h3>
+
+                Fraud Alerts
+
+            </h3>
+
+            <h2
+                class="counter"
+                data-target="27">
+
+                0
+
+            </h2>
+
+            <span class="danger">
+
+                High Priority
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+        PART 2 STARTS HERE
+        AI INSIGHTS
+        QUICK ACTIONS
+        FRAUD ALERTS
+========================================== -->
+
+<!-- ==========================================
+                AI INSIGHTS
+========================================== -->
+
+<section class="dashboard-row">
+
+    <div class="card ai-card">
+
+        <div class="card-header">
+
+            <h2 class="card-title">
+
+                <i class="fa-solid fa-robot"></i>
+
+                AI Insights
+
+            </h2>
+
+            <span class="badge success">
+
+                Live
+
+            </span>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="ai-score">
+
+                <div class="score-circle">
+
+                    <h1>
+
+                        92%
+
+                    </h1>
+
+                    <span>
+
+                        Accuracy
+
+                    </span>
+
+                </div>
+
+                <div class="score-details">
+
+                    <h3>
+
+                        AI Fraud Detection Engine
+
+                    </h3>
+
+                    <p>
+
+                        The AI engine continuously analyzes
+                        healthcare claims to identify suspicious
+                        activities, duplicate claims and abnormal
+                        billing patterns.
+
+                    </p>
+
+                    <ul>
+
+                        <li>
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            Duplicate Claim Detection
+
+                        </li>
+
+                        <li>
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            Pattern Recognition
+
+                        </li>
+
+                        <li>
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            Hospital Risk Analysis
+
+                        </li>
+
+                        <li>
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            Real-Time Monitoring
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ======================================
+                FRAUD ALERT
+    ======================================= -->
+
+    <div class="card fraud-card">
+
+        <div class="card-header">
+
+            <h2 class="card-title">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+                Latest Fraud Alert
+
+            </h2>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="fraud-alert high">
+
+                <h3>
+
+                    High Risk Claim
+
+                </h3>
+
+                <p>
+
+                    Claim ID :
+
+                    <strong>
+
+                        C10254
+
+                    </strong>
+
+                </p>
+
+                <p>
+
+                    Patient :
+
+                    <strong>
+
+                        Rahul Sharma
+
+                    </strong>
+
+                </p>
+
+                <p>
+
+                    Hospital :
+
+                    <strong>
+
+                        City Hospital
+
+                    </strong>
+
+                </p>
+
+                <p>
+
+                    Risk Score :
+
+                    <strong>
+
+                        94%
+
+                    </strong>
+
+                </p>
+
+                <button
+                    class="btn btn-danger mt-2">
+
+                    View Details
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+                QUICK ACTIONS
+========================================== -->
+
+<section class="card mt-3">
+
+    <div class="card-header">
+
+        <h2 class="card-title">
+
+            Quick Actions
+
+        </h2>
+
+    </div>
+
+    <div class="card-body">
+
+        <div class="quick-actions-grid">
+
+            <div class="action-card">
+
+                <a href="{{ url_for('patient.add') }}">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                    <h3>
+
+                        Add Patient
+
+                    </h3>
+
+                </a>
+
+            </div>
+
+            <div class="action-card">
+
+                <a  href="{{ url_for('claim.add') }}">
+
+                <i class="fa-solid fa-file-circle-plus"></i>
+
+                <h3>
+
+                    Create Claim
+
+                </h3>
+
+                </a>
+
+            </div>
+
+            <div class="action-card">
+
+                <a  href="{{ url_for('pharmacy.index') }}">
+
+                <i class="fa-solid fa-capsules"></i>
+
+                <h3>
+
+                    Pharmacy
+
+                </h3>
+
+                </a>
+
+            </div>
+
+            <div class="action-card">
+
+                <a  href="{{ url_for('reports.index') }}">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                <h3>
+
+                    Reports
+
+                </h3>
+
+                </a>
+
+            </div>
+
+            <div class="action-card">
+
+                <a  href="{{ url_for('fraud.index') }}">
+
+                <i class="fa-solid fa-robot"></i>
+
+                <h3>
+
+                    AI Analysis
+
+                </h3>
+
+                </a>
+
+            </div>
+
+            <div class="action-card">
+
+                <a  href="{{ url_for('reports.export_pdf') }}">
+
+                <i class="fa-solid fa-download"></i>
+
+                <h3>
+
+                    Export Data
+
+                </h3>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+                LIVE ACTIVITY
+========================================== -->
+
+<section class="card mt-3">
+
+    <div class="card-header">
+
+        <h2 class="card-title">
+
+            Today's Activity
+
+        </h2>
+
+    </div>
+
+    <div class="card-body">
+
+        <div class="activity-list">
+
+            <div class="activity-item">
+
+                <i class="fa-solid fa-circle-check success"></i>
+
+                <span>
+
+                    128 claims processed successfully today.
+
+                </span>
+
+            </div>
+
+            <div class="activity-item">
+
+                <i class="fa-solid fa-user-plus info"></i>
+
+                <span>
+
+                    42 new patients registered.
+
+                </span>
+
+            </div>
+
+            <div class="activity-item">
+
+                <i class="fa-solid fa-triangle-exclamation warning"></i>
+
+                <span>
+
+                    7 claims require manual verification.
+
+                </span>
+
+            </div>
+
+            <div class="activity-item">
+
+                <i class="fa-solid fa-robot danger"></i>
+
+                <span>
+
+                    AI detected 3 high-risk fraud claims.
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+        PART 3 STARTS HERE
+
+        CLAIMS CHART
+        REVENUE CHART
+        STATUS CHART
+========================================== -->
+
+<!-- ==========================================
+                ANALYTICS SECTION
+========================================== -->
+
+<section class="dashboard-row mt-3">
+
+    <!-- ======================================
+                CLAIMS TREND
+    ======================================= -->
+
+    <div class="card chart-card">
+
+        <div class="card-header">
+
+            <h2 class="card-title">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                Claims Trend
+
+            </h2>
+
+        </div>
+
+        <div class="card-body">
+
+            <canvas
+                id="claimsChart"
+                height="320">
+
+            </canvas>
+
+        </div>
+
+    </div>
+
+    <!-- ======================================
+                CLAIM STATUS
+    ======================================= -->
+
+    <div class="card status-card">
+
+        <div class="card-header">
+
+            <h2 class="card-title">
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+                Claim Status
+
+            </h2>
+
+        </div>
+
+        <div class="card-body">
+
+            <canvas
+                id="statusChart"
+                height="300">
+
+            </canvas>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+                REVENUE
+========================================== -->
+
+<section class="card mt-3">
+
+    <div class="card-header">
+
+        <h2 class="card-title">
+
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+
+            Revenue Analytics
+
+        </h2>
+
+    </div>
+
+    <div class="card-body">
+
+        <canvas
+            id="revenueChart"
+            height="120">
+
+        </canvas>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+                MONTHLY ANALYTICS
+========================================== -->
+
+<section class="statistics-grid mt-3">
+
+    <div class="card">
+
+        <div class="statistics-content">
+
+            <h3>
+
+                Monthly Revenue
+
+            </h3>
+
+            <h2>
+
+                ₹4.2 Cr
+
+            </h2>
+
+            <span class="success">
+
+                +15.4%
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <div class="statistics-content">
+
+            <h3>
+
+                AI Accuracy
+
+            </h3>
+
+            <h2>
+
+                92%
+
+            </h2>
+
+            <span class="success">
+
+                Excellent
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <div class="statistics-content">
+
+            <h3>
+
+                Duplicate Claims
+
+            </h3>
+
+            <h2>
+
+                18
+
+            </h2>
+
+            <span class="warning">
+
+                Needs Review
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <div class="statistics-content">
+
+            <h3>
+
+                Fraud Prevented
+
+            </h3>
+
+            <h2>
+
+                ₹78 Lakh
+
+            </h2>
+
+            <span class="success">
+
+                Saved
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+                PERFORMANCE
+========================================== -->
+
+<section class="dashboard-row mt-3">
+
+    <div class="card">
+
+        <div class="card-header">
+
+            <h2 class="card-title">
+
+                Hospital Performance
+
+            </h2>
+
+        </div>
+
+        <div class="card-body">
+
+            <table class="table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Hospital</th>
+
+                        <th>Claims</th>
+
+                        <th>Approval</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>Fortis Hospital</td>
+
+                        <td>325</td>
+
+                        <td>94%</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Apollo Hospital</td>
+
+                        <td>287</td>
+
+                        <td>91%</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Ruby Hall</td>
+
+                        <td>198</td>
+
+                        <td>88%</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>AIIMS</td>
+
+                        <td>145</td>
+
+                        <td>93%</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Max Hospital</td>
+
+                        <td>192</td>
+
+                        <td>89%</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>KEM Hospital</td>
+
+                        <td>210</td>
+
+                        <td>96%</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <div class="card-header">
+
+            <h2 class="card-title">
+
+                AI Recommendation
+
+            </h2>
+
+        </div>
+
+        <div class="card-body">
+
+            <ul class="activity-list">
+
+                <li class="activity-item">
+
+                    <i class="fa-solid fa-circle-check success"></i>
+
+                    Increase fraud monitoring for duplicate claims.
+
+                </li>
+
+                <li class="activity-item">
+
+                    <i class="fa-solid fa-circle-check success"></i>
+
+                    Monitor unusually high billing hospitals.
+
+                </li>
+
+                <li class="activity-item">
+
+                    <i class="fa-solid fa-circle-check success"></i>
+
+                    Review claims above ₹2,00,000 manually.
+
+                </li>
+
+                <li class="activity-item">
+
+                    <i class="fa-solid fa-circle-check success"></i>
+
+                    AI confidence remains above 90%.
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+        PART 4 STARTS HERE
+
+        RECENT CLAIMS
+        RECENT ACTIVITIES
+        FOOTER
+
+========================================== -->
+
+<!-- ==========================================
+                RECENT CLAIMS
+========================================== -->
+
+<section class="card mt-3">
+
+    <div class="card-header">
+
+        <h2 class="card-title">
+
+            Recent Healthcare Claims
+
+        </h2>
+
+        <input
+            type="text"
+            class="form-control table-search"
+            placeholder="Search Claims...">
+
+    </div>
+
+    <div class="card-body">
+
+        <div class="table-responsive">
+
+            <table class="table claims-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Claim ID</th>
+                        <th>Patient</th>
+                        <th>Hospital</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Risk</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>C1021</td>
+
+                        <td>Rahul Sharma</td>
+
+                        <td>KEM Hospital</td>
+
+                        <td>₹45,200</td>
+
+                        <td>
+
+                            <span>
+
+                                Approved
+
+                            </span>
+
+                        </td>
+
+                        <td>Low</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>C1022</td>
+
+                        <td>Priya Patil</td>
+
+                        <td>Apollo Hospital</td>
+
+                        <td>₹82,100</td>
+
+                        <td>
+
+                            <span>
+
+                                Pending
+
+                            </span>
+
+                        </td>
+
+                        <td>Medium</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>C1023</td>
+
+                        <td>Amit Singh</td>
+
+                        <td>Ruby Hall</td>
+
+                        <td>₹2,45,000</td>
+
+                        <td>
+
+                            <span>
+
+                                Review
+
+                            </span>
+
+                        </td>
+
+                        <td>High</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>C1024</td>
+
+                        <td>Neha Verma</td>
+
+                        <td>AIIMS</td>
+
+                        <td>₹58,900</td>
+
+                        <td>
+
+                            <span>
+
+                                Approved
+
+                            </span>
+
+                        </td>
+
+                        <td>Low</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+                RECENT ACTIVITIES
+========================================== -->
+
+<section class="dashboard-row mt-3">
+
+    <div class="card">
+
+        <div class="card-header">
+
+            <h2 class="card-title">
+
+                Recent Activities
+
+            </h2>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="activity-list">
+
+                <div class="activity-item">
+
+                    <i class="fa-solid fa-circle-check success"></i>
+
+                    Claim C1024 approved successfully.
+
+                </div>
+
+                <div class="activity-item">
+
+                    <i class="fa-solid fa-user-plus info"></i>
+
+                    New patient registered.
+
+                </div>
+
+                <div class="activity-item">
+
+                    <i class="fa-solid fa-capsules warning"></i>
+
+                    Pharmacy inventory updated.
+
+                </div>
+
+                <div class="activity-item">
+
+                    <i class="fa-solid fa-robot danger"></i>
+
+                    AI detected suspicious billing pattern.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ======================================
+                SYSTEM STATUS
+    ======================================= -->
+
+    <div class="card">
+
+        <div class="card-header">
+
+            <h2 class="card-title">
+
+                System Status
+
+            </h2>
+
+        </div>
+
+        <div class="card-body">
+
+            <table class="table">
+
+                <tbody>
+
+                    <tr>
+
+                        <td>Application</td>
+
+                        <td>
+
+                            <span class="badge success">
+
+                                Running
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Database</td>
+
+                        <td>
+
+                            <span class="badge success">
+
+                                Connected
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>AI Engine</td>
+
+                        <td>
+
+                            <span class="badge success">
+
+                                Active
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Fraud Detection</td>
+
+                        <td>
+
+                            <span class="badge success">
+
+                                Monitoring
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+                FOOTER
+========================================== -->
+
+<footer class="dashboard-footer mt-3">
+
+    <div class="card">
+
+        <div class="card-body text-center">
+
+            <h3>
+
+                Modernized Healthcare PBM Portal
+
+            </h3>
+
+            <p>
+
+                AI-Powered Healthcare Management System
+
+            </p>
+
+            <small>
+
+                © 2026 PBM Healthcare Portal |
+                Developed using Flask, Python, HTML, CSS,
+                JavaScript & AI
+
+            </small>
+
+        </div>
+
+    </div>
+
+</footer>
+
+{% endblock %}

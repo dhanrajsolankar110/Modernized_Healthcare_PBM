@@ -1,0 +1,425 @@
+{% extends "dashboard_layout.html" %}
+
+<!-- ==========================================================
+                    PAGE TITLE
+=========================================================== -->
+
+{% set page_title = "Claim Details" %}
+
+<!-- ==========================================================
+                    EXTRA CSS
+=========================================================== -->
+
+{% block extra_css %}
+
+<link
+rel="stylesheet"
+href="{{ url_for('static', filename='css/claim.css') }}">
+
+{% endblock %}
+
+<!-- ==========================================================
+                    CONTENT
+=========================================================== -->
+
+{% block content %}
+
+<div class="claim-details-page fade-in">
+
+    <!-- ==========================================
+                    PAGE HEADER
+    =========================================== -->
+
+    <div class="page-header">
+
+        <div>
+
+            <h2>
+
+                Claim Details
+
+            </h2>
+
+            <p>
+
+                Complete healthcare claim information.
+
+            </p>
+
+        </div>
+
+        <a
+
+            href="{{ url_for('claim.index') }}"
+
+            class="btn btn-outline">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back
+
+        </a>
+
+    </div>
+
+    <!-- ==========================================
+                    CLAIM DETAILS CARD
+    =========================================== -->
+
+    <div class="card">
+
+        <div class="card-header">
+
+            <h3 class="card-title">
+
+                Claim Information
+
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="details-grid">
+
+                <!-- Claim ID -->
+
+                <div class="detail-item">
+
+                    <label>
+
+                        Claim ID
+
+                    </label>
+
+                    <span>
+
+                        {{ claim.claim_id }}
+
+                    </span>
+
+                </div>
+
+                <!-- Patient ID -->
+
+                <div class="detail-item">
+
+                    <label>
+
+                        Patient ID
+
+                    </label>
+
+                    <span>
+
+                        {{ claim.patient_id }}
+
+                    </span>
+
+                </div>
+
+                <!-- Hospital -->
+
+                <div class="detail-item">
+
+                    <label>
+
+                        Hospital Name
+
+                    </label>
+
+                    <span>
+
+                        {{ claim.hospital_name }}
+
+                    </span>
+
+                </div>
+
+                <!-- Doctor -->
+
+                <div class="detail-item">
+
+                    <label>
+
+                        Doctor Name
+
+                    </label>
+
+                    <span>
+
+                        {{ claim.doctor_name }}
+
+                    </span>
+
+                </div>
+
+                <!-- Disease -->
+
+                <div class="detail-item">
+
+                    <label>
+
+                        Disease
+
+                    </label>
+
+                    <span>
+
+                        {{ claim.disease }}
+
+                    </span>
+
+                </div>
+
+                <!-- Claim Amount -->
+
+                <div class="detail-item">
+
+                    <label>
+
+                        Claim Amount
+
+                    </label>
+
+                    <span>
+
+                        ₹{{ "{:,.2f}".format(claim.claim_amount) }}
+
+                    </span>
+
+                </div>
+
+                                <!-- Treatment Date -->
+
+                <div class="detail-item">
+
+                    <label>
+
+                        Treatment Date
+
+                    </label>
+
+                    <span>
+
+                        {{ claim.treatment_date.strftime("%d-%m-%Y") }}
+
+                    </span>
+
+                </div>
+
+                <!-- Submission Date -->
+
+                <div class="detail-item">
+
+                    <label>
+
+                        Submission Date
+
+                    </label>
+
+                    <span>
+
+                        {{ claim.submission_date.strftime("%d-%m-%Y %I:%M %p") }}
+
+                    </span>
+
+                </div>
+
+                <!-- Claim Status -->
+
+                <div class="detail-item">
+
+                    <label>
+
+                        Claim Status
+
+                    </label>
+
+                    <span>
+
+                        {% if claim.status %}
+
+    {% set status = claim.status|trim|lower %}
+
+    {% if status == "approved" %}
+
+        <span>
+            Approved
+        </span>
+
+    {% elif status == "rejected" %}
+
+        <span>
+            Rejected
+        </span>
+
+    {% else %}
+
+        <span>
+            Pending
+        </span>
+
+    {% endif %}
+
+{% else %}
+
+    <span>
+        Pending
+    </span>
+
+{% endif %}
+
+                    </span>
+
+                </div>
+
+                <!-- Created At -->
+
+                <div class="detail-item">
+
+                    <label>
+
+                        Created On
+
+                    </label>
+
+                    <span>
+
+                        {{ claim.created_at.strftime("%d-%m-%Y %I:%M %p") }}
+
+                    </span>
+
+                </div>
+
+                <!-- Last Updated -->
+
+                <div class="detail-item">
+
+                    <label>
+
+                        Last Updated
+
+                    </label>
+
+                    <span>
+
+                        {{ claim.updated_at.strftime("%d-%m-%Y %I:%M %p") }}
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- ==========================================
+                        REMARKS
+            =========================================== -->
+
+            <div class="remarks-section mt-3">
+
+                <h4>
+
+                    Remarks
+
+                </h4>
+
+                <div class="remarks-box">
+
+                    {% if claim.remarks %}
+
+                        {{ claim.remarks }}
+
+                    {% else %}
+
+                        <span class="text-muted">
+
+                            No remarks available.
+
+                        </span>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+                    </div>
+
+        <!-- ==========================================
+                    ACTION BUTTONS
+        =========================================== -->
+
+        <div class="card-footer">
+
+            <div class="d-flex justify-between align-center w-100">
+
+                <a
+
+                    href="{{ url_for('claim.index') }}"
+
+                    class="btn btn-outline">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Back
+
+                </a>
+
+                <a
+                href="{{ url_for('fraud.predict', id=claim.id) }}"
+                class="btn btn-danger">
+
+                    <i class="fa-solid fa-robot"></i>
+
+                    Run AI Prediction
+
+                </a>
+
+                <div class="d-flex gap-2">
+
+                    <a
+
+                        href="{{ url_for('claim.edit', id=claim.id) }}"
+
+                        class="btn btn-warning">
+
+                        <i class="fa-solid fa-pen"></i>
+
+                        Edit Claim
+
+                    </a>
+
+                    <a
+
+                        href="{{ url_for('claim.delete', id=claim.id) }}"
+
+                        class="btn btn-danger">
+
+                        <i class="fa-solid fa-trash"></i>
+
+                        Delete Claim
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+<!-- ==========================================================
+                    EXTRA JAVASCRIPT
+=========================================================== -->
+
+{% block extra_js %}
+
+<script src="{{ url_for('static', filename='js/claim.js') }}"></script>
+
+{% endblock %}

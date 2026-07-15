@@ -1,0 +1,1022 @@
+{% extends "auth_layout.html" %}
+
+{% block title %}
+Register | {{ APP_NAME }}
+{% endblock %}
+
+{% block extra_css %}
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/auth.css') }}"
+>
+{% endblock %}
+
+{% block content %}
+
+<!-- =====================================================
+                    REGISTER PAGE
+====================================================== -->
+
+<section class="login-page">
+
+    <div class="login-container">
+
+        <!-- ==========================================
+                    LEFT PANEL
+        =========================================== -->
+
+        <div class="login-left">
+
+            <!-- =====================================================
+                    BRANDING PANEL
+====================================================== -->
+
+<div class="branding-overlay">
+
+    <div class="branding-content">
+
+        <!-- Logo -->
+
+        <div class="brand-logo">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+            <div>
+
+                <h1>Healthcare PBM</h1>
+
+                <span>AI-Powered Portal</span>
+
+            </div>
+
+        </div>
+
+        <!-- Badge -->
+
+        <div class="brand-badge">
+
+            <i class="fa-solid fa-user-plus"></i>
+
+            <span>Create Your Secure Account</span>
+
+        </div>
+
+        <!-- Heading -->
+
+        <h2>
+
+            Join the Modernized Healthcare PBM Platform
+
+        </h2>
+
+        <p>
+
+            Create your account to securely access healthcare
+            services, patient management, pharmacy benefits,
+            intelligent analytics, and AI-powered healthcare
+            insights from a single platform.
+
+        </p>
+
+        <!-- Features -->
+
+        <div class="feature-list">
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+                <div>
+
+                    <h4>Secure Registration</h4>
+
+                    <p>
+
+                        Protected account creation with secure
+                        authentication.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-brain"></i>
+
+                <div>
+
+                    <h4>AI-Powered Insights</h4>
+
+                    <p>
+
+                        Receive intelligent recommendations and
+                        real-time healthcare analytics.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-hospital-user"></i>
+
+                <div>
+
+                    <h4>Healthcare Management</h4>
+
+                    <p>
+
+                        Manage patients, claims, pharmacy benefits,
+                        and reports efficiently.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <div>
+
+                    <h4>Data Security</h4>
+
+                    <p>
+
+                        Enterprise-level protection for sensitive
+                        healthcare information.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Highlights -->
+
+        <div class="portal-highlights">
+
+            <div class="highlight-box">
+
+                <h3>1000+</h3>
+
+                <span>Healthcare Records</span>
+
+            </div>
+
+            <div class="highlight-box">
+
+                <h3>24×7</h3>
+
+                <span>AI Assistance</span>
+
+            </div>
+
+            <div class="highlight-box">
+
+                <h3>Secure</h3>
+
+                <span>User Access</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+        </div>
+
+        <!-- ==========================================
+                    RIGHT PANEL
+        =========================================== -->
+
+        <div class="login-right">
+
+            <!-- =====================================================
+                    FLASH MESSAGES
+====================================================== -->
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+
+    {% if messages %}
+
+        <div class="flash-container">
+
+            {% for category, message in messages %}
+
+                <div class="flash-message flash-{{ category }}">
+
+                    <div class="flash-icon">
+
+                        {% if category == "success" %}
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                        {% elif category == "danger" %}
+
+                            <i class="fa-solid fa-circle-xmark"></i>
+
+                        {% elif category == "warning" %}
+
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+
+                        {% else %}
+
+                            <i class="fa-solid fa-circle-info"></i>
+
+                        {% endif %}
+
+                    </div>
+
+                    <div class="flash-content">
+
+                        {{ message }}
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="flash-close"
+                        aria-label="Close">
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                    </button>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% endif %}
+
+{% endwith %}
+
+<!-- =====================================================
+                    REGISTER CARD
+====================================================== -->
+
+<div class="login-card">
+
+    <div class="login-header">
+
+        <h2>
+
+            Create Account
+
+        </h2>
+
+        <p>
+
+            Fill in your details to create a Healthcare PBM account.
+
+        </p>
+
+    </div>
+
+    <!-- ==========================================
+                REGISTER FORM
+    =========================================== -->
+
+    <form
+
+        id="loginForm"
+
+        class="login-form"
+
+        method="POST"
+
+        action="{{ url_for('auth.register') }}"
+
+        novalidate
+
+    >
+
+        <!-- Full Name -->
+
+        <div class="form-group">
+
+            <label for="full_name">
+
+                Full Name
+
+            </label>
+
+            <div class="input-group">
+
+                <span class="input-icon">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </span>
+
+                <input
+
+                    type="text"
+
+                    id="full_name"
+
+                    name="full_name"
+
+                    class="form-control"
+
+                    placeholder="Enter your full name"
+
+                    autocomplete="name"
+
+                    required
+
+                >
+
+            </div>
+
+            <small
+
+                class="error-message"
+
+                id="fullNameError">
+
+            </small>
+
+        </div>
+
+        <!-- Username -->
+
+        <div class="form-group">
+
+            <label for="username">
+
+                Username
+
+            </label>
+
+            <div class="input-group">
+
+                <span class="input-icon">
+
+                    <i class="fa-solid fa-id-badge"></i>
+
+                </span>
+
+                <input
+
+                    type="text"
+
+                    id="username"
+
+                    name="username"
+
+                    class="form-control"
+
+                    placeholder="Choose a username"
+
+                    autocomplete="username"
+
+                    required
+
+                >
+
+            </div>
+
+            <small
+
+                class="error-message"
+
+                id="usernameError">
+
+            </small>
+
+        </div>
+
+        <!-- Email -->
+
+        <div class="form-group">
+
+            <label for="email">
+
+                Email Address
+
+            </label>
+
+            <div class="input-group">
+
+                <span class="input-icon">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </span>
+
+                <input
+
+                    type="email"
+
+                    id="email"
+
+                    name="email"
+
+                    class="form-control"
+
+                    placeholder="Enter your email"
+
+                    autocomplete="email"
+
+                    required
+
+                >
+
+            </div>
+
+            <small
+
+                class="error-message"
+
+                id="emailError">
+
+            </small>
+
+        </div>
+
+                <!-- ==========================================
+                    PASSWORD
+        =========================================== -->
+
+        <div class="form-group">
+
+            <label for="password">
+
+                Password
+
+            </label>
+
+            <div class="input-group">
+
+                <span class="input-icon">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                </span>
+
+                <input
+
+                    type="password"
+
+                    id="password"
+
+                    name="password"
+
+                    class="form-control"
+
+                    placeholder="Create a strong password"
+
+                    autocomplete="new-password"
+
+                    required
+
+                >
+
+                <button
+
+                    type="button"
+
+                    class="password-toggle"
+
+                    id="togglePassword"
+
+                    aria-label="Show password"
+
+                >
+
+                    <i
+
+                        class="fa-solid fa-eye"
+
+                        id="passwordIcon">
+
+                    </i>
+
+                </button>
+
+            </div>
+
+            <small
+
+                class="error-message"
+
+                id="passwordError">
+
+            </small>
+
+        </div>
+
+        <!-- ==========================================
+                CONFIRM PASSWORD
+        =========================================== -->
+
+        <div class="form-group">
+
+            <label for="confirm_password">
+
+                Confirm Password
+
+            </label>
+
+            <div class="input-group">
+
+                <span class="input-icon">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                </span>
+
+                <input
+
+                    type="password"
+
+                    id="confirm_password"
+
+                    name="confirm_password"
+
+                    class="form-control"
+
+                    placeholder="Re-enter your password"
+
+                    autocomplete="new-password"
+
+                    required
+
+                >
+
+                <button
+
+                    type="button"
+
+                    class="password-toggle"
+
+                    id="toggleConfirmPassword"
+
+                    aria-label="Show confirm password"
+
+                >
+
+                    <i
+
+                        class="fa-solid fa-eye"
+
+                        id="confirmPasswordIcon">
+
+                    </i>
+
+                </button>
+
+            </div>
+
+            <small
+
+                class="error-message"
+
+                id="confirmPasswordError">
+
+            </small>
+
+        </div>
+
+        <!-- ==========================================
+                PASSWORD REQUIREMENTS
+        =========================================== -->
+
+        <div class="security-message">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <span>
+
+                Password should contain at least 8 characters,
+                including uppercase, lowercase, a number, and a
+                special character for better security.
+
+            </span>
+
+        </div>
+
+                <!-- ==========================================
+                    ROLE SELECTION
+        =========================================== -->
+
+        <div class="form-group">
+
+            <label for="role">
+
+                Select Your Role
+
+            </label>
+
+            <div class="input-group">
+
+                <span class="input-icon">
+
+                    <i class="fa-solid fa-user-tag"></i>
+
+                </span>
+
+                <select
+
+                    id="role"
+
+                    name="role"
+
+                    class="form-control"
+
+                    required
+
+                >
+
+                    <option value="">
+
+                        -- Select Role --
+
+                    </option>
+
+                    <option value="Administrator">
+
+                        Administrator
+
+                    </option>
+
+                    <option value="Doctor">
+
+                        Doctor
+
+                    </option>
+
+                    <option value="Pharmacist">
+
+                        Pharmacist
+
+                    </option>
+
+                    <option value="Analyst">
+
+                        Analyst
+
+                    </option>
+
+                </select>
+
+            </div>
+
+            <small
+
+                class="error-message"
+
+                id="roleError">
+
+            </small>
+
+        </div>
+
+        <!-- ==========================================
+                TERMS & CONDITIONS
+        =========================================== -->
+
+        <div class="form-options">
+
+            <label class="remember-me">
+
+                <input
+
+                    type="checkbox"
+
+                    id="acceptTerms"
+
+                    name="accept_terms"
+
+                    required
+
+                >
+
+                <span class="checkmark"></span>
+
+                <span class="remember-text">
+
+                    I agree to the
+
+                    <a
+
+                        href="#"
+
+                        class="forgot-password"
+
+                    >
+
+                        Terms & Conditions
+
+                    </a>
+
+                    and
+
+                    <a
+
+                        href="#"
+
+                        class="forgot-password"
+
+                    >
+
+                        Privacy Policy
+
+                    </a>
+
+                </span>
+
+            </label>
+
+        </div>
+
+        <small
+
+            class="error-message"
+
+            id="termsError">
+
+        </small>
+
+                <!-- ==========================================
+                    REGISTER BUTTON
+        =========================================== -->
+
+        <div class="login-actions">
+
+            <button
+
+                type="submit"
+
+                class="btn btn-primary login-btn"
+
+                id="loginButton"
+
+            >
+
+                <span class="btn-text">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                    Create Account
+
+                </span>
+
+            </button>
+
+        </div>
+
+        <!-- ==========================================
+                    DIVIDER
+        =========================================== -->
+
+        <div class="login-divider">
+
+            <span>
+
+                OR
+
+            </span>
+
+        </div>
+
+        <!-- ==========================================
+                    LOGIN SECTION
+        =========================================== -->
+
+        <div class="register-section">
+
+            <p>
+
+                Already have an account?
+
+            </p>
+
+            <a
+
+                href="{{ url_for('auth.login') }}"
+
+                class="register-link"
+
+            >
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                Sign In
+
+            </a>
+
+        </div>
+
+        <!-- ==========================================
+                    AI MESSAGE
+        =========================================== -->
+
+        <div class="ai-login-note">
+
+            <i class="fa-solid fa-robot"></i>
+
+            <p>
+
+                Create your Healthcare PBM account to securely
+                access AI-powered healthcare analytics, patient
+                management, pharmacy services, and real-time
+                operational insights.
+
+            </p>
+
+        </div>
+
+    </form>
+
+</div>
+
+<!-- =====================================================
+                    REGISTER FOOTER
+====================================================== -->
+
+<div class="login-footer">
+
+    <div class="footer-top">
+
+        <div class="footer-brand">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+            <span>
+
+                Healthcare PBM Portal
+
+            </span>
+
+        </div>
+
+        <div class="footer-version">
+
+            Version {{ VERSION }}
+
+        </div>
+
+    </div>
+
+    <div class="footer-links">
+
+        <a href="#">
+
+            Privacy Policy
+
+        </a>
+
+        <span>|</span>
+
+        <a href="#">
+
+            Terms of Service
+
+        </a>
+
+        <span>|</span>
+
+        <a href="#">
+
+            Contact Support
+
+        </a>
+
+    </div>
+
+    <div class="footer-copy">
+
+        <p>
+
+            &copy; {{ APP_NAME }} {{ VERSION }}.
+            All rights reserved.
+
+        </p>
+
+        <p>
+
+            Secure Healthcare Management with
+            AI-Powered User Experience.
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- =====================================================
+                REGISTER LOADING OVERLAY
+====================================================== -->
+
+<div class="login-loading"
+
+     id="loginLoading"
+
+     hidden>
+
+    <div class="loading-card">
+
+        <div class="loading-spinner">
+
+            <i class="fa-solid fa-spinner fa-spin"></i>
+
+        </div>
+
+        <h3>
+
+            Creating Account...
+
+        </h3>
+
+        <p>
+
+            Please wait while your Healthcare PBM account
+            is being created.
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- =====================================================
+                ACCESSIBILITY SUPPORT
+====================================================== -->
+
+<a href="#registerForm"
+
+   class="skip-link">
+
+    Skip to Registration Form
+
+</a>
+
+<!-- =====================================================
+                PAGE INFORMATION
+====================================================== -->
+
+<div class="page-information"
+
+     hidden>
+
+    <span>
+
+        Portal :
+
+        {{ APP_NAME }}
+
+    </span>
+
+    <span>
+
+        Version :
+
+        {{ VERSION }}
+
+    </span>
+
+</div>
+
+<!-- =====================================================
+                END OF LOGIN RIGHT
+====================================================== -->
+
+</div>
+
+<!-- End login-container -->
+
+</div>
+
+<!-- End login-page -->
+
+</section>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+
+<script
+    src="{{ url_for('static', filename='js/auth.js') }}">
+</script>
+
+{% endblock %}

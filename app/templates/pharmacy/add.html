@@ -1,0 +1,335 @@
+{% extends "dashboard_layout.html" %}
+
+{% block title %}
+Add Medicine
+{% endblock %}
+
+{% block extra_css %}
+
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/pharmacy.css') }}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="pharmacy-form-page">
+
+    <!-- ==========================================
+                    PAGE HEADER
+    =========================================== -->
+
+    <div class="page-header">
+
+        <div>
+
+            <h1>
+
+                Add Medicine
+
+            </h1>
+
+            <p>
+
+                Register a new medicine in the pharmacy inventory.
+
+            </p>
+
+        </div>
+
+        <a
+            href="{{ url_for('pharmacy.index') }}"
+            class="btn btn-secondary">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back
+
+        </a>
+
+    </div>
+
+    <!-- ==========================================
+                    FORM CARD
+    =========================================== -->
+
+    <form
+        method="POST"
+        class="pharmacy-form">
+
+        <div class="form-card">
+
+            <div class="card-header">
+
+                <i class="fa-solid fa-capsules"></i>
+
+                <h3>
+
+                    Medicine Information
+
+                </h3>
+
+            </div>
+
+            <div class="form-grid">
+
+                <!-- Medicine ID -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Medicine ID
+
+                    </label>
+
+                    <input
+                        type="text"
+                        name="medicine_id"
+                        value="{{ medicine_id }}"
+                        readonly>
+
+                </div>
+
+                <!-- Medicine Name -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Medicine Name <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        name="medicine_name"
+                        required>
+
+                </div>
+
+                <!-- Category -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Category <span>*</span>
+
+                    </label>
+
+                    <select
+                        name="category"
+                        required>
+
+                        <option value="">Select Category</option>
+
+                        <option>Tablet</option>
+
+                        <option>Capsule</option>
+
+                        <option>Syrup</option>
+
+                        <option>Injection</option>
+
+                        <option>Cream</option>
+
+                    </select>
+
+                </div>
+
+                <!-- Manufacturer -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Manufacturer <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        name="manufacturer"
+                        required>
+
+                </div>
+
+                <!-- Batch Number -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Batch Number <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        name="batch_number"
+                        required>
+
+                </div>
+
+                <!-- Expiry Date -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Expiry Date <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="date"
+                        name="expiry_date"
+                        required>
+
+                </div>
+
+                                <!-- Stock Quantity -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Stock Quantity <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="number"
+                        name="stock_quantity"
+                        min="0"
+                        required>
+
+                </div>
+
+                <!-- Unit Price -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Unit Price (₹) <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="number"
+                        name="unit_price"
+                        min="0"
+                        step="0.01"
+                        required>
+
+                </div>
+
+                <!-- Supplier Name -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Supplier Name <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        name="supplier_name"
+                        required>
+
+                </div>
+
+                <!-- Status -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Status <span>*</span>
+
+                    </label>
+
+                    <select
+                        name="status"
+                        required>
+
+                        <option value="Available">
+
+                            Available
+
+                        </option>
+
+                        <option value="Low Stock">
+
+                            Low Stock
+
+                        </option>
+
+                        <option value="Out of Stock">
+
+                            Out of Stock
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ==========================================
+                    FORM ACTIONS
+        =========================================== -->
+
+        <div class="form-actions">
+
+            <button
+                type="submit"
+                class="btn btn-primary">
+
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                Save Medicine
+
+            </button>
+
+            <button
+                type="reset"
+                class="btn btn-secondary">
+
+                <i class="fa-solid fa-rotate-left"></i>
+
+                Reset
+
+            </button>
+
+            <a
+                href="{{ url_for('pharmacy.index') }}"
+                class="btn btn-danger">
+
+                <i class="fa-solid fa-xmark"></i>
+
+                Cancel
+
+            </a>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+
+<script src="{{ url_for('static', filename='js/pharmacy.js') }}"></script>
+
+{% endblock %}

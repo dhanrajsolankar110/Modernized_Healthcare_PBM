@@ -1,0 +1,257 @@
+{% extends "dashboard_layout.html" %}
+
+{% block title %}
+
+Edit Setting
+
+{% endblock %}
+
+{% block extra_css %}
+
+<link
+rel="stylesheet"
+href="{{ url_for('static', filename='css/settings.css') }}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+
+    <div>
+
+        <h1>
+
+            Edit System Setting
+
+        </h1>
+
+        <p>
+
+            Update the selected system configuration.
+
+        </p>
+
+    </div>
+
+    <div class="header-actions">
+
+        <a
+
+        href="{{ url_for('settings.index') }}"
+
+        class="btn btn-secondary">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back
+
+        </a>
+
+    </div>
+
+</div>
+
+<div class="table-card">
+
+    <div class="table-header">
+
+        <h2>
+
+            Setting Information
+
+        </h2>
+
+    </div>
+
+    <div style="padding:30px;">
+
+        <form method="POST">
+
+            <div class="form-group">
+
+                <label>
+
+                    Setting Key
+
+                </label>
+
+                <input
+
+                    type="text"
+
+                    class="form-control"
+
+                    value="{{ setting.setting_key }}"
+
+                    readonly
+
+                >
+
+            </div>
+
+            <br>
+
+            <div class="form-group">
+
+                <label>
+
+                    Category
+
+                </label>
+
+                <input
+
+                    type="text"
+
+                    class="form-control"
+
+                    value="{{ setting.category }}"
+
+                    readonly
+
+                >
+
+            </div>
+
+            <br>
+
+            <div class="form-group">
+
+                <label>
+
+                    Description
+
+                </label>
+
+                <textarea
+
+                    class="form-control"
+
+                    rows="3"
+
+                    readonly>{{ setting.description }}</textarea>
+
+            </div>
+
+            <br>
+
+            <div class="form-group">
+
+                <label>
+
+                    Setting Value
+
+                </label>
+
+                <input
+
+                    type="text"
+
+                    name="setting_value"
+
+                    class="form-control"
+
+                    value="{{ setting.setting_value }}"
+
+                    required
+
+                >
+
+            </div>
+
+            <br>
+
+            <div class="form-group">
+
+                <label>
+
+                    Data Type
+
+                </label>
+
+                <input
+
+                    type="text"
+
+                    class="form-control"
+
+                    value="{{ setting.data_type }}"
+
+                    readonly
+
+                >
+
+            </div>
+
+            <br>
+
+            <div class="form-group">
+
+                <label>
+
+                    Editable
+
+                </label>
+
+                <br>
+
+                {% if setting.is_editable %}
+
+                <span class="badge badge-success">
+
+                    Yes
+
+                </span>
+
+                {% else %}
+
+                <span class="badge badge-danger">
+
+                    No
+
+                </span>
+
+                {% endif %}
+
+            </div>
+
+            <br><br>
+
+            <button
+
+                type="submit"
+
+                class="btn btn-success">
+
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                Save Changes
+
+            </button>
+
+            <a
+
+                href="{{ url_for('settings.index') }}"
+
+                class="btn btn-secondary">
+
+                Cancel
+
+            </a>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+
+<script
+src="{{ url_for('static', filename='js/settings.js') }}">
+</script>
+
+{% endblock %}

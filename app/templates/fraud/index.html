@@ -1,0 +1,560 @@
+{% extends "dashboard_layout.html" %}
+
+{% block title %}
+AI Fraud Detection
+{% endblock %}
+
+{% block extra_css %}
+
+<link
+rel="stylesheet"
+href="{{ url_for('static', filename='css/fraud.css') }}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="fraud-page">
+
+    <!-- ==========================================
+                    PAGE HEADER
+    =========================================== -->
+
+    <div class="page-header">
+
+        <div>
+
+            <h1>
+
+                AI Fraud Detection
+
+            </h1>
+
+            <p>
+
+                Detect suspicious healthcare claims using Artificial Intelligence.
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <a
+            href="{{ url_for('claim.index') }}"
+            class="btn btn-primary">
+
+                <i class="fa-solid fa-file-medical"></i>
+
+                Claims
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+                    STATISTICS
+    =========================================== -->
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+            </div>
+
+            <div class="stat-content">
+
+                <h2>
+
+                    {{ total_predictions }}
+
+                </h2>
+
+                <span>
+
+                    Total Predictions
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="stat-card">
+
+            <div class="stat-icon red">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+            </div>
+
+            <div class="stat-content">
+
+                <h2>
+
+                    {{ high_risk }}
+
+                </h2>
+
+                <span>
+
+                    High Risk
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="stat-card">
+
+            <div class="stat-icon yellow">
+
+                <i class="fa-solid fa-circle-exclamation"></i>
+
+            </div>
+
+            <div class="stat-content">
+
+                <h2>
+
+                    {{ medium_risk }}
+
+                </h2>
+
+                <span>
+
+                    Medium Risk
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+            <div class="stat-content">
+
+                <h2>
+
+                    {{ low_risk }}
+
+                </h2>
+
+                <span>
+
+                    Low Risk
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+                    SEARCH BAR
+    =========================================== -->
+
+    <div class="card">
+
+        <div class="card-body">
+
+            <div class="table-toolbar">
+
+                <form
+                method="GET"
+                class="search-form">
+
+                    <div class="search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+
+                            type="text"
+
+                            name="search"
+
+                            placeholder="Search Claim ID, Patient, Hospital..."
+
+                            value="{{ search }}">
+
+                    </div>
+
+                    <button
+                    type="submit"
+                    class="btn btn-primary">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        Search
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+                FRAUD TABLE
+    =========================================== -->
+
+    <div class="table-container">
+
+        <table class="fraud-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>Claim ID</th>
+
+                    <th>Patient</th>
+
+                    <th>Hospital</th>
+
+                    <th>Disease</th>
+
+                    <th>Risk Score</th>
+
+                    <th>Risk Level</th>
+
+                    <th>Prediction Date</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {% if fraud.items %}
+
+                    {% for claim in fraud.items %}
+
+                    <tr>
+
+                        <td>
+
+                            <span class="claim-id">
+
+                                {{ claim.claim_id }}
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            {{ claim.patient_id }}
+
+                        </td>
+
+                        <td>
+
+                            {{ claim.hospital_name }}
+
+                        </td>
+
+                        <td>
+
+                            {{ claim.disease }}
+
+                        </td>
+
+                        <td>
+
+                            <strong>
+
+                                {{ "%.2f"|format(claim.predicted_risk or 0) }}%
+
+                            </strong>
+
+                        </td>
+
+                        <td>
+
+                            {% if claim.risk_level == "High" %}
+
+                                <span>
+
+                                    High Risk
+
+                                </span>
+
+                            {% elif claim.risk_level == "Medium" %}
+
+                                <span>
+
+                                    Medium Risk
+
+                                </span>
+
+                            {% elif claim.risk_level == "Low" %}
+
+                                <span>
+
+                                    Low Risk
+
+                                </span>
+
+                            {% else %}
+
+                                <span>
+
+                                    Not Predicted
+
+                                </span>
+
+                            {% endif %}
+
+                        </td>
+
+                        <td>
+
+                            {% if claim.prediction_date %}
+
+                                {{ claim.prediction_date.strftime("%d-%m-%Y") }}
+
+                            {% else %}
+
+                                --
+
+                            {% endif %}
+
+                        </td>
+
+                        <td>
+
+                            <div class="action-buttons">
+
+                                <a
+
+                                href="{{ url_for('claim.details', id=claim.id) }}"
+
+                                class="btn-action view"
+
+                                title="View Claim">
+
+                                    <i class="fa-solid fa-eye"></i>
+
+                                </a>
+
+                                <a
+
+                                href="{{ url_for('fraud.predict', id=claim.id) }}"
+
+                                class="btn-action predict"
+
+                                title="Run Prediction Again">
+
+                                    <i class="fa-solid fa-robot"></i>
+
+                                </a>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                {% else %}
+
+                    <tr>
+
+                        <td
+
+                        colspan="8"
+
+                        class="empty-table">
+
+                            <div class="empty-state">
+
+                                <i class="fa-solid fa-shield-halved"></i>
+
+                                <h3>
+
+                                    No AI Predictions Found
+
+                                </h3>
+
+                                <p>
+
+                                    No claims have been analyzed by the AI yet.
+
+                                </p>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                {% endif %}
+
+            </tbody>
+
+        </table>
+
+            <!-- ==========================================
+                    PAGINATION
+    =========================================== -->
+
+    {% if fraud.pages > 1 %}
+
+    <div class="table-footer">
+
+        <div class="table-info">
+
+            Showing
+
+            <strong>
+
+                {{ fraud.first }}
+
+            </strong>
+
+            -
+
+            <strong>
+
+                {{ fraud.last }}
+
+            </strong>
+
+            of
+
+            <strong>
+
+                {{ fraud.total }}
+
+            </strong>
+
+            predictions
+
+        </div>
+
+        <nav class="pagination">
+
+            {% if fraud.has_prev %}
+
+            <a
+            href="{{ url_for(
+                'fraud.index',
+                page=fraud.prev_num,
+                search=search
+            ) }}">
+
+                <i class="fa-solid fa-angle-left"></i>
+
+            </a>
+
+            {% endif %}
+
+            {% for page_num in fraud.iter_pages(
+
+                left_edge=1,
+
+                right_edge=1,
+
+                left_current=2,
+
+                right_current=2
+
+            ) %}
+
+                {% if page_num %}
+
+                    {% if page_num == fraud.page %}
+
+                        <span class="active">
+
+                            {{ page_num }}
+
+                        </span>
+
+                    {% else %}
+
+                        <a
+                        href="{{ url_for(
+                            'fraud.index',
+                            page=page_num,
+                            search=search
+                        ) }}">
+
+                            {{ page_num }}
+
+                        </a>
+
+                    {% endif %}
+
+                {% else %}
+
+                    <span>
+
+                        ...
+
+                    </span>
+
+                {% endif %}
+
+            {% endfor %}
+
+            {% if fraud.has_next %}
+
+            <a
+            href="{{ url_for(
+                'fraud.index',
+                page=fraud.next_num,
+                search=search
+            ) }}">
+
+                <i class="fa-solid fa-angle-right"></i>
+
+            </a>
+
+            {% endif %}
+
+        </nav>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+
+<script
+src="{{ url_for(
+'static',
+filename='js/fraud.js'
+) }}">
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "dashboard_layout.html" %}
+
+{% block title %}
+Fraud Prediction
+{% endblock %}
+
+{% block content %}
+
+<div class="fraud-page">
+
+    <div class="page-header">
+
+        <h1>
+
+            AI Fraud Prediction
+
+        </h1>
+
+    </div>
+
+    <div class="prediction-card">
+
+        <h2>
+
+            Prediction Result
+
+        </h2>
+
+        <br>
+
+        <h1>
+
+            {{ result.risk_score }} %
+
+        </h1>
+
+        <h3>
+
+            {{ result.risk_level }} Risk
+
+        </h3>
+
+    </div>
+
+</div>
+
+<div>
+    <a
+
+                    href="{{ url_for('fraud.index') }}"
+
+                    class="btn btn-outline">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Back
+
+                </a>
+</div>
+
+{% endblock %}

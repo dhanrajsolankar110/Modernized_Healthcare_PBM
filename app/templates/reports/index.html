@@ -1,0 +1,963 @@
+{% extends "dashboard_layout.html" %}
+
+{% set page_title = "Reports & Analytics" %}
+
+{% block title %}
+
+Reports & Analytics
+
+{% endblock %}
+
+{% block extra_css %}
+
+<link
+rel="stylesheet"
+href="{{ url_for('static', filename='css/reports.css') }}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="reports-page">
+
+    <!-- ==========================================
+                    PAGE HEADER
+    =========================================== -->
+
+    <div class="page-header">
+
+        <div>
+
+            <h1>
+
+                Reports & Analytics
+
+            </h1>
+
+            <p>
+
+                Healthcare Business Intelligence Dashboard
+
+            </p>
+
+        </div>
+
+        <div class="header-buttons">
+
+    <a
+
+    href="{{ url_for('reports.export_pdf') }}"
+
+    class="btn btn-primary">
+
+        <i class="fa-solid fa-file-pdf"></i>
+
+        Export PDF
+
+    </a>
+
+    <a
+
+    href="{{ url_for('reports.export_excel') }}"
+
+    class="btn btn-success">
+
+        <i class="fa-solid fa-file-excel"></i>
+
+        Export Excel
+
+    </a>
+
+    <a
+
+    href="{{ url_for('reports.export_csv') }}"
+
+    class="btn btn-info">
+
+        <i class="fa-solid fa-file-csv"></i>
+
+        Export CSV
+
+    </a>
+
+</div>
+
+    </div>
+
+    <!-- ==========================================
+                    SUMMARY CARDS
+    =========================================== -->
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+
+                <i class="fa-solid fa-users"></i>
+
+            </div>
+
+            <div class="stat-content">
+
+                <h2>
+
+                    {{ total_patients }}
+
+                </h2>
+
+                <span>
+
+                    Total Patients
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+
+                <i class="fa-solid fa-file-medical"></i>
+
+            </div>
+
+            <div class="stat-content">
+
+                <h2>
+
+                    {{ total_claims }}
+
+                </h2>
+
+                <span>
+
+                    Total Claims
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="stat-card">
+
+            <div class="stat-icon purple">
+
+                <i class="fa-solid fa-pills"></i>
+
+            </div>
+
+            <div class="stat-content">
+
+                <h2>
+
+                    {{ total_medicines }}
+
+                </h2>
+
+                <span>
+
+                    Medicines
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="stat-card">
+
+            <div class="stat-icon red">
+
+                <i class="fa-solid fa-robot"></i>
+
+            </div>
+
+            <div class="stat-content">
+
+                <h2>
+
+                    {{ total_predictions }}
+
+                </h2>
+
+                <span>
+
+                    AI Predictions
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="summary-grid">
+
+    <div class="summary-card">
+
+        <h3>
+
+            Total Claim Amount
+
+        </h3>
+
+        <h2>
+
+            ₹ {{ "{:,.2f}".format(total_amount) }}
+
+        </h2>
+
+    </div>
+
+    <div class="summary-card">
+
+        <h3>
+
+            Average Claim Amount
+
+        </h3>
+
+        <h2>
+
+            ₹ {{ "{:,.2f}".format(average_amount) }}
+
+        </h2>
+
+    </div>
+
+</div>
+
+    <!-- ==========================================
+                    FILTER TOOLBAR
+    =========================================== -->
+
+    <div class="toolbar-card">
+
+    <div class="toolbar">
+
+        <div class="toolbar-left">
+
+            <form
+            method="GET"
+            action="{{ url_for('reports.index') }}">
+
+                <select
+                name="filter"
+                class="form-control">
+
+                    <option value="all"
+                    {% if filter_type=="all" %}selected{% endif %}>
+
+                        All Reports
+
+                    </option>
+
+                    <option value="today"
+                    {% if filter_type=="today" %}selected{% endif %}>
+
+                        Today
+
+                    </option>
+
+                    <option value="week"
+                    {% if filter_type=="week" %}selected{% endif %}>
+
+                        Last 7 Days
+
+                    </option>
+
+                    <option value="month"
+                    {% if filter_type=="month" %}selected{% endif %}>
+
+                        Last 30 Days
+
+                    </option>
+
+                </select>
+
+                <button
+                type="submit"
+                class="btn btn-primary">
+
+                    <i class="fa-solid fa-filter"></i>
+
+                    Apply Filter
+
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="toolbar-right">
+
+            <a
+            href="{{ url_for('reports.index') }}"
+            class="btn btn-success">
+
+                <i class="fa-solid fa-rotate-right"></i>
+
+                Refresh
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- ==========================================
+                    REPORT SUMMARY
+    =========================================== -->
+
+    <div class="summary-grid">
+
+        <div class="summary-card">
+
+            <h3>
+
+                Patient Report
+
+            </h3>
+
+            <h2>
+
+                {{ total_patients }}
+
+            </h2>
+
+            <p>
+
+                Male : {{ male_patients }}
+
+            </p>
+
+            <p>
+
+                Female : {{ female_patients }}
+
+            </p>
+
+        </div>
+
+        <div class="summary-card">
+
+            <h3>
+
+                Claim Report
+
+            </h3>
+
+            <h2>
+
+                {{ total_claims }}
+
+            </h2>
+
+            <p>
+
+                Approved : {{ approved_claims }}
+
+            </p>
+
+            <p>
+
+                Pending : {{ pending_claims }}
+
+            </p>
+
+            <p>
+
+                Rejected : {{ rejected_claims }}
+
+            </p>
+
+        </div>
+
+        <div class="summary-card">
+
+            <h3>
+
+                Pharmacy Report
+
+            </h3>
+
+            <h2>
+
+                {{ total_medicines }}
+
+            </h2>
+
+            <p>
+
+                Low Stock :
+
+                {{ low_stock }}
+
+            </p>
+
+        </div>
+
+        <div class="summary-card">
+
+            <h3>
+
+                AI Report
+
+            </h3>
+
+            <h2>
+
+                {{ total_predictions }}
+
+            </h2>
+
+            <p>
+
+                High Risk :
+
+                {{ high_risk }}
+
+            </p>
+
+            <p>
+
+                Duplicate :
+
+                {{ duplicate_claims }}
+
+            </p>
+
+        </div>
+
+    </div>
+
+    
+
+    <!-- ==========================================
+                    CHART SECTION
+    =========================================== -->
+
+    <div class="charts-grid">
+
+        <div id="loadingOverlay">
+
+    <div class="spinner"></div>
+
+</div>
+
+        <div class="chart-card">
+
+            <div class="chart-header">
+
+                <h3>
+
+                    Patients
+
+                </h3>
+
+            </div>
+
+            <div class="chart-body">
+
+                <canvas id="patientChart"></canvas>
+
+            </div>
+
+        </div>
+
+        <div class="chart-card">
+
+            <div class="chart-header">
+
+                <h3>
+
+                    Claims
+
+                </h3>
+
+            </div>
+
+            <div class="chart-body">
+
+                <canvas id="claimChart"></canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+                CLAIM REPORT TABLE
+========================================== -->
+
+{% if claims %}
+
+<div class="table-card">
+
+    <div class="table-header">
+
+        <div>
+
+            <h2>
+
+                Healthcare Claims Report
+
+            </h2>
+
+        </div>
+
+    </div>
+
+    <div class="table-responsive">
+
+        <table class="reports-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>No.</th>
+
+                    <th>Claim ID</th>
+
+                    <th>Patient ID</th>
+
+                    <th>Hospital</th>
+
+                    <th>Disease</th>
+
+                    <th>Status</th>
+
+                    <th>Risk Level</th>
+
+                    <th>Risk Score</th>
+
+                    <th>Claim Amount</th>
+
+                    <th>Prediction Date</th>
+
+                    <th>Duplicate</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {% for claim in claims %}
+
+                <tr>
+
+                    <td>
+
+                        {{ loop.index }}
+
+                    </td>
+
+                    <td>
+
+                        <strong>
+
+                            {{ claim.claim_id }}
+
+                        </strong>
+
+                    </td>
+
+                    <td>
+
+                        {{ claim.patient_id }}
+
+                    </td>
+
+                    <td>
+
+                        {{ claim.hospital_name }}
+
+                    </td>
+
+                    <td>
+
+                        {{ claim.disease }}
+
+                    </td>
+
+                    <!-- ==========================================
+                                CLAIM STATUS
+                    =========================================== -->
+
+                    <td>
+
+                        {% if claim.status == "Approved" %}
+
+                            <span>
+
+                                <i class="fa-solid fa-circle-check"></i>
+
+                                Approved
+
+                            </span>
+
+                        {% elif claim.status == "Pending" %}
+
+                            <span>
+
+                                <i class="fa-solid fa-clock"></i>
+
+                                Pending
+
+                            </span>
+
+                        {% elif claim.status == "Rejected" %}
+
+                            <span>
+
+                                <i class="fa-solid fa-circle-xmark"></i>
+
+                                Rejected
+
+                            </span>
+
+                        {% else %}
+
+                            <span>
+
+                                Unknown
+
+                            </span>
+
+                        {% endif %}
+
+                    </td>
+
+                    <!-- ==========================================
+                                RISK LEVEL
+                    =========================================== -->
+
+                    <td>
+
+                        {% if claim.risk_level == "High" %}
+
+                            <span>
+
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+
+                                High
+
+                            </span>
+
+                        {% elif claim.risk_level == "Medium" %}
+
+                            <span>
+
+                                <i class="fa-solid fa-circle-exclamation"></i>
+
+                                Medium
+
+                            </span>
+
+                        {% elif claim.risk_level == "Low" %}
+
+                            <span>
+
+                                <i class="fa-solid fa-shield"></i>
+
+                                Low
+
+                            </span>
+
+                        {% else %}
+
+                            <span>
+
+                                Not Predicted
+
+                            </span>
+
+                        {% endif %}
+
+                    </td>
+
+                    <!-- ==========================================
+                                RISK SCORE
+                    =========================================== -->
+
+                    <td>
+
+                        <strong>
+
+                            {{ "%.2f"|format(claim.predicted_risk or 0) }}%
+
+                        </strong>
+
+                    </td>
+
+                    <!-- ==========================================
+                                CLAIM AMOUNT
+                    =========================================== -->
+
+                    <td>
+
+                        ₹ {{ "{:,.2f}".format(claim.claim_amount) }}
+
+                    </td>
+
+                    <!-- ==========================================
+                                PREDICTION DATE
+                    =========================================== -->
+
+                    <td>
+
+                        {% if claim.prediction_date %}
+
+                            {{ claim.prediction_date.strftime("%d-%m-%Y") }}
+
+                            <br>
+
+                            <small>
+
+                                {{ claim.prediction_date.strftime("%I:%M %p") }}
+
+                            </small>
+
+                        {% else %}
+
+                            --
+
+                        {% endif %}
+
+                    </td>
+
+                    <!-- ==========================================
+                                DUPLICATE CLAIM
+                    =========================================== -->
+
+                    <td>
+
+                        {% if claim.duplicate_claim %}
+
+                            <span>
+
+                                <i class="fa-solid fa-copy"></i>
+
+                                Yes
+
+                            </span>
+
+                        {% else %}
+
+                            <span>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                No
+
+                            </span>
+
+                        {% endif %}
+
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+                            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- ==========================================
+                    TABLE FOOTER
+    =========================================== -->
+
+    <div class="table-footer">
+
+        <div class="table-info">
+
+            Showing
+
+            <strong>
+
+                {{ claims|length }}
+
+            </strong>
+
+            claim record(s).
+
+        </div>
+
+    </div>
+
+</div>
+
+{% else %}
+
+<!-- ==========================================
+                EMPTY STATE
+========================================== -->
+
+<div class="empty-state">
+
+    <div class="empty-icon">
+
+        <i class="fa-solid fa-folder-open"></i>
+
+    </div>
+
+    <h2>
+
+        No Reports Available
+
+    </h2>
+
+    <p>
+
+        There are no healthcare claims available for the selected filter.
+
+    </p>
+
+    <a
+
+    href="{{ url_for('claim.index') }}"
+
+    class="btn btn-primary">
+
+        <i class="fa-solid fa-file-medical"></i>
+
+        Go To Claims
+
+    </a>
+
+</div>
+
+{% endif %}
+
+<!-- ==========================================
+                QUICK ACTIONS
+========================================== -->
+
+<div class="actions-grid">
+
+    <div class="action-card">
+
+        <i class="fa-solid fa-file-pdf"></i>
+
+        <h3>
+
+            PDF Report
+
+        </h3>
+
+        <p>
+
+            Download a professionally formatted PDF report.
+
+        </p>
+
+        <a
+
+        href="{{ url_for('reports.export_pdf') }}"
+
+        class="btn btn-primary">
+
+            Download PDF
+
+        </a>
+
+    </div>
+
+    <div class="action-card">
+
+        <i class="fa-solid fa-file-excel"></i>
+
+        <h3>
+
+            Excel Report
+
+        </h3>
+
+        <p>
+
+            Export all healthcare claims into Microsoft Excel.
+
+        </p>
+
+        <a
+
+        href="{{ url_for('reports.export_excel') }}"
+
+        class="btn btn-success">
+
+            Download Excel
+
+        </a>
+
+    </div>
+
+    <div class="action-card">
+
+        <i class="fa-solid fa-file-csv"></i>
+
+        <h3>
+
+            CSV Report
+
+        </h3>
+
+        <p>
+
+            Download claim records as a CSV spreadsheet.
+
+        </p>
+
+        <a
+
+        href="{{ url_for('reports.export_csv') }}"
+
+        class="btn btn-info">
+
+            Download CSV
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+const reportData = {{ {
+    "male": male_patients,
+    "female": female_patients,
+    "approved": approved_claims,
+    "pending": pending_claims,
+    "rejected": rejected_claims
+}|tojson }};
+
+</script>
+
+<script>
+console.log(reportData);
+</script>
+
+<script src="{{ url_for('static', filename='js/reports.js') }}"></script>
+
+{% endblock %}

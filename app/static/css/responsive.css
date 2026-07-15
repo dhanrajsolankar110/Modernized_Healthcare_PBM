@@ -1,0 +1,63 @@
+
+/*==========================================================
+    RESPONSIVE STYLES
+    Modernized Healthcare PBM Web Portal
+==========================================================*/
+
+@media (max-width: 1200px){
+    .container{width:95%;}
+}
+
+@media (max-width:992px){
+    #sidebar{
+        position:fixed;
+        transform:translateX(-100%);
+        z-index:1000;
+    }
+    #sidebar.mobile-open{
+        transform:translateX(0);
+    }
+    .main-content{
+        margin-left:0;
+        width:100%;
+    }
+    .dashboard-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media (max-width:768px){
+    .header{
+        flex-direction:column;
+        gap:10px;
+    }
+    .card{
+        width:100%;
+    }
+    table{
+        display:block;
+        overflow-x:auto;
+    }
+    .btn{
+        width:100%;
+        margin-bottom:10px;
+    }
+    .form-row{
+        display:block;
+    }
+    .form-group{
+        width:100%;
+    }
+}
+
+@media (max-width:480px){
+    h1,h2,h3{
+        font-size:90%;
+    }
+    .logo{
+        width:140px;
+    }
+    .container{
+        padding:10px;
+    }
+}
